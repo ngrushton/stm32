@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
   29:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @{
   30:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   */
   31:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 2
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 2
 
 
   32:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /** @defgroup PWREx PWREx
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
   86:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
   87:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /* Private macro -------------------------------------------------------------*/
   88:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /* Private variables ---------------------------------------------------------*/
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 3
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 3
 
 
   89:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /* Private function prototypes -----------------------------------------------*/
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
   36              		.loc 1 134 0
   37 0004 00F4C060 		and	r0, r0, #1536
   38 0008 7047     		bx	lr
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 4
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 4
 
 
   39              	.L3:
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  168:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   assert_param(IS_PWR_VOLTAGE_SCALING_RANGE(VoltageScaling));
  169:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
  170:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** #if defined(PWR_CR5_R1MODE)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 5
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 5
 
 
  171:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   if (VoltageScaling == PWR_REGULATOR_VOLTAGE_SCALE1_BOOST)
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  225:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       /* Disable Range 1 Boost (no issue if bit already set) */
  226:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       SET_BIT(PWR->CR5, PWR_CR5_R1MODE);
  227:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 6
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 6
 
 
  228:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   }
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  267:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   }
  268:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** #endif
  269:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 7
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 7
 
 
  270:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   return HAL_OK;
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  122 0068 064B     		ldr	r3, .L15
  123              	.LVL5:
  124 006a 5B69     		ldr	r3, [r3, #20]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 8
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 8
 
 
  125 006c 13F4806F 		tst	r3, #1024
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  283:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** void HAL_PWREx_EnableBatteryCharging(uint32_t ResistorSelection)
  284:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** {
  168              		.loc 1 284 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 9
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 9
 
 
  169              		.cfi_startproc
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  301:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->CR4, PWR_CR4_VBE);
  209              		.loc 1 301 0
  210 0000 024A     		ldr	r2, .L21
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 10
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 10
 
 
  211 0002 D368     		ldr	r3, [r2, #12]
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  255              		.syntax unified
  256              		.thumb
  257              		.thumb_func
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 11
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 11
 
 
  258              		.fpu fpv4-sp-d16
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  295              		@ link register save eliminated.
  335:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   SET_BIT(PWR->CR2, PWR_CR2_IOSV);
  296              		.loc 1 335 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 12
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 12
 
 
  297 0000 024A     		ldr	r2, .L30
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  343              		.thumb
  344              		.thumb_func
  345              		.fpu fpv4-sp-d16
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 13
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 13
 
 
  347              	HAL_PWREx_EnableInternalWakeUpLine:
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  383              		.loc 1 366 0
  384 0000 024A     		ldr	r2, .L39
  385 0002 9368     		ldr	r3, [r2, #8]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 14
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 14
 
 
  386 0004 23F40043 		bic	r3, r3, #32768
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  396:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   assert_param(IS_PWR_GPIO(GPIO));
  397:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   assert_param(IS_PWR_GPIO_BIT_NUMBER(GPIONumber));
  398:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 15
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 15
 
 
  399:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   switch (GPIO)
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  457 003e D962     		str	r1, [r3, #44]
  394:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
  458              		.loc 1 394 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 16
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 16
 
 
  459 0040 0020     		movs	r0, #0
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  420:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     case PWR_GPIO_E:
  421:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****        SET_BIT(PWR->PUCRE, GPIONumber);
  499              		.loc 1 421 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 17
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 17
 
 
  500 006c 154B     		ldr	r3, .L53
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  539 009c 5A6D     		ldr	r2, [r3, #84]
  540 009e 22EA0101 		bic	r1, r2, r1
  541              	.LVL34:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 18
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 18
 
 
  542 00a2 5965     		str	r1, [r3, #84]
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  571              		.loc 1 457 0
  572 00c2 7047     		bx	lr
  573              	.L54:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 19
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 19
 
 
  574              		.align	2
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  605 000c 22       		.byte	(.L62-.L58)/2
  606 000d 29       		.byte	(.L63-.L58)/2
  607 000e 30       		.byte	(.L64-.L58)/2
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 20
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 20
 
 
  608 000f 37       		.byte	(.L65-.L58)/2
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  649              	.LVL50:
  650              	.L61:
  493:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** #if defined(GPIOD)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 21
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 21
 
 
  494:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     case PWR_GPIO_D:
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  689              	.L64:
  507:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** #endif
  508:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** #if defined(GPIOG)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 22
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 22
 
 
  509:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     case PWR_GPIO_G:
@@ -1318,7 +1318,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  723              		.align	2
  724              	.L67:
  725 008c 00700040 		.word	1073770496
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 23
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 23
 
 
  726              		.cfi_endproc
@@ -1378,7 +1378,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  750 0008 04       		.byte	(.L71-.L72)/2
  751 0009 12       		.byte	(.L73-.L72)/2
  752 000a 1E       		.byte	(.L74-.L72)/2
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 24
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 24
 
 
  753 000b 28       		.byte	(.L75-.L72)/2
@@ -1438,7 +1438,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  796              	.L74:
  569:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     case PWR_GPIO_C:
  570:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****        SET_BIT(PWR->PDCRC, GPIONumber);
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 25
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 25
 
 
  797              		.loc 1 570 0
@@ -1498,7 +1498,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  837 0074 1A6C     		ldr	r2, [r3, #64]
  838 0076 22EA0101 		bic	r1, r2, r1
  839              	.LVL80:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 26
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 26
 
 
  840 007a 1964     		str	r1, [r3, #64]
@@ -1558,7 +1558,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  878              		.loc 1 595 0
  879 00a6 7047     		bx	lr
  880              	.LVL88:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 27
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 27
 
 
  881              	.L79:
@@ -1618,7 +1618,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  913              		.align	1
  914              		.global	HAL_PWREx_DisableGPIOPullDown
  915              		.syntax unified
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 28
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 28
 
 
  916              		.thumb
@@ -1678,7 +1678,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  943              		.loc 1 645 0
  944 0010 1F4A     		ldr	r2, .L95
  945 0012 536A     		ldr	r3, [r2, #36]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 29
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 29
 
 
  946 0014 21F42041 		bic	r1, r1, #40960
@@ -1738,7 +1738,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  987 0046 23EA0101 		bic	r1, r3, r1
  988              	.LVL103:
  989 004a D163     		str	r1, [r2, #60]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 30
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 30
 
 
  637:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1026 0070 23EA0101 		bic	r1, r3, r1
  1027              	.LVL112:
  1028 0074 5165     		str	r1, [r2, #84]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 31
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 31
 
 
  637:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
@@ -1858,7 +1858,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1060              	.LFE143:
  1062              		.section	.text.HAL_PWREx_EnablePullUpPullDownConfig,"ax",%progbits
  1063              		.align	1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 32
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 32
 
 
  1064              		.global	HAL_PWREx_EnablePullUpPullDownConfig
@@ -1918,7 +1918,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  712:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @brief Disable pull-up and pull-down configuration.
  713:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @note  When APC bit is cleared, the I/O pull-up and pull-down configurations defined in
  714:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   *        PWR_PUCRx and PWR_PDCRx registers are not applied in Standby and Shutdown modes.
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 33
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 33
 
 
  715:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @retval None
@@ -1978,7 +1978,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  742:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /**
  743:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @brief Enable SRAM2 content retention in Standby mode.
  744:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @param  SRAM2Size: specifies the SRAM2 size kept in Standby mode
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 34
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 34
 
 
  745:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   *          This parameter can be one of the following values:
@@ -2038,7 +2038,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1152 0014 9360     		str	r3, [r2, #8]
  1153 0016 7047     		bx	lr
  1154              	.L108:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 35
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 35
 
 
  762:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   }
@@ -2098,7 +2098,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1208              	.LFB147:
  738:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   (void) HAL_PWREx_SetSRAM2ContentRetention(PWR_NO_SRAM2_RETENTION);
  1209              		.loc 1 738 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 36
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 36
 
 
  1210              		.cfi_startproc
@@ -2158,7 +2158,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  803:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /**
  804:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @brief Enable the CFLDO working @ 0.95V.
  805:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @note  When external SMPS is used & CFLDO operating in Range 2, the regulated voltage of the
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 37
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 37
 
 
  806:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   *        internal CFLDO can be reduced to 0.95V.
@@ -2218,7 +2218,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  860:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   SET_BIT(PWR->CR3, PWR_CR3_DSIPDEN);
  861:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** }
  862:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 38
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 38
 
 
  863:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
@@ -2278,7 +2278,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1266              		.loc 1 889 0
  1267              		.cfi_startproc
  1268              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 39
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 39
 
 
  1269              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2338,7 +2338,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1311              		.cfi_endproc
  1312              	.LFE151:
  1314              		.section	.text.HAL_PWREx_DisablePVM2,"ax",%progbits
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 40
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 40
 
 
  1315              		.align	1
@@ -2398,7 +2398,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1354              		.cfi_startproc
  1355              		@ args = 0, pretend = 0, frame = 0
  1356              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 41
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 41
 
 
  1357              		@ link register save eliminated.
@@ -2458,7 +2458,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1403              		.global	HAL_PWREx_EnablePVM4
  1404              		.syntax unified
  1405              		.thumb
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 42
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 42
 
 
  1406              		.thumb_func
@@ -2518,7 +2518,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1445              		.loc 1 950 0
  1446 0000 024A     		ldr	r2, .L137
  1447 0002 5368     		ldr	r3, [r2, #4]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 43
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 43
 
 
  1448 0004 23F08003 		bic	r3, r3, #128
@@ -2578,7 +2578,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  980:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   switch (sConfigPVM->PVMType)
  1475              		.loc 1 980 0
  1476 0000 0368     		ldr	r3, [r0]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 44
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 44
 
 
  1477 0002 202B     		cmp	r3, #32
@@ -2638,7 +2638,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
 1028:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
 1029:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       /* Configure event mode */
 1030:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       if((sConfigPVM->Mode & PVM_MODE_EVT) == PVM_MODE_EVT)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 45
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 45
 
 
 1031:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       {
@@ -2698,7 +2698,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1487 0018 22F04002 		bic	r2, r2, #64
  1488 001c 5A62     		str	r2, [r3, #36]
 1082:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       __HAL_PWR_PVM4_EXTI_DISABLE_IT();
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 46
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 46
 
 
  1489              		.loc 1 1082 0
@@ -2758,7 +2758,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
 1101:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****         __HAL_PWR_PVM4_EXTI_ENABLE_RISING_EDGE();
  1525              		.loc 1 1101 0
  1526 0062 614A     		ldr	r2, .L164
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 47
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 47
 
 
  1527 0064 936A     		ldr	r3, [r2, #40]
@@ -2818,7 +2818,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1569 00b2 04D0     		beq	.L146
  993:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       }
  1570              		.loc 1 993 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 48
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 48
 
 
  1571 00b4 4C4A     		ldr	r2, .L164
@@ -2878,7 +2878,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1616              		.loc 1 1019 0
  1617 0102 1A6A     		ldr	r2, [r3, #32]
  1618 0104 22F01002 		bic	r2, r2, #16
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 49
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 49
 
 
  1619 0108 1A62     		str	r2, [r3, #32]
@@ -2938,7 +2938,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1663 0158 234A     		ldr	r2, .L164
  1664 015a D36A     		ldr	r3, [r2, #44]
  1665 015c 43F01003 		orr	r3, r3, #16
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 50
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 50
 
 
  1666 0160 D362     		str	r3, [r2, #44]
@@ -2998,7 +2998,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1710              		.loc 1 1068 0
  1711 01ac 4368     		ldr	r3, [r0, #4]
  1712 01ae 13F0010F 		tst	r3, #1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 51
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 51
 
 
  1713 01b2 04D0     		beq	.L154
@@ -3058,7 +3058,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1757 01e4 0020     		movs	r0, #0
  1758              	.LVL142:
 1112:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****       break;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 52
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 52
 
 
 1113:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   }
@@ -3118,7 +3118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1793 000c 00700040 		.word	1073770496
  1794              		.cfi_endproc
  1795              	.LFE158:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 53
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 53
 
 
  1797              		.section	.text.HAL_PWREx_DisableLowPowerRunMode,"ax",%progbits
@@ -3178,7 +3178,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1830              		.loc 1 1156 0
  1831 0020 013B     		subs	r3, r3, #1
  1832              	.LVL144:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 54
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 54
 
 
  1833              	.L170:
@@ -3238,7 +3238,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
 1167:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /**
 1168:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @brief Enter Stop 0 mode.
 1169:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @note  In Stop 0 mode, main and low voltage regulators are ON.
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 55
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 55
 
 
 1170:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   * @note  In Stop 0 mode, all I/O pins keep the same state as in Run mode.
@@ -3298,7 +3298,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
 1205:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   }
 1206:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   else
 1207:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 56
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 56
 
 
 1208:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     /* Request Wait For Event */
@@ -3358,7 +3358,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1940              		.thumb_func
  1941              		.fpu fpv4-sp-d16
  1943              	HAL_PWREx_EnterSTOP1Mode:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 57
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 57
 
 
  1944              	.LFB161:
@@ -3418,7 +3418,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  1962              		.loc 1 1252 0
  1963 0018 0128     		cmp	r0, #1
  1964 001a 08D0     		beq	.L187
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 58
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 58
 
 
 1253:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   {
@@ -3478,7 +3478,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  2003              	.LFE161:
  2005              		.section	.text.HAL_PWREx_EnterSTOP2Mode,"ax",%progbits
  2006              		.align	1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 59
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 59
 
 
  2007              		.global	HAL_PWREx_EnterSTOP2Mode
@@ -3538,7 +3538,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  2027              		.loc 1 1302 0
  2028 000e 0A4A     		ldr	r2, .L194+4
  2029 0010 1369     		ldr	r3, [r2, #16]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 60
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 60
 
 
  2030 0012 43F00403 		orr	r3, r3, #4
@@ -3598,7 +3598,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  2065              		.syntax unified
  2066 0030 F7E7     		b	.L192
  2067              	.L195:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 61
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 61
 
 
  2068 0032 00BF     		.align	2
@@ -3658,7 +3658,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
 1344:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** /* This option is used to ensure that store operations are completed */
 1345:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** #if defined ( __CC_ARM)
 1346:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   __force_stores();
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 62
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 62
 
 
 1347:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** #endif
@@ -3718,7 +3718,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
 1376:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     HAL_PWREx_PVM1Callback();
 1377:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c **** 
 1378:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     /* Clear PVM1 exti pending bit */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 63
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 63
 
 
 1379:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****     __HAL_PWR_PVM1_EXTI_CLEAR_FLAG();
@@ -3778,7 +3778,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  2140              		.weak	HAL_PWREx_PVM2Callback
  2141              		.syntax unified
  2142              		.thumb
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 64
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 64
 
 
  2143              		.thumb_func
@@ -3838,7 +3838,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  2175              		.cfi_endproc
  2176              	.LFE167:
  2178              		.section	.text.HAL_PWREx_PVM4Callback,"ax",%progbits
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 65
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 65
 
 
  2179              		.align	1
@@ -3898,7 +3898,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
 1373:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   {
  2223              		.loc 1 1373 0
  2224 000c 194B     		ldr	r3, .L215
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 66
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 66
 
 
  2225 000e 5B6B     		ldr	r3, [r3, #52]
@@ -3958,7 +3958,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  2270              	.LVL151:
 1389:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c ****   }
  2271              		.loc 1 1389 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 67
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 67
 
 
  2272 0054 074B     		ldr	r3, .L215
@@ -4007,136 +4007,136 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 1
  2311              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h"
  2312              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
  2313              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 68
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 68
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32l4xx_hal_pwr_ex.c
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:18     .text.HAL_PWREx_GetVoltageRange:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:25     .text.HAL_PWREx_GetVoltageRange:0000000000000000 HAL_PWREx_GetVoltageRange
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:42     .text.HAL_PWREx_GetVoltageRange:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:47     .text.HAL_PWREx_ControlVoltageScaling:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:54     .text.HAL_PWREx_ControlVoltageScaling:0000000000000000 HAL_PWREx_ControlVoltageScaling
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:152    .text.HAL_PWREx_ControlVoltageScaling:0000000000000084 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:159    .text.HAL_PWREx_EnableBatteryCharging:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:166    .text.HAL_PWREx_EnableBatteryCharging:0000000000000000 HAL_PWREx_EnableBatteryCharging
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:190    .text.HAL_PWREx_EnableBatteryCharging:0000000000000018 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:195    .text.HAL_PWREx_DisableBatteryCharging:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:202    .text.HAL_PWREx_DisableBatteryCharging:0000000000000000 HAL_PWREx_DisableBatteryCharging
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:219    .text.HAL_PWREx_DisableBatteryCharging:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:224    .text.HAL_PWREx_EnableVddUSB:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:231    .text.HAL_PWREx_EnableVddUSB:0000000000000000 HAL_PWREx_EnableVddUSB
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:248    .text.HAL_PWREx_EnableVddUSB:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:253    .text.HAL_PWREx_DisableVddUSB:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:260    .text.HAL_PWREx_DisableVddUSB:0000000000000000 HAL_PWREx_DisableVddUSB
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:277    .text.HAL_PWREx_DisableVddUSB:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:282    .text.HAL_PWREx_EnableVddIO2:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:289    .text.HAL_PWREx_EnableVddIO2:0000000000000000 HAL_PWREx_EnableVddIO2
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:306    .text.HAL_PWREx_EnableVddIO2:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:311    .text.HAL_PWREx_DisableVddIO2:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:318    .text.HAL_PWREx_DisableVddIO2:0000000000000000 HAL_PWREx_DisableVddIO2
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:335    .text.HAL_PWREx_DisableVddIO2:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:340    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:347    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000000000000 HAL_PWREx_EnableInternalWakeUpLine
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:364    .text.HAL_PWREx_EnableInternalWakeUpLine:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:369    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:376    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000000000000 HAL_PWREx_DisableInternalWakeUpLine
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:393    .text.HAL_PWREx_DisableInternalWakeUpLine:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:398    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:405    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000000 HAL_PWREx_EnableGPIOPullUp
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:418    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000008 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:426    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000010 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:576    .text.HAL_PWREx_EnableGPIOPullUp:00000000000000c4 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:581    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:588    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000000 HAL_PWREx_DisableGPIOPullUp
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:601    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000008 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:609    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000010 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:725    .text.HAL_PWREx_DisableGPIOPullUp:000000000000008c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:730    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:737    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000000 HAL_PWREx_EnableGPIOPullDown
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:750    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000008 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:758    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000010 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:908    .text.HAL_PWREx_EnableGPIOPullDown:00000000000000c4 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:913    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:920    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000000 HAL_PWREx_DisableGPIOPullDown
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:933    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000008 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:941    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000010 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1058   .text.HAL_PWREx_DisableGPIOPullDown:0000000000000090 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1063   .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1070   .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000000000000 HAL_PWREx_EnablePullUpPullDownConfig
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1087   .text.HAL_PWREx_EnablePullUpPullDownConfig:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1092   .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1099   .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000000000000 HAL_PWREx_DisablePullUpPullDownConfig
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 69
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:18     .text.HAL_PWREx_GetVoltageRange:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:25     .text.HAL_PWREx_GetVoltageRange:0000000000000000 HAL_PWREx_GetVoltageRange
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:42     .text.HAL_PWREx_GetVoltageRange:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:47     .text.HAL_PWREx_ControlVoltageScaling:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:54     .text.HAL_PWREx_ControlVoltageScaling:0000000000000000 HAL_PWREx_ControlVoltageScaling
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:152    .text.HAL_PWREx_ControlVoltageScaling:0000000000000084 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:159    .text.HAL_PWREx_EnableBatteryCharging:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:166    .text.HAL_PWREx_EnableBatteryCharging:0000000000000000 HAL_PWREx_EnableBatteryCharging
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:190    .text.HAL_PWREx_EnableBatteryCharging:0000000000000018 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:195    .text.HAL_PWREx_DisableBatteryCharging:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:202    .text.HAL_PWREx_DisableBatteryCharging:0000000000000000 HAL_PWREx_DisableBatteryCharging
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:219    .text.HAL_PWREx_DisableBatteryCharging:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:224    .text.HAL_PWREx_EnableVddUSB:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:231    .text.HAL_PWREx_EnableVddUSB:0000000000000000 HAL_PWREx_EnableVddUSB
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:248    .text.HAL_PWREx_EnableVddUSB:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:253    .text.HAL_PWREx_DisableVddUSB:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:260    .text.HAL_PWREx_DisableVddUSB:0000000000000000 HAL_PWREx_DisableVddUSB
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:277    .text.HAL_PWREx_DisableVddUSB:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:282    .text.HAL_PWREx_EnableVddIO2:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:289    .text.HAL_PWREx_EnableVddIO2:0000000000000000 HAL_PWREx_EnableVddIO2
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:306    .text.HAL_PWREx_EnableVddIO2:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:311    .text.HAL_PWREx_DisableVddIO2:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:318    .text.HAL_PWREx_DisableVddIO2:0000000000000000 HAL_PWREx_DisableVddIO2
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:335    .text.HAL_PWREx_DisableVddIO2:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:340    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:347    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000000000000 HAL_PWREx_EnableInternalWakeUpLine
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:364    .text.HAL_PWREx_EnableInternalWakeUpLine:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:369    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:376    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000000000000 HAL_PWREx_DisableInternalWakeUpLine
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:393    .text.HAL_PWREx_DisableInternalWakeUpLine:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:398    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:405    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000000 HAL_PWREx_EnableGPIOPullUp
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:418    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000008 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:426    .text.HAL_PWREx_EnableGPIOPullUp:0000000000000010 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:576    .text.HAL_PWREx_EnableGPIOPullUp:00000000000000c4 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:581    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:588    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000000 HAL_PWREx_DisableGPIOPullUp
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:601    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000008 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:609    .text.HAL_PWREx_DisableGPIOPullUp:0000000000000010 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:725    .text.HAL_PWREx_DisableGPIOPullUp:000000000000008c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:730    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:737    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000000 HAL_PWREx_EnableGPIOPullDown
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:750    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000008 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:758    .text.HAL_PWREx_EnableGPIOPullDown:0000000000000010 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:908    .text.HAL_PWREx_EnableGPIOPullDown:00000000000000c4 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:913    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:920    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000000 HAL_PWREx_DisableGPIOPullDown
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:933    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000008 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:941    .text.HAL_PWREx_DisableGPIOPullDown:0000000000000010 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1058   .text.HAL_PWREx_DisableGPIOPullDown:0000000000000090 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1063   .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1070   .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000000000000 HAL_PWREx_EnablePullUpPullDownConfig
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1087   .text.HAL_PWREx_EnablePullUpPullDownConfig:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1092   .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1099   .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000000000000 HAL_PWREx_DisablePullUpPullDownConfig
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 69
 
 
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1116   .text.HAL_PWREx_DisablePullUpPullDownConfig:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1121   .text.HAL_PWREx_SetSRAM2ContentRetention:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1128   .text.HAL_PWREx_SetSRAM2ContentRetention:0000000000000000 HAL_PWREx_SetSRAM2ContentRetention
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1167   .text.HAL_PWREx_SetSRAM2ContentRetention:0000000000000028 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1172   .text.HAL_PWREx_EnableSRAM2ContentRetention:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1179   .text.HAL_PWREx_EnableSRAM2ContentRetention:0000000000000000 HAL_PWREx_EnableSRAM2ContentRetention
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1200   .text.HAL_PWREx_DisableSRAM2ContentRetention:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1207   .text.HAL_PWREx_DisableSRAM2ContentRetention:0000000000000000 HAL_PWREx_DisableSRAM2ContentRetention
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1228   .text.HAL_PWREx_EnablePVM1:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1235   .text.HAL_PWREx_EnablePVM1:0000000000000000 HAL_PWREx_EnablePVM1
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1252   .text.HAL_PWREx_EnablePVM1:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1257   .text.HAL_PWREx_DisablePVM1:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1264   .text.HAL_PWREx_DisablePVM1:0000000000000000 HAL_PWREx_DisablePVM1
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1281   .text.HAL_PWREx_DisablePVM1:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1286   .text.HAL_PWREx_EnablePVM2:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1293   .text.HAL_PWREx_EnablePVM2:0000000000000000 HAL_PWREx_EnablePVM2
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1310   .text.HAL_PWREx_EnablePVM2:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1315   .text.HAL_PWREx_DisablePVM2:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1322   .text.HAL_PWREx_DisablePVM2:0000000000000000 HAL_PWREx_DisablePVM2
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1339   .text.HAL_PWREx_DisablePVM2:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1344   .text.HAL_PWREx_EnablePVM3:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1351   .text.HAL_PWREx_EnablePVM3:0000000000000000 HAL_PWREx_EnablePVM3
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1368   .text.HAL_PWREx_EnablePVM3:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1373   .text.HAL_PWREx_DisablePVM3:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1380   .text.HAL_PWREx_DisablePVM3:0000000000000000 HAL_PWREx_DisablePVM3
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1397   .text.HAL_PWREx_DisablePVM3:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1402   .text.HAL_PWREx_EnablePVM4:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1409   .text.HAL_PWREx_EnablePVM4:0000000000000000 HAL_PWREx_EnablePVM4
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1426   .text.HAL_PWREx_EnablePVM4:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1431   .text.HAL_PWREx_DisablePVM4:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1438   .text.HAL_PWREx_DisablePVM4:0000000000000000 HAL_PWREx_DisablePVM4
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1455   .text.HAL_PWREx_DisablePVM4:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1460   .text.HAL_PWREx_ConfigPVM:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1467   .text.HAL_PWREx_ConfigPVM:0000000000000000 HAL_PWREx_ConfigPVM
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1764   .text.HAL_PWREx_ConfigPVM:00000000000001e8 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1769   .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1776   .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 HAL_PWREx_EnableLowPowerRunMode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1793   .text.HAL_PWREx_EnableLowPowerRunMode:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1798   .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1805   .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 HAL_PWREx_DisableLowPowerRunMode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1860   .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000044 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1867   .text.HAL_PWREx_EnterSTOP0Mode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1874   .text.HAL_PWREx_EnterSTOP0Mode:0000000000000000 HAL_PWREx_EnterSTOP0Mode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1930   .text.HAL_PWREx_EnterSTOP0Mode:0000000000000030 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1936   .text.HAL_PWREx_EnterSTOP1Mode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:1943   .text.HAL_PWREx_EnterSTOP1Mode:0000000000000000 HAL_PWREx_EnterSTOP1Mode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2000   .text.HAL_PWREx_EnterSTOP1Mode:0000000000000034 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2006   .text.HAL_PWREx_EnterSTOP2Mode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2013   .text.HAL_PWREx_EnterSTOP2Mode:0000000000000000 HAL_PWREx_EnterSTOP2Mode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2070   .text.HAL_PWREx_EnterSTOP2Mode:0000000000000034 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2076   .text.HAL_PWREx_EnterSHUTDOWNMode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2083   .text.HAL_PWREx_EnterSHUTDOWNMode:0000000000000000 HAL_PWREx_EnterSHUTDOWNMode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2113   .text.HAL_PWREx_EnterSHUTDOWNMode:000000000000001c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2119   .text.HAL_PWREx_PVM1Callback:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2126   .text.HAL_PWREx_PVM1Callback:0000000000000000 HAL_PWREx_PVM1Callback
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2139   .text.HAL_PWREx_PVM2Callback:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2146   .text.HAL_PWREx_PVM2Callback:0000000000000000 HAL_PWREx_PVM2Callback
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s 			page 70
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1116   .text.HAL_PWREx_DisablePullUpPullDownConfig:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1121   .text.HAL_PWREx_SetSRAM2ContentRetention:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1128   .text.HAL_PWREx_SetSRAM2ContentRetention:0000000000000000 HAL_PWREx_SetSRAM2ContentRetention
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1167   .text.HAL_PWREx_SetSRAM2ContentRetention:0000000000000028 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1172   .text.HAL_PWREx_EnableSRAM2ContentRetention:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1179   .text.HAL_PWREx_EnableSRAM2ContentRetention:0000000000000000 HAL_PWREx_EnableSRAM2ContentRetention
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1200   .text.HAL_PWREx_DisableSRAM2ContentRetention:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1207   .text.HAL_PWREx_DisableSRAM2ContentRetention:0000000000000000 HAL_PWREx_DisableSRAM2ContentRetention
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1228   .text.HAL_PWREx_EnablePVM1:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1235   .text.HAL_PWREx_EnablePVM1:0000000000000000 HAL_PWREx_EnablePVM1
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1252   .text.HAL_PWREx_EnablePVM1:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1257   .text.HAL_PWREx_DisablePVM1:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1264   .text.HAL_PWREx_DisablePVM1:0000000000000000 HAL_PWREx_DisablePVM1
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1281   .text.HAL_PWREx_DisablePVM1:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1286   .text.HAL_PWREx_EnablePVM2:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1293   .text.HAL_PWREx_EnablePVM2:0000000000000000 HAL_PWREx_EnablePVM2
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1310   .text.HAL_PWREx_EnablePVM2:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1315   .text.HAL_PWREx_DisablePVM2:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1322   .text.HAL_PWREx_DisablePVM2:0000000000000000 HAL_PWREx_DisablePVM2
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1339   .text.HAL_PWREx_DisablePVM2:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1344   .text.HAL_PWREx_EnablePVM3:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1351   .text.HAL_PWREx_EnablePVM3:0000000000000000 HAL_PWREx_EnablePVM3
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1368   .text.HAL_PWREx_EnablePVM3:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1373   .text.HAL_PWREx_DisablePVM3:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1380   .text.HAL_PWREx_DisablePVM3:0000000000000000 HAL_PWREx_DisablePVM3
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1397   .text.HAL_PWREx_DisablePVM3:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1402   .text.HAL_PWREx_EnablePVM4:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1409   .text.HAL_PWREx_EnablePVM4:0000000000000000 HAL_PWREx_EnablePVM4
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1426   .text.HAL_PWREx_EnablePVM4:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1431   .text.HAL_PWREx_DisablePVM4:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1438   .text.HAL_PWREx_DisablePVM4:0000000000000000 HAL_PWREx_DisablePVM4
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1455   .text.HAL_PWREx_DisablePVM4:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1460   .text.HAL_PWREx_ConfigPVM:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1467   .text.HAL_PWREx_ConfigPVM:0000000000000000 HAL_PWREx_ConfigPVM
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1764   .text.HAL_PWREx_ConfigPVM:00000000000001e8 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1769   .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1776   .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 HAL_PWREx_EnableLowPowerRunMode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1793   .text.HAL_PWREx_EnableLowPowerRunMode:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1798   .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1805   .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 HAL_PWREx_DisableLowPowerRunMode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1860   .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000044 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1867   .text.HAL_PWREx_EnterSTOP0Mode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1874   .text.HAL_PWREx_EnterSTOP0Mode:0000000000000000 HAL_PWREx_EnterSTOP0Mode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1930   .text.HAL_PWREx_EnterSTOP0Mode:0000000000000030 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1936   .text.HAL_PWREx_EnterSTOP1Mode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:1943   .text.HAL_PWREx_EnterSTOP1Mode:0000000000000000 HAL_PWREx_EnterSTOP1Mode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2000   .text.HAL_PWREx_EnterSTOP1Mode:0000000000000034 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2006   .text.HAL_PWREx_EnterSTOP2Mode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2013   .text.HAL_PWREx_EnterSTOP2Mode:0000000000000000 HAL_PWREx_EnterSTOP2Mode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2070   .text.HAL_PWREx_EnterSTOP2Mode:0000000000000034 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2076   .text.HAL_PWREx_EnterSHUTDOWNMode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2083   .text.HAL_PWREx_EnterSHUTDOWNMode:0000000000000000 HAL_PWREx_EnterSHUTDOWNMode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2113   .text.HAL_PWREx_EnterSHUTDOWNMode:000000000000001c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2119   .text.HAL_PWREx_PVM1Callback:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2126   .text.HAL_PWREx_PVM1Callback:0000000000000000 HAL_PWREx_PVM1Callback
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2139   .text.HAL_PWREx_PVM2Callback:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2146   .text.HAL_PWREx_PVM2Callback:0000000000000000 HAL_PWREx_PVM2Callback
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s 			page 70
 
 
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2159   .text.HAL_PWREx_PVM3Callback:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2166   .text.HAL_PWREx_PVM3Callback:0000000000000000 HAL_PWREx_PVM3Callback
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2179   .text.HAL_PWREx_PVM4Callback:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2186   .text.HAL_PWREx_PVM4Callback:0000000000000000 HAL_PWREx_PVM4Callback
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2199   .text.HAL_PWREx_PVD_PVM_IRQHandler:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2206   .text.HAL_PWREx_PVD_PVM_IRQHandler:0000000000000000 HAL_PWREx_PVD_PVM_IRQHandler
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccvbPgaE.s:2298   .text.HAL_PWREx_PVD_PVM_IRQHandler:0000000000000074 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2159   .text.HAL_PWREx_PVM3Callback:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2166   .text.HAL_PWREx_PVM3Callback:0000000000000000 HAL_PWREx_PVM3Callback
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2179   .text.HAL_PWREx_PVM4Callback:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2186   .text.HAL_PWREx_PVM4Callback:0000000000000000 HAL_PWREx_PVM4Callback
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2199   .text.HAL_PWREx_PVD_PVM_IRQHandler:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2206   .text.HAL_PWREx_PVD_PVM_IRQHandler:0000000000000000 HAL_PWREx_PVD_PVM_IRQHandler
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccNtcEtU.s:2298   .text.HAL_PWREx_PVD_PVM_IRQHandler:0000000000000074 $d
 
 UNDEFINED SYMBOLS
 SystemCoreClock

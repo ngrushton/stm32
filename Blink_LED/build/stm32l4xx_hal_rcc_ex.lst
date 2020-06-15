@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
   30:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @{
   31:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   */
   32:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 2
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 2
 
 
   33:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** /** @defgroup RCCEx RCCEx
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
   87:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** /* Exported functions --------------------------------------------------------*/
   88:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
   89:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** /** @defgroup RCCEx_Exported_Functions RCCEx Exported Functions
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 3
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 3
 
 
   90:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @{
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  144:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_SAI1  SAI1 peripheral clock (only for devices with SAI1)
  145:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   @if STM32L486xx
  146:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_SAI2  SAI2 peripheral clock (only for devices with SAI2)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 4
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 4
 
 
  147:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   @endif
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  201:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  202:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Check the parameters */
  203:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   assert_param(IS_RCC_PERIPHCLOCK(PeriphClkInit->PeriphClockSelection));
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 5
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 5
 
 
  204:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  258:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     else
  259:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     {
  260:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       /* set overall return value */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 6
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 6
 
 
  261:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       status = ret;
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  315:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       status = ret;
  316:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
  317:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 7
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 7
 
 
  318:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* SAI2 */
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  372:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         /* Wait till LSE is ready */
  373:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         while(READ_BIT(RCC->BDCR, RCC_BDCR_LSERDY) == 0U)
  374:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 8
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 8
 
 
  375:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           if((HAL_GetTick() - tickstart) > RCC_LSE_TIMEOUT_VALUE)
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  429:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /*-------------------------- USART3 clock source configuration -------------------*/
  430:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_USART3) == RCC_PERIPHCLK_USART3)
  431:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 9
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 9
 
 
  432:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     /* Check the parameters */
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  486:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /*-------------------------- LPTIM2 clock source configuration -------------------*/
  487:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_LPTIM2) == (RCC_PERIPHCLK_LPTIM2))
  488:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 10
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 10
 
 
  489:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_LPTIM2CLK(PeriphClkInit->Lptim2ClockSelection));
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  543:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /*-------------------------- USB clock source configuration ----------------------*/
  544:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_USB) == (RCC_PERIPHCLK_USB))
  545:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 11
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 11
 
 
  546:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_USBCLKSOURCE(PeriphClkInit->UsbClockSelection));
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  600:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
  601:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         /* set overall return value */
  602:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         status = ret;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 12
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 12
 
 
  603:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  657:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       ret = RCCEx_PLLSAI1_Config(&(PeriphClkInit->PLLSAI1), DIVIDER_R_UPDATE);
  658:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  659:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       if(ret != HAL_OK)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 13
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 13
 
 
  660:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  714:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_DFSDM1AUDIO) == RCC_PERIPHCLK_DFSDM1AUD
  715:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
  716:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     /* Check the parameters */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 14
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 14
 
 
  717:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     assert_param(IS_RCC_DFSDM1AUDIOCLKSOURCE(PeriphClkInit->Dfsdm1AudioClockSelection));
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  771:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /*-------------------------- DSI clock source configuration ---------------------*/
  772:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_DSI) == RCC_PERIPHCLK_DSI)
  773:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 15
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 15
 
 
  774:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     /* Check the parameters */
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  828:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Set all possible values for the extended clock type parameter------------*/
  829:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  830:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #if defined(STM32L412xx) || defined(STM32L422xx)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 16
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 16
 
 
  831:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  885:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  886:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #elif defined(STM32L475xx) || defined(STM32L476xx) || defined(STM32L485xx) || defined(STM32L486xx)
  887:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 17
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 17
 
 
  888:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   PeriphClkInit->PeriphClockSelection = RCC_PERIPHCLK_USART1  | RCC_PERIPHCLK_USART2 | RCC_PERIPHCL
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  942:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  943:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* RCC_PLLSAI1_SUPPORT */
  944:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 18
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 18
 
 
  945:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #if defined(RCC_PLLSAI2_SUPPORT)
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  999:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Get the I2C4 clock source -----------------------------------------------*/
 1000:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   PeriphClkInit->I2c4ClockSelection    = __HAL_RCC_GET_I2C4_SOURCE();
 1001:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* I2C4 */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 19
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 19
 
 
 1002:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1056:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Get the LTDC clock source -----------------------------------------------*/
 1057:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   PeriphClkInit->LtdcClockSelection = __HAL_RCC_GET_LTDC_SOURCE();
 1058:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* LTDC */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 20
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 20
 
 
 1059:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1113:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_SDMMC1  SDMMC1 peripheral clock
 1114:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   @if STM32L443xx
 1115:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_SWPMI1  SWPMI1 peripheral clock (only for devices with SWPMI
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 21
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 21
 
 
 1116:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   @endif
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1170:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     case RCC_RTCCLKSOURCE_LSE:
 1171:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       /* Check if LSE is ready */
 1172:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       if(HAL_IS_BIT_SET(RCC->BDCR, RCC_BDCR_LSERDY))
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 22
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 22
 
 
 1173:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
@@ -1318,7 +1318,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1227:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         pllvco = HSI_VALUE;
 1228:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
 1229:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       else
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 23
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 23
 
 
 1230:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
@@ -1378,7 +1378,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1284:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         switch(srcclk)
 1285:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         {
 1286:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         case RCC_CCIPR_CLK48SEL:   /* MSI ? */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 24
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 24
 
 
 1287:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           if(HAL_IS_BIT_SET(RCC->CR, RCC_CR_MSIRDY))
@@ -1438,7 +1438,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1341:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 1342:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #if defined(SDMMC1) && defined(RCC_CCIPR2_SDMMCSEL)
 1343:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 25
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 25
 
 
 1344:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     case RCC_PERIPHCLK_SDMMC1:
@@ -1498,7 +1498,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1398:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         case RCC_CCIPR_CLK48SEL_0:  /* PLLSAI1 ? */
 1399:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           if(HAL_IS_BIT_SET(RCC->CR, RCC_CR_PLLSAI1RDY))
 1400:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 26
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 26
 
 
 1401:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****             if(HAL_IS_BIT_SET(RCC->PLLSAI1CFGR, RCC_PLLSAI1CFGR_PLLSAI1QEN))
@@ -1558,7 +1558,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1455:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 1456:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         break;
 1457:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 27
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 27
 
 
 1458:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1512:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           break;
 1513:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         case RCC_USART3CLKSOURCE_LSE:
 1514:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           if(HAL_IS_BIT_SET(RCC->BDCR, RCC_BDCR_LSERDY))
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 28
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 28
 
 
 1515:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           {
@@ -1678,7 +1678,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1569:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
 1570:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         /* Get the current UART5 source */
 1571:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         srcclk = __HAL_RCC_GET_UART5_SOURCE();
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 29
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 29
 
 
 1572:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -1738,7 +1738,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1626:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           }
 1627:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           break;
 1628:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         default:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 30
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 30
 
 
 1629:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           /* No clock source, frequency default init at 0 */
@@ -1798,7 +1798,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1683:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           break;
 1684:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         }
 1685:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 31
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 31
 
 
 1686:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         break;
@@ -1858,7 +1858,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1740:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 1741:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx || STM32L4S7xx || STM32L4S9xx */
 1742:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 32
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 32
 
 
 1743:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* DFSDM1_Filter0 */
@@ -1918,7 +1918,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1797:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 1798:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         break;
 1799:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 33
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 33
 
 
 1800:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1854:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         }
 1855:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 1856:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         break;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 34
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 34
 
 
 1857:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
@@ -2038,7 +2038,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1911:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         switch(srcclk)
 1912:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         {
 1913:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         case RCC_LPTIM2CLKSOURCE_PCLK1:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 35
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 35
 
 
 1914:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           frequency = HAL_RCC_GetPCLK1Freq();
@@ -2098,7 +2098,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1968:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           break;
 1969:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         default:
 1970:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           /* No clock source, frequency default init at 0 */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 36
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 36
 
 
 1971:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           break;
@@ -2158,7 +2158,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2025:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 2026:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   return(frequency);
 2027:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 37
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 37
 
 
 2028:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2082:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       break;
 2083:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
 2084:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 38
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 38
 
 
 2085:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -2278,7 +2278,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2139:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     {
 2140:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       status = HAL_TIMEOUT;
 2141:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       break;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 39
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 39
 
 
 2142:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
@@ -2338,7 +2338,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2196:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Wait till PLLSAI2 is ready to be updated */
 2197:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   while(READ_BIT(RCC->CR, RCC_CR_PLLSAI2RDY) != 0U)
 2198:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 40
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 40
 
 
 2199:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     if((HAL_GetTick() - tickstart) > PLLSAI2_TIMEOUT_VALUE)
@@ -2398,7 +2398,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2253:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** {
 2254:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   uint32_t tickstart;
 2255:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 41
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 41
 
 
 2256:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2310:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @note   After Standby its frequency can be selected between 4 possible values (1, 2, 4 or 8 MHz
 2311:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @param  MSIRange  MSI range
 2312:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   *         This parameter can be one of the following values:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 42
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 42
 
 
 2313:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   *            @arg @ref RCC_MSIRANGE_4  Range 4 around 1 MHz
@@ -2518,7 +2518,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2367:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** }
 2368:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 2369:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** /**
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 43
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 43
 
 
 2370:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @brief Handle the RCC LSE Clock Security System interrupt request.
@@ -2578,7 +2578,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2424:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Update LSCOSEL clock source in Backup Domain control register */
 2425:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   if(__HAL_RCC_PWR_IS_CLK_DISABLED())
 2426:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 44
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 44
 
 
 2427:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     __HAL_RCC_PWR_CLK_ENABLE();
@@ -2638,7 +2638,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2481:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   }
 2482:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** }
 2483:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 45
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 45
 
 
 2484:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** /**
@@ -2698,7 +2698,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2538:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       (#) In System clock config, HSI48 needs to be enabled
 2539:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 2540:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       (#) Enable CRS clock in IP MSP init which will use CRS functions
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 46
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 46
 
 
 2541:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -2758,7 +2758,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2595:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @retval None
 2596:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   */
 2597:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** void HAL_RCCEx_CRSConfig(RCC_CRSInitTypeDef *pInit)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 47
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 47
 
 
 2598:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** {
@@ -2818,7 +2818,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2652:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Check the parameter */
 2653:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   assert_param(pSynchroInfo != (void *)NULL);
 2654:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 48
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 48
 
 
 2655:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Get the reload value */
@@ -2878,7 +2878,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2709:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
 2710:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 2711:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     /* Check CRS SYNCWARN flag  */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 49
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 49
 
 
 2712:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     if(__HAL_RCC_CRS_GET_FLAG(RCC_CRS_FLAG_SYNCWARN))
@@ -2938,7 +2938,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2766:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** void HAL_RCCEx_CRS_IRQHandler(void)
 2767:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** {
 2768:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   uint32_t crserror = RCC_CRS_NONE;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 50
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 50
 
 
 2769:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   /* Get current IT flags and IT sources values */
@@ -2998,7 +2998,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2823:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
 2824:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   }
 2825:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 51
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 51
 
 
 2826:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -3058,7 +3058,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2880:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @}
 2881:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   */
 2882:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 52
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 52
 
 
 2883:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* CRS */
@@ -3118,7 +3118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2937:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     {
 2938:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     case RCC_PLLSOURCE_MSI:
 2939:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       if(HAL_IS_BIT_CLR(RCC->CR, RCC_CR_MSIRDY))
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 53
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 53
 
 
 2940:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
@@ -3178,7 +3178,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2994:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     if(status == HAL_OK)
 2995:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     {
 2996:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       if(Divider == DIVIDER_P_UPDATE)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 54
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 54
 
 
 2997:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
@@ -3238,7 +3238,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3051:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
 3052:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         assert_param(IS_RCC_PLLSAI1R_VALUE(PllSai1->PLLSAI1R));
 3053:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #if defined(RCC_PLLSAI1M_DIV_1_16_SUPPORT)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 55
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 55
 
 
 3054:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         /* Configure the PLLSAI1 Division factor M, R and Multiplication factor N*/
@@ -3298,7 +3298,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3108:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   * @retval HAL status
 3109:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   */
 3110:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** static HAL_StatusTypeDef RCCEx_PLLSAI2_Config(RCC_PLLSAI2InitTypeDef *PllSai2, uint32_t Divider)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 56
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 56
 
 
 3111:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** {
@@ -3358,7 +3358,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3165:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       status = HAL_ERROR;
 3166:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       break;
 3167:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 57
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 57
 
 
 3168:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -3418,7 +3418,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3222:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         /* Configure the PLLSAI2 Division factor P and Multiplication factor N*/
 3223:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #if defined(RCC_PLLSAI2P_DIV_2_31_SUPPORT)
 3224:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         MODIFY_REG(RCC->PLLSAI2CFGR,
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 58
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 58
 
 
 3225:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****                    RCC_PLLSAI2CFGR_PLLSAI2N | RCC_PLLSAI2CFGR_PLLSAI2PDIV,
@@ -3478,7 +3478,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3279:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       /* Get Start Tick*/
 3280:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       tickstart = HAL_GetTick();
 3281:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 59
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 59
 
 
 3282:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       /* Wait till PLLSAI2 is ready */
@@ -3538,7 +3538,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3327:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   else
 3328:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
 3329:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     if(PeriphClk == RCC_PERIPHCLK_SAI2)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 60
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 60
 
 
   36              		.loc 1 3329 0
@@ -3598,7 +3598,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3370:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
 3371:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     else if(srcclk == 0U)  /* RCC_SAI1CLKSOURCE_PLLSAI1 || RCC_SAI2CLKSOURCE_PLLSAI1 */
   49              		.loc 1 3371 0 is_stmt 1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 61
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 61
 
 
   50 001a 0028     		cmp	r0, #0
@@ -3658,7 +3658,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
   79              	.L9:
   80              	.LVL4:
 3397:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 62
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 62
 
 
 3398:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         }
@@ -3718,7 +3718,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  125 008c 264B     		ldr	r3, .L27
  126 008e DB68     		ldr	r3, [r3, #12]
  127 0090 13F4803F 		tst	r3, #65536
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 63
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 63
 
 
  128 0094 41D0     		beq	.L16
@@ -3778,7 +3778,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3410:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* STM32L4P5xx || STM32L4Q5xx || STM32L4R5xx || STM32L4R7xx || STM32L4R9xx || STM32L4S5xx ||
 3411:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
 3412:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #else
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 64
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 64
 
 
 3413:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     if(srcclk == RCC_SAI1CLKSOURCE_PLL)
@@ -3838,7 +3838,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 3467:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           {
 3468:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****             pllp = 17U;
 3469:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 65
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 65
 
 
 3470:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           else
@@ -3898,7 +3898,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  187 00ee C0F30210 		ubfx	r0, r0, #4, #3
  188 00f2 0130     		adds	r0, r0, #1
  189 00f4 B1FBF0F1 		udiv	r1, r1, r0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 66
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 66
 
 
  190              	.LVL23:
@@ -3958,7 +3958,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  225 0122 0020     		movs	r0, #0
  226              	.L1:
 3520:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 67
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 67
 
 
 3521:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     }
@@ -4018,7 +4018,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  267 000c 574B     		ldr	r3, .L62
  268 000e DB68     		ldr	r3, [r3, #12]
  269 0010 03F00303 		and	r3, r3, #3
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 68
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 68
 
 
  270 0014 0268     		ldr	r2, [r0]
@@ -4078,7 +4078,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  316 0058 61D0     		beq	.L51
  317              	.L37:
 2971:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 69
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 69
 
 
  318              		.loc 1 2971 0
@@ -4138,7 +4138,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  365 00a0 BCD1     		bne	.L31
 2996:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
  366              		.loc 1 2996 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 70
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 70
 
 
  367 00a2 002F     		cmp	r7, #0
@@ -4198,7 +4198,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  413 00ee 1369     		ldr	r3, [r2, #16]
  414 00f0 A169     		ldr	r1, [r4, #24]
  415 00f2 0B43     		orrs	r3, r3, r1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 71
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 71
 
 
  416 00f4 1361     		str	r3, [r2, #16]
@@ -4258,7 +4258,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  462 0140 1343     		orrs	r3, r3, r2
  463 0142 0361     		str	r3, [r0, #16]
  464 0144 BDE7     		b	.L42
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 72
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 72
 
 
  465              	.L61:
@@ -4318,7 +4318,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  518 0006 13F0030F 		tst	r3, #3
  519 000a 18D0     		beq	.L65
 3126:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****        ||
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 73
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 73
 
 
  520              		.loc 1 3126 0
@@ -4378,7 +4378,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  566              		.loc 1 3144 0
  567 0050 3D4A     		ldr	r2, .L95
  568 0052 1268     		ldr	r2, [r2]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 74
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 74
 
 
  569 0054 12F0020F 		tst	r2, #2
@@ -4438,7 +4438,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  616              	.LVL56:
 3199:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     {
  617              		.loc 1 3199 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 75
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 75
 
 
  618 009e 002D     		cmp	r5, #0
@@ -4498,7 +4498,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  664 00ea 97D1     		bne	.L66
 3295:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
  665              		.loc 1 3295 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 76
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 76
 
 
  666 00ec 164A     		ldr	r2, .L95
@@ -4558,7 +4558,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  713 013c 1343     		orrs	r3, r3, r2
  714 013e 4361     		str	r3, [r0, #20]
  715 0140 BFE7     		b	.L77
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 77
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 77
 
 
  716              	.LVL63:
@@ -4618,7 +4618,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  199:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   HAL_StatusTypeDef status = HAL_OK;   /* Final status */
  769              		.loc 1 199 0
  770 0028 0026     		movs	r6, #0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 78
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 78
 
 
  771 002a 10E0     		b	.L103
@@ -4678,7 +4678,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  817              	.LVL73:
  818 006c 0646     		mov	r6, r0
  819              	.LVL74:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 79
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 79
 
 
  237:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -4738,7 +4738,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  865 00b6 13F0805F 		tst	r3, #268435456
  866 00ba 6AD1     		bne	.L148
  867              	.LBB3:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 80
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 80
 
 
  331:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       pwrclkchanged = SET;
@@ -4798,7 +4798,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  913 00fe 2F4B     		ldr	r3, .L171
  914 0100 D3F89030 		ldr	r3, [r3, #144]
  915              	.LVL85:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 81
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 81
 
 
  355:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
@@ -4858,7 +4858,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  960              		.loc 1 249 0
  961 015a 0127     		movs	r7, #1
  962 015c 3E46     		mov	r6, r7
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 82
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 82
 
 
  963 015e 89E7     		b	.L98
@@ -4918,7 +4918,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1009              	.LBB4:
  323:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  1010              		.loc 1 323 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 83
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 83
 
 
  1011 0192 4FF00008 		mov	r8, #0
@@ -4978,7 +4978,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  414:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   }
  1058              		.loc 1 414 0
  1059 01d6 9D4A     		ldr	r2, .L173
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 84
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 84
 
 
  1060 01d8 D2F88830 		ldr	r3, [r2, #136]
@@ -5038,7 +5038,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1106              		.loc 1 464 0
  1107 023e 834A     		ldr	r2, .L173
  1108 0240 D2F88830 		ldr	r3, [r2, #136]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 85
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 85
 
 
  1109 0244 23F44073 		bic	r3, r3, #768
@@ -5098,7 +5098,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1155 02a6 694A     		ldr	r2, .L173
  1156 02a8 D2F88830 		ldr	r3, [r2, #136]
  1157 02ac 23F44053 		bic	r3, r3, #12288
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 86
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 86
 
 
  1158 02b0 216D     		ldr	r1, [r4, #80]
@@ -5158,7 +5158,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1204              	.LVL109:
  1205              	.L132:
  577:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 87
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 87
 
 
  1206              		.loc 1 577 0
@@ -5218,7 +5218,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1251 036c 374A     		ldr	r2, .L173
  1252 036e D2F88830 		ldr	r3, [r2, #136]
  1253 0372 23F04053 		bic	r3, r3, #805306368
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 88
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 88
 
 
  1254 0376 A16F     		ldr	r1, [r4, #120]
@@ -5278,7 +5278,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1301              		.cfi_restore_state
  1302              	.LBB5:
  391:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 89
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 89
 
 
  1303              		.loc 1 391 0
@@ -5338,7 +5338,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1349              		.loc 1 599 0
  1350 0406 0028     		cmp	r0, #0
  1351 0408 98D0     		beq	.L134
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 90
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 90
 
 
  602:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
@@ -5398,7 +5398,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  674:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
  1397              		.loc 1 674 0
  1398 0442 0028     		cmp	r0, #0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 91
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 91
 
 
  1399 0444 A2D0     		beq	.L138
@@ -5458,7 +5458,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1448              		.loc 1 939 0
  1449 0022 1A69     		ldr	r2, [r3, #16]
  1450 0024 520C     		lsrs	r2, r2, #17
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 92
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 92
 
 
  1451 0026 1201     		lsls	r2, r2, #4
@@ -5518,7 +5518,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  971:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* USART3 */
  1496              		.loc 1 971 0
  1497 0082 D3F88820 		ldr	r2, [r3, #136]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 93
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 93
 
 
  1498 0086 02F03002 		and	r2, r2, #48
@@ -5578,7 +5578,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1541 00f0 D3F89020 		ldr	r2, [r3, #144]
  1542 00f4 02F44072 		and	r2, r2, #768
  1543 00f8 C0F88420 		str	r2, [r0, #132]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 94
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 94
 
 
 1024:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif /* USB_OTG_FS || USB */
@@ -5638,7 +5638,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1592              		.loc 1 1153 0
  1593              		.cfi_startproc
  1594              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 95
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 95
 
 
  1595              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -5698,7 +5698,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1642 0052 402B     		cmp	r3, #64
  1643 0054 00F0EA81 		beq	.L235
  1644 0058 40F2E281 		bls	.L341
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 96
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 96
 
 
  1645 005c 802B     		cmp	r3, #128
@@ -5758,7 +5758,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1691              	.LVL145:
  1692              	.L182:
 1179:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 97
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 97
 
 
  1693              		.loc 1 1179 0
@@ -5818,7 +5818,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1217:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****       }
  1740              		.loc 1 1217 0 discriminator 2
  1741 00f2 814B     		ldr	r3, .L356
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 98
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 98
 
 
  1742 00f4 D3F89430 		ldr	r3, [r3, #148]
@@ -5878,7 +5878,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1787 0132 03F00303 		and	r3, r3, #3
  1788              	.LVL160:
 1431:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 99
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 99
 
 
  1789              		.loc 1 1431 0
@@ -5938,7 +5938,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1836 0190 B3F5806F 		cmp	r3, #1024
  1837 0194 00F08581 		beq	.L245
  1838 0198 40F27D81 		bls	.L345
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 100
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 100
 
 
  1839 019c B3F5006F 		cmp	r3, #2048
@@ -5998,7 +5998,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1885 01fc B3F5001F 		cmp	r3, #2097152
  1886 0200 00F03A82 		beq	.L271
  1887 0204 B3F5401F 		cmp	r3, #3145728
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 101
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 101
 
 
  1888 0208 40F09B82 		bne	.L323
@@ -6058,7 +6058,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  1933              		.loc 1 1958 0
  1934 025a 13F08043 		ands	r3, r3, #1073741824
  1935              	.LVL180:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 102
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 102
 
 
  1936 025e 00F01282 		beq	.L273
@@ -6118,7 +6118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1290:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           }
  1982              		.loc 1 1290 0 discriminator 4
  1983 02a4 154A     		ldr	r2, .L356+4
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 103
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 103
 
 
  1984 02a6 52F82300 		ldr	r0, [r2, r3, lsl #2]
@@ -6178,7 +6178,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2032 02f8 00100240 		.word	1073876992
  2033 02fc 00000000 		.word	MSIRangeTable
  2034 0300 0024F400 		.word	16000000
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 104
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 104
 
 
  2035 0304 00127A00 		.word	8000000
@@ -6238,7 +6238,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2081 034e FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
  2082              	.LVL208:
 1438:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         case RCC_USART1CLKSOURCE_HSI:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 105
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 105
 
 
  2083              		.loc 1 1438 0
@@ -6298,7 +6298,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2131 039e A101     		.2byte	(.L293-.L226)/2
  2132 03a0 A101     		.2byte	(.L293-.L226)/2
  2133 03a2 1B00     		.2byte	(.L229-.L226)/2
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 106
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 106
 
 
  2134              		.p2align 1
@@ -6358,7 +6358,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1499:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         {
  2179              		.loc 1 1499 0
  2180 03dc 102B     		cmp	r3, #16
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 107
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 107
 
 
  2181 03de 14D0     		beq	.L230
@@ -6418,7 +6418,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2226              	.LVL237:
  2227              	.L341:
 1536:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****         {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 108
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 108
 
 
  2228              		.loc 1 1536 0
@@ -6478,7 +6478,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2273 0464 D3F89030 		ldr	r3, [r3, #144]
  2274 0468 13F0020F 		tst	r3, #2
  2275 046c 40F04781 		bne	.L304
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 109
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 109
 
 
 1154:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   uint32_t srcclk, pll_oscsource, pllvco, plln;    /* no init needed */
@@ -6538,7 +6538,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2319              	.LVL257:
  2320              	.L245:
 1614:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           break;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 110
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 110
 
 
  2321              		.loc 1 1614 0
@@ -6598,7 +6598,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2366 04de 444B     		ldr	r3, .L358
  2367              	.LVL268:
  2368 04e0 1B68     		ldr	r3, [r3]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 111
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 111
 
 
  2369 04e2 13F0006F 		tst	r3, #134217728
@@ -6658,7 +6658,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2416              	.LVL277:
 1674:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** #endif
  2417              		.loc 1 1674 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 112
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 112
 
 
  2418 053e 00FB01F0 		mul	r0, r0, r1
@@ -6718,7 +6718,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1154:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   uint32_t srcclk, pll_oscsource, pllvco, plln;    /* no init needed */
  2465              		.loc 1 1154 0
  2466 058c 0020     		movs	r0, #0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 113
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 113
 
 
  2467              	.LVL288:
@@ -6778,7 +6778,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2512              	.LVL299:
  2513              	.L354:
 1782:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           break;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 114
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 114
 
 
  2514              		.loc 1 1782 0
@@ -6838,7 +6838,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2558              		.loc 1 1817 0
  2559 05f4 594B     		ldr	r3, .L360
  2560              	.LVL311:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 115
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 115
 
 
  2561 05f6 1B68     		ldr	r3, [r3]
@@ -6898,7 +6898,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2606 0640 464B     		ldr	r3, .L360
  2607              	.LVL320:
  2608 0642 D3F89430 		ldr	r3, [r3, #148]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 116
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 116
 
 
  2609 0646 13F0020F 		tst	r3, #2
@@ -6958,7 +6958,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2654 067a 1B68     		ldr	r3, [r3]
  2655 067c 13F4806F 		tst	r3, #1024
  2656 0680 64D1     		bne	.L325
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 117
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 117
 
 
 1154:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   uint32_t srcclk, pll_oscsource, pllvco, plln;    /* no init needed */
@@ -7018,7 +7018,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2702              	.LVL345:
  2703 06ac F4E4     		b	.L179
  2704              	.LVL346:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 118
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 118
 
 
  2705              	.L286:
@@ -7078,7 +7078,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 1481:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****           }
  2755              		.loc 1 1481 0
  2756 06d4 4FF40040 		mov	r0, #32768
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 119
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 119
 
 
  2757              	.LVL365:
@@ -7138,7 +7138,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2803              		.loc 1 1584 0
  2804 06fa 1A48     		ldr	r0, .L360+8
  2805              	.LVL381:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 120
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 120
 
 
  2806 06fc CCE4     		b	.L179
@@ -7198,7 +7198,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2854              		.loc 1 1761 0
  2855 0722 1048     		ldr	r0, .L360+8
  2856              	.LVL399:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 121
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 121
 
 
  2857 0724 B8E4     		b	.L179
@@ -7258,7 +7258,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2903 0746 4FF4FA40 		mov	r0, #32000
  2904              	.LVL415:
  2905 074a A5E4     		b	.L179
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 122
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 122
 
 
  2906              	.LVL416:
@@ -7318,7 +7318,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  2957              	.LVL423:
 2071:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  2958              		.loc 1 2071 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 123
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 123
 
 
  2959 0004 224A     		ldr	r2, .L374
@@ -7378,7 +7378,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3005 003e 2B69     		ldr	r3, [r5, #16]
  3006 0040 5B08     		lsrs	r3, r3, #1
  3007 0042 013B     		subs	r3, r3, #1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 124
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 124
 
 
  3008 0044 5B05     		lsls	r3, r3, #21
@@ -7438,7 +7438,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3057              		.section	.text.HAL_RCCEx_DisablePLLSAI1,"ax",%progbits
  3058              		.align	1
  3059              		.global	HAL_RCCEx_DisablePLLSAI1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 125
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 125
 
 
  3060              		.syntax unified
@@ -7498,7 +7498,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3107              		.loc 1 2146 0
  3108 002c 074A     		ldr	r2, .L384
  3109 002e 1369     		ldr	r3, [r2, #16]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 126
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 126
 
 
  3110 0030 23F08873 		bic	r3, r3, #17825792
@@ -7558,7 +7558,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2194:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
  3161              		.loc 1 2194 0
  3162 000e FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 127
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 127
 
 
  3163              	.LVL444:
@@ -7618,7 +7618,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3210 004e 43EA4143 		orr	r3, r3, r1, lsl #17
  3211 0052 0343     		orrs	r3, r3, r0
  3212 0054 5361     		str	r3, [r2, #20]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 128
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 128
 
 
 2226:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -7678,7 +7678,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3262              		.cfi_startproc
  3263              		@ args = 0, pretend = 0, frame = 0
  3264              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 129
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 129
 
 
  3265 0000 10B5     		push	{r4, lr}
@@ -7738,7 +7738,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2283:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   }
  3311              		.loc 1 2283 0
  3312 0042 D368     		ldr	r3, [r2, #12]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 130
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 130
 
 
  3313 0044 23F00303 		bic	r3, r3, #3
@@ -7798,7 +7798,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3367              	.LFB138:
 2320:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   assert_param(IS_RCC_MSI_STANDBY_CLOCK_RANGE(MSIRange));
  3368              		.loc 1 2320 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 131
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 131
 
 
  3369              		.cfi_startproc
@@ -7858,7 +7858,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3421              		.global	HAL_RCCEx_DisableLSECSS
  3422              		.syntax unified
  3423              		.thumb
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 132
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 132
 
 
  3424              		.thumb_func
@@ -7918,7 +7918,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3474 0010 42F40072 		orr	r2, r2, #512
  3475 0014 9A61     		str	r2, [r3, #24]
 2365:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   __HAL_RCC_LSECSS_EXTI_ENABLE_RISING_EDGE();
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 133
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 133
 
 
  3476              		.loc 1 2365 0
@@ -7978,7 +7978,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3529              	.LCFI13:
  3530              		.cfi_def_cfa_offset 8
  3531              		.cfi_offset 3, -8
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 134
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 134
 
 
  3532              		.cfi_offset 14, -4
@@ -8038,7 +8038,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3582 0004 0546     		mov	r5, r0
  3583              	.LVL468:
  3584              	.LBB6:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 135
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 135
 
 
 2415:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c **** 
@@ -8098,7 +8098,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3630              	.LVL472:
  3631              	.L433:
 2430:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 136
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 136
 
 
  3632              		.loc 1 2430 0
@@ -8158,7 +8158,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3678              	.L441:
 2440:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****   }
  3679              		.loc 1 2440 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 137
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 137
 
 
  3680 0084 FFF7FEFF 		bl	HAL_PWR_DisableBkUpAccess
@@ -8218,7 +8218,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3731 0012 42F08052 		orr	r2, r2, #268435456
  3732 0016 9A65     		str	r2, [r3, #88]
  3733 0018 9B6D     		ldr	r3, [r3, #88]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 138
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 138
 
 
  3734 001a 03F08053 		and	r3, r3, #268435456
@@ -8278,7 +8278,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
 2466:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c ****     backupchanged = SET;
  3780              		.loc 1 2466 0
  3781 004a FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 139
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 139
 
 
  3782              	.LVL487:
@@ -8338,7 +8338,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3831              		.align	2
  3832              	.L459:
  3833 000c 00100240 		.word	1073876992
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 140
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 140
 
 
  3834              		.cfi_endproc
@@ -8388,86 +8388,86 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 1
  3878              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
  3879              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h"
  3880              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 141
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 141
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32l4xx_hal_rcc_ex.c
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:18     .text.RCCEx_GetSAIxPeriphCLKFreq:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:24     .text.RCCEx_GetSAIxPeriphCLKFreq:0000000000000000 RCCEx_GetSAIxPeriphCLKFreq
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:232    .text.RCCEx_GetSAIxPeriphCLKFreq:0000000000000128 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:238    .text.RCCEx_PLLSAI1_Config:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:244    .text.RCCEx_PLLSAI1_Config:0000000000000000 RCCEx_PLLSAI1_Config
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:487    .text.RCCEx_PLLSAI1_Config:000000000000016c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:492    .text.RCCEx_PLLSAI2_Config:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:498    .text.RCCEx_PLLSAI2_Config:0000000000000000 RCCEx_PLLSAI2_Config
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:723    .text.RCCEx_PLLSAI2_Config:0000000000000148 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:728    .text.HAL_RCCEx_PeriphCLKConfig:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:735    .text.HAL_RCCEx_PeriphCLKConfig:0000000000000000 HAL_RCCEx_PeriphCLKConfig
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1040   .text.HAL_RCCEx_PeriphCLKConfig:00000000000001bc $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1045   .text.HAL_RCCEx_PeriphCLKConfig:00000000000001c4 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1407   .text.HAL_RCCEx_PeriphCLKConfig:000000000000044c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1412   .text.HAL_RCCEx_GetPeriphCLKConfig:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1419   .text.HAL_RCCEx_GetPeriphCLKConfig:0000000000000000 HAL_RCCEx_GetPeriphCLKConfig
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1577   .text.HAL_RCCEx_GetPeriphCLKConfig:0000000000000140 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1583   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1590   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000000 HAL_RCCEx_GetPeriphCLKFreq
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1794   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000140 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:1799   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000148 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2032   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000002f8 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2039   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000308 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2121   .text.HAL_RCCEx_GetPeriphCLKFreq:000000000000038a $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2134   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000003a4 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2555   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000005f0 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2559   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000005f4 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2928   .text.HAL_RCCEx_GetPeriphCLKFreq:000000000000075c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2935   .text.HAL_RCCEx_EnablePLLSAI1:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:2942   .text.HAL_RCCEx_EnablePLLSAI1:0000000000000000 HAL_RCCEx_EnablePLLSAI1
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3052   .text.HAL_RCCEx_EnablePLLSAI1:0000000000000090 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3058   .text.HAL_RCCEx_DisablePLLSAI1:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3065   .text.HAL_RCCEx_DisablePLLSAI1:0000000000000000 HAL_RCCEx_DisablePLLSAI1
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3128   .text.HAL_RCCEx_DisablePLLSAI1:000000000000004c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3133   .text.HAL_RCCEx_EnablePLLSAI2:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3140   .text.HAL_RCCEx_EnablePLLSAI2:0000000000000000 HAL_RCCEx_EnablePLLSAI2
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3246   .text.HAL_RCCEx_EnablePLLSAI2:0000000000000084 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3252   .text.HAL_RCCEx_DisablePLLSAI2:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3259   .text.HAL_RCCEx_DisablePLLSAI2:0000000000000000 HAL_RCCEx_DisablePLLSAI2
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3322   .text.HAL_RCCEx_DisablePLLSAI2:000000000000004c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3327   .text.HAL_RCCEx_WakeUpStopCLKConfig:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3334   .text.HAL_RCCEx_WakeUpStopCLKConfig:0000000000000000 HAL_RCCEx_WakeUpStopCLKConfig
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3354   .text.HAL_RCCEx_WakeUpStopCLKConfig:0000000000000010 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3359   .text.HAL_RCCEx_StandbyMSIRangeConfig:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3366   .text.HAL_RCCEx_StandbyMSIRangeConfig:0000000000000000 HAL_RCCEx_StandbyMSIRangeConfig
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3386   .text.HAL_RCCEx_StandbyMSIRangeConfig:0000000000000014 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3391   .text.HAL_RCCEx_EnableLSECSS:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3398   .text.HAL_RCCEx_EnableLSECSS:0000000000000000 HAL_RCCEx_EnableLSECSS
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3415   .text.HAL_RCCEx_EnableLSECSS:0000000000000010 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3420   .text.HAL_RCCEx_DisableLSECSS:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3427   .text.HAL_RCCEx_DisableLSECSS:0000000000000000 HAL_RCCEx_DisableLSECSS
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3448   .text.HAL_RCCEx_DisableLSECSS:0000000000000018 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3453   .text.HAL_RCCEx_EnableLSECSS_IT:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3460   .text.HAL_RCCEx_EnableLSECSS_IT:0000000000000000 HAL_RCCEx_EnableLSECSS_IT
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3490   .text.HAL_RCCEx_EnableLSECSS_IT:000000000000002c $d
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s 			page 142
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:18     .text.RCCEx_GetSAIxPeriphCLKFreq:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:24     .text.RCCEx_GetSAIxPeriphCLKFreq:0000000000000000 RCCEx_GetSAIxPeriphCLKFreq
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:232    .text.RCCEx_GetSAIxPeriphCLKFreq:0000000000000128 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:238    .text.RCCEx_PLLSAI1_Config:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:244    .text.RCCEx_PLLSAI1_Config:0000000000000000 RCCEx_PLLSAI1_Config
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:487    .text.RCCEx_PLLSAI1_Config:000000000000016c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:492    .text.RCCEx_PLLSAI2_Config:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:498    .text.RCCEx_PLLSAI2_Config:0000000000000000 RCCEx_PLLSAI2_Config
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:723    .text.RCCEx_PLLSAI2_Config:0000000000000148 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:728    .text.HAL_RCCEx_PeriphCLKConfig:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:735    .text.HAL_RCCEx_PeriphCLKConfig:0000000000000000 HAL_RCCEx_PeriphCLKConfig
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1040   .text.HAL_RCCEx_PeriphCLKConfig:00000000000001bc $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1045   .text.HAL_RCCEx_PeriphCLKConfig:00000000000001c4 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1407   .text.HAL_RCCEx_PeriphCLKConfig:000000000000044c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1412   .text.HAL_RCCEx_GetPeriphCLKConfig:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1419   .text.HAL_RCCEx_GetPeriphCLKConfig:0000000000000000 HAL_RCCEx_GetPeriphCLKConfig
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1577   .text.HAL_RCCEx_GetPeriphCLKConfig:0000000000000140 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1583   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1590   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000000 HAL_RCCEx_GetPeriphCLKFreq
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1794   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000140 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:1799   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000148 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2032   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000002f8 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2039   .text.HAL_RCCEx_GetPeriphCLKFreq:0000000000000308 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2121   .text.HAL_RCCEx_GetPeriphCLKFreq:000000000000038a $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2134   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000003a4 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2555   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000005f0 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2559   .text.HAL_RCCEx_GetPeriphCLKFreq:00000000000005f4 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2928   .text.HAL_RCCEx_GetPeriphCLKFreq:000000000000075c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2935   .text.HAL_RCCEx_EnablePLLSAI1:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:2942   .text.HAL_RCCEx_EnablePLLSAI1:0000000000000000 HAL_RCCEx_EnablePLLSAI1
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3052   .text.HAL_RCCEx_EnablePLLSAI1:0000000000000090 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3058   .text.HAL_RCCEx_DisablePLLSAI1:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3065   .text.HAL_RCCEx_DisablePLLSAI1:0000000000000000 HAL_RCCEx_DisablePLLSAI1
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3128   .text.HAL_RCCEx_DisablePLLSAI1:000000000000004c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3133   .text.HAL_RCCEx_EnablePLLSAI2:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3140   .text.HAL_RCCEx_EnablePLLSAI2:0000000000000000 HAL_RCCEx_EnablePLLSAI2
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3246   .text.HAL_RCCEx_EnablePLLSAI2:0000000000000084 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3252   .text.HAL_RCCEx_DisablePLLSAI2:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3259   .text.HAL_RCCEx_DisablePLLSAI2:0000000000000000 HAL_RCCEx_DisablePLLSAI2
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3322   .text.HAL_RCCEx_DisablePLLSAI2:000000000000004c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3327   .text.HAL_RCCEx_WakeUpStopCLKConfig:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3334   .text.HAL_RCCEx_WakeUpStopCLKConfig:0000000000000000 HAL_RCCEx_WakeUpStopCLKConfig
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3354   .text.HAL_RCCEx_WakeUpStopCLKConfig:0000000000000010 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3359   .text.HAL_RCCEx_StandbyMSIRangeConfig:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3366   .text.HAL_RCCEx_StandbyMSIRangeConfig:0000000000000000 HAL_RCCEx_StandbyMSIRangeConfig
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3386   .text.HAL_RCCEx_StandbyMSIRangeConfig:0000000000000014 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3391   .text.HAL_RCCEx_EnableLSECSS:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3398   .text.HAL_RCCEx_EnableLSECSS:0000000000000000 HAL_RCCEx_EnableLSECSS
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3415   .text.HAL_RCCEx_EnableLSECSS:0000000000000010 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3420   .text.HAL_RCCEx_DisableLSECSS:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3427   .text.HAL_RCCEx_DisableLSECSS:0000000000000000 HAL_RCCEx_DisableLSECSS
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3448   .text.HAL_RCCEx_DisableLSECSS:0000000000000018 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3453   .text.HAL_RCCEx_EnableLSECSS_IT:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3460   .text.HAL_RCCEx_EnableLSECSS_IT:0000000000000000 HAL_RCCEx_EnableLSECSS_IT
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3490   .text.HAL_RCCEx_EnableLSECSS_IT:000000000000002c $d
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s 			page 142
 
 
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3495   .text.HAL_RCCEx_LSECSS_Callback:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3502   .text.HAL_RCCEx_LSECSS_Callback:0000000000000000 HAL_RCCEx_LSECSS_Callback
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3515   .text.HAL_RCCEx_LSECSS_IRQHandler:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3522   .text.HAL_RCCEx_LSECSS_IRQHandler:0000000000000000 HAL_RCCEx_LSECSS_IRQHandler
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3554   .text.HAL_RCCEx_LSECSS_IRQHandler:000000000000001c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3559   .text.HAL_RCCEx_EnableLSCO:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3566   .text.HAL_RCCEx_EnableLSCO:0000000000000000 HAL_RCCEx_EnableLSCO
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3694   .text.HAL_RCCEx_EnableLSCO:0000000000000098 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3700   .text.HAL_RCCEx_DisableLSCO:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3707   .text.HAL_RCCEx_DisableLSCO:0000000000000000 HAL_RCCEx_DisableLSCO
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3803   .text.HAL_RCCEx_DisableLSCO:0000000000000064 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3809   .text.HAL_RCCEx_EnableMSIPLLMode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3816   .text.HAL_RCCEx_EnableMSIPLLMode:0000000000000000 HAL_RCCEx_EnableMSIPLLMode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3833   .text.HAL_RCCEx_EnableMSIPLLMode:000000000000000c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3838   .text.HAL_RCCEx_DisableMSIPLLMode:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3845   .text.HAL_RCCEx_DisableMSIPLLMode:0000000000000000 HAL_RCCEx_DisableMSIPLLMode
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4AgpBb.s:3862   .text.HAL_RCCEx_DisableMSIPLLMode:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3495   .text.HAL_RCCEx_LSECSS_Callback:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3502   .text.HAL_RCCEx_LSECSS_Callback:0000000000000000 HAL_RCCEx_LSECSS_Callback
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3515   .text.HAL_RCCEx_LSECSS_IRQHandler:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3522   .text.HAL_RCCEx_LSECSS_IRQHandler:0000000000000000 HAL_RCCEx_LSECSS_IRQHandler
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3554   .text.HAL_RCCEx_LSECSS_IRQHandler:000000000000001c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3559   .text.HAL_RCCEx_EnableLSCO:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3566   .text.HAL_RCCEx_EnableLSCO:0000000000000000 HAL_RCCEx_EnableLSCO
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3694   .text.HAL_RCCEx_EnableLSCO:0000000000000098 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3700   .text.HAL_RCCEx_DisableLSCO:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3707   .text.HAL_RCCEx_DisableLSCO:0000000000000000 HAL_RCCEx_DisableLSCO
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3803   .text.HAL_RCCEx_DisableLSCO:0000000000000064 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3809   .text.HAL_RCCEx_EnableMSIPLLMode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3816   .text.HAL_RCCEx_EnableMSIPLLMode:0000000000000000 HAL_RCCEx_EnableMSIPLLMode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3833   .text.HAL_RCCEx_EnableMSIPLLMode:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3838   .text.HAL_RCCEx_DisableMSIPLLMode:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3845   .text.HAL_RCCEx_DisableMSIPLLMode:0000000000000000 HAL_RCCEx_DisableMSIPLLMode
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccmLmsKf.s:3862   .text.HAL_RCCEx_DisableMSIPLLMode:000000000000000c $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
