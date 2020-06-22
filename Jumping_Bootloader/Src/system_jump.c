@@ -6,8 +6,8 @@ void SystemAppJump(uint32_t APP_ADDRESS)
     typedef void (*pFunction)(void);
     pFunction JumpToApplication;
 
-    __HAL_RCC_USART1_FORCE_RESET();
-    __HAL_RCC_USART1_RELEASE_RESET();
+    // __HAL_RCC_USART1_FORCE_RESET();
+    // __HAL_RCC_USART1_RELEASE_RESET();
 
     __HAL_RCC_USART2_FORCE_RESET();
     __HAL_RCC_USART2_RELEASE_RESET();

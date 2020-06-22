@@ -45,6 +45,8 @@ MDM_knownGMD_t known_MetaData[]={
   {GMD_END    ,0}/* THIS MUST BE THE LAST ONE */
 };
 
+#define PROG1_ADDRESS ((uint32_t)0x08004000)
+
 /**
   * @brief  The application entry point.
   * @retval int
@@ -55,6 +57,9 @@ int main(void)
   SystemClock_Config();
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+
+  SCB->VTOR = 0x08000000;
+	__enable_irq();
 
   // InitMetaDataManager((void *)&known_MetaData, MDM_DATA_TYPE_GMD, NULL);
 
@@ -76,9 +81,9 @@ int main(void)
 
   // EraseMetaDataManager();
 
-  HAL_UART_Transmit(&huart2, (uint8_t*)"Programme started...\r\n", 22, 1000);
+  HAL_UART_Transmit(&huart2, (uint8_t*)"In bootloader...\r\n", 18, 1000);
 
-  
+  SystemAppJump(PROG1_ADDRESS);
 }
 
 /**
