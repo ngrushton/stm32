@@ -1,0 +1,355 @@
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"TemplateFlashManagement.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Error_Handler,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv4-sp-d16
+  24              	Error_Handler:
+  25              	.LFB130:
+  26              		.file 1 "STM32_MetaDataManager/Template/TemplateFlashManagement.c"
+   1:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** /**
+   2:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   ******************************************************************************
+   3:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @file    TemplateFlashManagement.c
+   4:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @author  Central LAB
+   5:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @version V0.1.0
+   6:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @date    02-November-2016
+   7:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @brief   Templete File User specialization of Flash Management for MetaDataManager
+   8:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   ******************************************************************************
+   9:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @attention
+  10:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *
+  11:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  12:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *
+  13:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+  14:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * You may not use this file except in compliance with the License.
+  15:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * You may obtain a copy of the License at:
+  16:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *
+  17:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *        http://www.st.com/software_license_agreement_liberty_v2
+  18:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *
+  19:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * Redistribution and use in source and binary forms, with or without modification,
+  20:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * are permitted provided that the following conditions are met:
+  21:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *   1. Redistributions of source code must retain the above copyright notice,
+  22:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *      this list of conditions and the following disclaimer.
+  23:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  24:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *      this list of conditions and the following disclaimer in the documentation
+  25:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *      and/or other materials provided with the distribution.
+  26:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  27:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *      may be used to endorse or promote products derived from this software
+  28:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *      without specific prior written permission.
+  29:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *
+  30:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  31:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  32:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s 			page 2
+
+
+  33:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  34:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  35:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  36:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  37:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  38:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  39:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  40:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   *
+  41:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   ******************************************************************************
+  42:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   */
+  43:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  44:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** /* Includes ------------------------------------------------------------------*/
+  45:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** #include "TemplateFlashManagement.h"
+  46:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  47:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** /* Private function prototypes -----------------------------------------------*/
+  48:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** static void Error_Handler(void);
+  49:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  50:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** /**
+  51:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @brief  This function is executed in case of error occurrence.
+  52:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @param  None
+  53:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   * @retval None
+  54:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   */
+  55:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** static void Error_Handler(void)
+  56:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** {
+  27              		.loc 1 56 0
+  28              		.cfi_startproc
+  29              		@ Volatile: function does not return.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.L2:
+  34 0000 FEE7     		b	.L2
+  35              		.cfi_endproc
+  36              	.LFE130:
+  38              		.section	.text.UserFunctionForErasingFlash,"ax",%progbits
+  39              		.align	1
+  40              		.global	UserFunctionForErasingFlash
+  41              		.syntax unified
+  42              		.thumb
+  43              		.thumb_func
+  44              		.fpu fpv4-sp-d16
+  46              	UserFunctionForErasingFlash:
+  47              	.LFB131:
+  57:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   /* User may add here some code to deal with this error */
+  58:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   while(1){
+  59:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   }
+  60:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** }
+  61:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  62:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** /* This Template contains one implementation for STM32F4XX_NUCLEO board*/
+  63:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  64:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** // #ifdef USE_STM32F4XX_NUCLEO
+  65:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** /**
+  66:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  * @brief User function for Erasing the Flash data for MDM
+  67:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  * @param None
+  68:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  * @retval uint32_t Success/NotSuccess [1/0]
+  69:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  */
+  70:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** uint32_t UserFunctionForErasingFlash(void) {
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s 			page 3
+
+
+  48              		.loc 1 70 0
+  49              		.cfi_startproc
+  50              		@ args = 0, pretend = 0, frame = 24
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		.loc 1 70 0
+  53 0000 00B5     		push	{lr}
+  54              	.LCFI0:
+  55              		.cfi_def_cfa_offset 4
+  56              		.cfi_offset 14, -4
+  57 0002 87B0     		sub	sp, sp, #28
+  58              	.LCFI1:
+  59              		.cfi_def_cfa_offset 32
+  71:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   FLASH_EraseInitTypeDef EraseInitStruct;
+  72:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   uint32_t SectorError = 0;
+  60              		.loc 1 72 0
+  61 0004 0023     		movs	r3, #0
+  62 0006 0193     		str	r3, [sp, #4]
+  63              	.LVL0:
+  73:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   uint32_t Success = 1;
+  74:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  75:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   EraseInitStruct.TypeErase = FLASH_TYPEERASE_PAGES;
+  64              		.loc 1 75 0
+  65 0008 0293     		str	r3, [sp, #8]
+  76:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   EraseInitStruct.Banks = FLASH_BANK_1;
+  66              		.loc 1 76 0
+  67 000a 0122     		movs	r2, #1
+  68 000c 0392     		str	r2, [sp, #12]
+  77:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   EraseInitStruct.Page = 0;
+  69              		.loc 1 77 0
+  70 000e 0493     		str	r3, [sp, #16]
+  78:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   EraseInitStruct.NbPages = 2;
+  71              		.loc 1 78 0
+  72 0010 0223     		movs	r3, #2
+  73 0012 0593     		str	r3, [sp, #20]
+  79:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  80:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   /* Unlock the Flash to enable the flash control register access *************/
+  81:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   HAL_FLASH_Unlock();
+  74              		.loc 1 81 0
+  75 0014 FFF7FEFF 		bl	HAL_FLASH_Unlock
+  76              	.LVL1:
+  82:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  83:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   if(HAL_FLASHEx_Erase(&EraseInitStruct, &SectorError) != HAL_OK){
+  77              		.loc 1 83 0
+  78 0018 01A9     		add	r1, sp, #4
+  79 001a 02A8     		add	r0, sp, #8
+  80 001c FFF7FEFF 		bl	HAL_FLASHEx_Erase
+  81              	.LVL2:
+  82 0020 28B9     		cbnz	r0, .L6
+  84:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****     /* Error occurred while sector erase. 
+  85:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       User can add here some code to deal with this error. 
+  86:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       SectorError will contain the faulty sector and then to know the code error on this sector,
+  87:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       user can call function 'HAL_FLASH_GetError()'
+  88:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       FLASH_ErrorTypeDef errorcode = HAL_FLASH_GetError(); */
+  89:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****     Success=0;
+  90:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****     Error_Handler();
+  91:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   }
+  92:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s 			page 4
+
+
+  93:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   /* Lock the Flash to disable the flash control register access (recommended
+  94:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   to protect the FLASH memory against possible unwanted operation) *********/
+  95:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   HAL_FLASH_Lock();
+  83              		.loc 1 95 0
+  84 0022 FFF7FEFF 		bl	HAL_FLASH_Lock
+  85              	.LVL3:
+  96:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+  97:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   return Success;
+  98:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** }
+  86              		.loc 1 98 0
+  87 0026 0120     		movs	r0, #1
+  88 0028 07B0     		add	sp, sp, #28
+  89              	.LCFI2:
+  90              		.cfi_remember_state
+  91              		.cfi_def_cfa_offset 4
+  92              		@ sp needed
+  93 002a 5DF804FB 		ldr	pc, [sp], #4
+  94              	.L6:
+  95              	.LCFI3:
+  96              		.cfi_restore_state
+  97              	.LVL4:
+  90:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   }
+  98              		.loc 1 90 0
+  99 002e FFF7FEFF 		bl	Error_Handler
+ 100              	.LVL5:
+ 101              		.cfi_endproc
+ 102              	.LFE131:
+ 104              		.section	.text.UserFunctionForSavingFlash,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	UserFunctionForSavingFlash
+ 107              		.syntax unified
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.fpu fpv4-sp-d16
+ 112              	UserFunctionForSavingFlash:
+ 113              	.LFB132:
+  99:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+ 100:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** /**
+ 101:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  * @brief User function for Saving the MDM  on the Flash
+ 102:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  * @param void *InitMetaDataVector Pointer to the MDM beginning
+ 103:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  * @param void *EndMetaDataVector Pointer to the MDM end
+ 104:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  * @retval uint32_t Success/NotSuccess [1/0]
+ 105:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  */
+ 106:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** uint32_t UserFunctionForSavingFlash(void *InitMetaDataVector,void *EndMetaDataVector)
+ 107:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** {
+ 114              		.loc 1 107 0
+ 115              		.cfi_startproc
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              	.LVL6:
+ 119 0000 70B5     		push	{r4, r5, r6, lr}
+ 120              	.LCFI4:
+ 121              		.cfi_def_cfa_offset 16
+ 122              		.cfi_offset 4, -16
+ 123              		.cfi_offset 5, -12
+ 124              		.cfi_offset 6, -8
+ 125              		.cfi_offset 14, -4
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s 			page 5
+
+
+ 126 0002 0446     		mov	r4, r0
+ 127 0004 0E46     		mov	r6, r1
+ 128              	.LVL7:
+ 108:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   uint32_t Success=1;
+ 109:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+ 110:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   /* Store in Flash Memory */
+ 111:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   uint32_t Address = MDM_FLASH_ADD;
+ 112:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   uint32_t *WriteIndex;
+ 113:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+ 114:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   /* Unlock the Flash to enable the flash control register access *************/
+ 115:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   HAL_FLASH_Unlock();
+ 129              		.loc 1 115 0
+ 130 0006 FFF7FEFF 		bl	HAL_FLASH_Unlock
+ 131              	.LVL8:
+ 111:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   uint32_t *WriteIndex;
+ 132              		.loc 1 111 0
+ 133 000a 094D     		ldr	r5, .L13
+ 134              	.LVL9:
+ 135              	.L8:
+ 116:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+ 117:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   for(WriteIndex =((uint32_t *) InitMetaDataVector); WriteIndex<((uint32_t *) EndMetaDataVector); W
+ 136              		.loc 1 117 0 discriminator 1
+ 137 000c B442     		cmp	r4, r6
+ 138 000e 0BD2     		bcs	.L12
+ 118:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****     if (HAL_FLASH_Program(TYPEPROGRAM_DOUBLEWORD, Address,*WriteIndex) == HAL_OK){
+ 139              		.loc 1 118 0
+ 140 0010 0020     		movs	r0, #0
+ 141 0012 2268     		ldr	r2, [r4]
+ 142 0014 0346     		mov	r3, r0
+ 143 0016 2946     		mov	r1, r5
+ 144 0018 FFF7FEFF 		bl	HAL_FLASH_Program
+ 145              	.LVL10:
+ 146 001c 10B9     		cbnz	r0, .L9
+ 119:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       Address = Address + 4;
+ 147              		.loc 1 119 0
+ 148 001e 0435     		adds	r5, r5, #4
+ 149              	.LVL11:
+ 117:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****     if (HAL_FLASH_Program(TYPEPROGRAM_DOUBLEWORD, Address,*WriteIndex) == HAL_OK){
+ 150              		.loc 1 117 0
+ 151 0020 0434     		adds	r4, r4, #4
+ 152              	.LVL12:
+ 153 0022 F3E7     		b	.L8
+ 154              	.L9:
+ 120:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****     } else {
+ 121:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       /* Error occurred while writing data in Flash memory.
+ 122:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****          User can add here some code to deal with this error
+ 123:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****          FLASH_ErrorTypeDef errorcode = HAL_FLASH_GetError(); */
+ 124:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       Error_Handler();
+ 155              		.loc 1 124 0
+ 156 0024 FFF7FEFF 		bl	Error_Handler
+ 157              	.LVL13:
+ 158              	.L12:
+ 125:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****       Success=0;
+ 126:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****     }
+ 127:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   }
+ 128:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** 
+ 129:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   /* Lock the Flash to disable the flash control register access (recommended
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s 			page 6
+
+
+ 130:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****    to protect the FLASH memory against possible unwanted operation) *********/
+ 131:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   HAL_FLASH_Lock();
+ 159              		.loc 1 131 0
+ 160 0028 FFF7FEFF 		bl	HAL_FLASH_Lock
+ 161              	.LVL14:
+ 132:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****  
+ 133:STM32_MetaDataManager/Template/TemplateFlashManagement.c ****   return Success;
+ 134:STM32_MetaDataManager/Template/TemplateFlashManagement.c **** }
+ 162              		.loc 1 134 0
+ 163 002c 0120     		movs	r0, #1
+ 164 002e 70BD     		pop	{r4, r5, r6, pc}
+ 165              	.LVL15:
+ 166              	.L14:
+ 167              		.align	2
+ 168              	.L13:
+ 169 0030 00F00F08 		.word	135262208
+ 170              		.cfi_endproc
+ 171              	.LFE132:
+ 173              		.text
+ 174              	.Letext0:
+ 175              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
+ 176              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
+ 177              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
+ 178              		.file 5 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h
+ 179              		.file 6 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
+ 180              		.file 7 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
+ 181              		.file 8 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
+ 182              		.file 9 "Drivers/CMSIS/Include/core_cm4.h"
+ 183              		.file 10 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 184              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 185              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 186              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 187              		.file 14 "STM32_MetaDataManager/MetaDataManager.h"
+ 188              		.file 15 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 TemplateFlashManagement.c
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s:18     .text.Error_Handler:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s:24     .text.Error_Handler:0000000000000000 Error_Handler
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s:39     .text.UserFunctionForErasingFlash:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s:46     .text.UserFunctionForErasingFlash:0000000000000000 UserFunctionForErasingFlash
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s:105    .text.UserFunctionForSavingFlash:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s:112    .text.UserFunctionForSavingFlash:0000000000000000 UserFunctionForSavingFlash
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccVie9Jd.s:169    .text.UserFunctionForSavingFlash:0000000000000030 $d
+
+UNDEFINED SYMBOLS
+HAL_FLASH_Unlock
+HAL_FLASHEx_Erase
+HAL_FLASH_Lock
+HAL_FLASH_Program

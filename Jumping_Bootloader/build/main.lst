@@ -1,0 +1,1000 @@
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv4-sp-d16
+  24              	MX_GPIO_Init:
+  25              	.LFB136:
+  26              		.file 1 "Src/main.c"
+   1:Src/main.c    **** /* USER CODE BEGIN Header */
+   2:Src/main.c    **** /**
+   3:Src/main.c    ****   ******************************************************************************
+   4:Src/main.c    ****   * @file           : main.c
+   5:Src/main.c    ****   * @brief          : Main program body
+   6:Src/main.c    ****   ******************************************************************************
+   7:Src/main.c    ****   * @attention
+   8:Src/main.c    ****   *
+   9:Src/main.c    ****   * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  10:Src/main.c    ****   * All rights reserved.</center></h2>
+  11:Src/main.c    ****   *
+  12:Src/main.c    ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Src/main.c    ****   * the "License"; You may not use this file except in compliance with the
+  14:Src/main.c    ****   * License. You may obtain a copy of the License at:
+  15:Src/main.c    ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Src/main.c    ****   *
+  17:Src/main.c    ****   ******************************************************************************
+  18:Src/main.c    ****   */
+  19:Src/main.c    **** 
+  20:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
+  21:Src/main.c    **** #include "main.h"
+  22:Src/main.c    **** #include "system_jump.h"
+  23:Src/main.c    **** #include "MetaDataManager.h"
+  24:Src/main.c    **** 
+  25:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  26:Src/main.c    **** UART_HandleTypeDef huart2;
+  27:Src/main.c    **** 
+  28:Src/main.c    **** uint8_t  NodeName[8];
+  29:Src/main.c    **** uint8_t  APIToken[32];
+  30:Src/main.c    **** uint32_t ActiveApp;
+  31:Src/main.c    **** 
+  32:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 2
+
+
+  33:Src/main.c    **** void SystemClock_Config(void);
+  34:Src/main.c    **** static void MX_GPIO_Init(void);
+  35:Src/main.c    **** static void MX_USART2_UART_Init(void);
+  36:Src/main.c    **** unsigned char ReCallActiveAppAddrFromMemory(void);
+  37:Src/main.c    **** unsigned char SaveActiveApp(uint32_t address);
+  38:Src/main.c    **** unsigned char SaveNodeName(char *data);
+  39:Src/main.c    **** 
+  40:Src/main.c    **** /* Table with All the known Meta Data */
+  41:Src/main.c    **** MDM_knownGMD_t known_MetaData[]={
+  42:Src/main.c    ****   {GMD_NODE_NAME,      (sizeof(NodeName))},
+  43:Src/main.c    ****   {GMD_API_TOKEN,    (sizeof(APIToken))},
+  44:Src/main.c    ****   {GMD_ACTIVE_APP,    (sizeof(ActiveApp))},
+  45:Src/main.c    ****   {GMD_END    ,0}/* THIS MUST BE THE LAST ONE */
+  46:Src/main.c    **** };
+  47:Src/main.c    **** 
+  48:Src/main.c    **** /**
+  49:Src/main.c    ****   * @brief  The application entry point.
+  50:Src/main.c    ****   * @retval int
+  51:Src/main.c    ****   */
+  52:Src/main.c    **** int main(void)
+  53:Src/main.c    **** {
+  54:Src/main.c    ****   HAL_Init();
+  55:Src/main.c    ****   SystemClock_Config();
+  56:Src/main.c    ****   MX_GPIO_Init();
+  57:Src/main.c    ****   MX_USART2_UART_Init();
+  58:Src/main.c    **** 
+  59:Src/main.c    ****   InitMetaDataManager((void *)&known_MetaData, MDM_DATA_TYPE_GMD, NULL);
+  60:Src/main.c    **** 
+  61:Src/main.c    ****   // unsigned char success = ReCallActiveAppAddrFromMemory();
+  62:Src/main.c    **** 
+  63:Src/main.c    ****   // SaveActiveApp(0x08000000);
+  64:Src/main.c    ****   // SaveNodeName("TestTest");
+  65:Src/main.c    **** 
+  66:Src/main.c    ****   // if (NecessityToSaveMetaDataManager) {
+  67:Src/main.c    ****   //   uint32_t Success = EraseMetaDataManager();
+  68:Src/main.c    ****   //   // if(Success) {
+  69:Src/main.c    ****   //   //   SaveMetaDataManager();
+  70:Src/main.c    ****   //   // }
+  71:Src/main.c    ****   // }
+  72:Src/main.c    **** 
+  73:Src/main.c    ****   // if (success) {
+  74:Src/main.c    ****   //   SystemAppJump(ActiveApp);
+  75:Src/main.c    ****   // }
+  76:Src/main.c    **** 
+  77:Src/main.c    ****   EraseMetaDataManager();
+  78:Src/main.c    **** 
+  79:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)"Programme started...\r\n", 22, 1000);
+  80:Src/main.c    **** }
+  81:Src/main.c    **** 
+  82:Src/main.c    **** /**
+  83:Src/main.c    ****   * @brief  ReCallActiveAppAddrFromMemory
+  84:Src/main.c    ****   *         Use the MetaDataManager functions to retrieve the active app address
+  85:Src/main.c    ****   * @retval unsigned char: Success (1) from MetaDataManager recall
+  86:Src/main.c    ****   */
+  87:Src/main.c    **** unsigned char ReCallActiveAppAddrFromMemory(void) {
+  88:Src/main.c    ****     unsigned char Success = 0;
+  89:Src/main.c    **** 
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 3
+
+
+  90:Src/main.c    ****     /* Recall the node name Credential saved */
+  91:Src/main.c    ****     Success = MDM_ReCallGMD(GMD_ACTIVE_APP,(void *)&ActiveApp);
+  92:Src/main.c    **** 
+  93:Src/main.c    ****     // memset(NodeNameString, '\0', sizeof(NodeNameString));
+  94:Src/main.c    ****     // strncpy(NodeNameString, (char*)NodeName, 8);
+  95:Src/main.c    **** 
+  96:Src/main.c    ****     return Success;
+  97:Src/main.c    **** }
+  98:Src/main.c    **** 
+  99:Src/main.c    **** /**
+ 100:Src/main.c    ****   * @brief  SaveActiveApp
+ 101:Src/main.c    ****   *         Use the MetaDataManager functions save the active app address
+ 102:Src/main.c    ****   * @retval unsigned char: Success (1) from MetaDataManager recall
+ 103:Src/main.c    ****   */
+ 104:Src/main.c    **** unsigned char SaveActiveApp(uint32_t address) {
+ 105:Src/main.c    ****     unsigned char Success = 0;
+ 106:Src/main.c    **** 
+ 107:Src/main.c    ****     uint32_t ActiveAppToSave[1];
+ 108:Src/main.c    ****     ActiveAppToSave[0] = address;
+ 109:Src/main.c    **** 
+ 110:Src/main.c    ****     Success = MDM_SaveGMD(GMD_ACTIVE_APP,(void *)&ActiveAppToSave);
+ 111:Src/main.c    ****     NecessityToSaveMetaDataManager = 1;
+ 112:Src/main.c    **** 
+ 113:Src/main.c    ****     return Success;
+ 114:Src/main.c    **** }
+ 115:Src/main.c    **** 
+ 116:Src/main.c    **** /**
+ 117:Src/main.c    ****   * @brief  SaveNodeName
+ 118:Src/main.c    ****   *         Use the MetaDataManager functions save node name
+ 119:Src/main.c    ****   * @retval unsigned char: Success (1) from MetaDataManager recall
+ 120:Src/main.c    ****   */
+ 121:Src/main.c    **** unsigned char SaveNodeName(char *data) {
+ 122:Src/main.c    ****     unsigned char Success = 0;
+ 123:Src/main.c    **** 
+ 124:Src/main.c    ****     uint8_t nameToSave[8];
+ 125:Src/main.c    **** 
+ 126:Src/main.c    ****     for (int i = 0; i < 8; i++) {
+ 127:Src/main.c    ****         nameToSave[i] = data[i];
+ 128:Src/main.c    ****     }
+ 129:Src/main.c    **** 
+ 130:Src/main.c    ****     Success = MDM_SaveGMD(GMD_NODE_NAME,(void *)&nameToSave);
+ 131:Src/main.c    ****     NecessityToSaveMetaDataManager = 1;
+ 132:Src/main.c    **** 
+ 133:Src/main.c    ****     return Success;
+ 134:Src/main.c    **** }
+ 135:Src/main.c    **** 
+ 136:Src/main.c    **** /**
+ 137:Src/main.c    ****   * @brief System Clock Configuration
+ 138:Src/main.c    ****   * @retval None
+ 139:Src/main.c    ****   */
+ 140:Src/main.c    **** void SystemClock_Config(void)
+ 141:Src/main.c    **** {
+ 142:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 143:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 144:Src/main.c    ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+ 145:Src/main.c    **** 
+ 146:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 4
+
+
+ 147:Src/main.c    ****   */
+ 148:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+ 149:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 150:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 151:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 152:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+ 153:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 1;
+ 154:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 10;
+ 155:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
+ 156:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+ 157:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+ 158:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 159:Src/main.c    ****   {
+ 160:Src/main.c    ****     Error_Handler();
+ 161:Src/main.c    ****   }
+ 162:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 163:Src/main.c    ****   */
+ 164:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 165:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 166:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 167:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 168:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 169:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 170:Src/main.c    **** 
+ 171:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
+ 172:Src/main.c    ****   {
+ 173:Src/main.c    ****     Error_Handler();
+ 174:Src/main.c    ****   }
+ 175:Src/main.c    ****   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2;
+ 176:Src/main.c    ****   PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+ 177:Src/main.c    ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+ 178:Src/main.c    ****   {
+ 179:Src/main.c    ****     Error_Handler();
+ 180:Src/main.c    ****   }
+ 181:Src/main.c    ****   /** Configure the main internal regulator output voltage 
+ 182:Src/main.c    ****   */
+ 183:Src/main.c    ****   if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+ 184:Src/main.c    ****   {
+ 185:Src/main.c    ****     Error_Handler();
+ 186:Src/main.c    ****   }
+ 187:Src/main.c    **** }
+ 188:Src/main.c    **** 
+ 189:Src/main.c    **** /**
+ 190:Src/main.c    ****   * @brief USART2 Initialization Function
+ 191:Src/main.c    ****   * @param None
+ 192:Src/main.c    ****   * @retval None
+ 193:Src/main.c    ****   */
+ 194:Src/main.c    **** static void MX_USART2_UART_Init(void)
+ 195:Src/main.c    **** {
+ 196:Src/main.c    **** 
+ 197:Src/main.c    ****   /* USER CODE BEGIN USART2_Init 0 */
+ 198:Src/main.c    **** 
+ 199:Src/main.c    ****   /* USER CODE END USART2_Init 0 */
+ 200:Src/main.c    **** 
+ 201:Src/main.c    ****   /* USER CODE BEGIN USART2_Init 1 */
+ 202:Src/main.c    **** 
+ 203:Src/main.c    ****   /* USER CODE END USART2_Init 1 */
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 5
+
+
+ 204:Src/main.c    ****   huart2.Instance = USART2;
+ 205:Src/main.c    ****   huart2.Init.BaudRate = 115200;
+ 206:Src/main.c    ****   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+ 207:Src/main.c    ****   huart2.Init.StopBits = UART_STOPBITS_1;
+ 208:Src/main.c    ****   huart2.Init.Parity = UART_PARITY_NONE;
+ 209:Src/main.c    ****   huart2.Init.Mode = UART_MODE_TX_RX;
+ 210:Src/main.c    ****   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+ 211:Src/main.c    ****   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+ 212:Src/main.c    ****   huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+ 213:Src/main.c    ****   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+ 214:Src/main.c    ****   if (HAL_UART_Init(&huart2) != HAL_OK)
+ 215:Src/main.c    ****   {
+ 216:Src/main.c    ****     Error_Handler();
+ 217:Src/main.c    ****   }
+ 218:Src/main.c    ****   /* USER CODE BEGIN USART2_Init 2 */
+ 219:Src/main.c    **** 
+ 220:Src/main.c    ****   /* USER CODE END USART2_Init 2 */
+ 221:Src/main.c    **** 
+ 222:Src/main.c    **** }
+ 223:Src/main.c    **** 
+ 224:Src/main.c    **** /**
+ 225:Src/main.c    ****   * @brief GPIO Initialization Function
+ 226:Src/main.c    ****   * @param None
+ 227:Src/main.c    ****   * @retval None
+ 228:Src/main.c    ****   */
+ 229:Src/main.c    **** static void MX_GPIO_Init(void)
+ 230:Src/main.c    **** {
+  27              		.loc 1 230 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 40
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  36 0002 8AB0     		sub	sp, sp, #40
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 48
+ 231:Src/main.c    ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  39              		.loc 1 231 0
+  40 0004 0024     		movs	r4, #0
+  41 0006 0594     		str	r4, [sp, #20]
+  42 0008 0694     		str	r4, [sp, #24]
+  43 000a 0794     		str	r4, [sp, #28]
+  44 000c 0894     		str	r4, [sp, #32]
+  45 000e 0994     		str	r4, [sp, #36]
+  46              	.LBB2:
+ 232:Src/main.c    **** 
+ 233:Src/main.c    ****   /* GPIO Ports Clock Enable */
+ 234:Src/main.c    ****   __HAL_RCC_GPIOC_CLK_ENABLE();
+  47              		.loc 1 234 0
+  48 0010 204B     		ldr	r3, .L3
+  49 0012 DA6C     		ldr	r2, [r3, #76]
+  50 0014 42F00402 		orr	r2, r2, #4
+  51 0018 DA64     		str	r2, [r3, #76]
+  52 001a DA6C     		ldr	r2, [r3, #76]
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 6
+
+
+  53 001c 02F00402 		and	r2, r2, #4
+  54 0020 0192     		str	r2, [sp, #4]
+  55 0022 019A     		ldr	r2, [sp, #4]
+  56              	.LBE2:
+  57              	.LBB3:
+ 235:Src/main.c    ****   __HAL_RCC_GPIOH_CLK_ENABLE();
+  58              		.loc 1 235 0
+  59 0024 DA6C     		ldr	r2, [r3, #76]
+  60 0026 42F08002 		orr	r2, r2, #128
+  61 002a DA64     		str	r2, [r3, #76]
+  62 002c DA6C     		ldr	r2, [r3, #76]
+  63 002e 02F08002 		and	r2, r2, #128
+  64 0032 0292     		str	r2, [sp, #8]
+  65 0034 029A     		ldr	r2, [sp, #8]
+  66              	.LBE3:
+  67              	.LBB4:
+ 236:Src/main.c    ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  68              		.loc 1 236 0
+  69 0036 DA6C     		ldr	r2, [r3, #76]
+  70 0038 42F00102 		orr	r2, r2, #1
+  71 003c DA64     		str	r2, [r3, #76]
+  72 003e DA6C     		ldr	r2, [r3, #76]
+  73 0040 02F00102 		and	r2, r2, #1
+  74 0044 0392     		str	r2, [sp, #12]
+  75 0046 039A     		ldr	r2, [sp, #12]
+  76              	.LBE4:
+  77              	.LBB5:
+ 237:Src/main.c    ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  78              		.loc 1 237 0
+  79 0048 DA6C     		ldr	r2, [r3, #76]
+  80 004a 42F00202 		orr	r2, r2, #2
+  81 004e DA64     		str	r2, [r3, #76]
+  82 0050 DB6C     		ldr	r3, [r3, #76]
+  83 0052 03F00203 		and	r3, r3, #2
+  84 0056 0493     		str	r3, [sp, #16]
+  85 0058 049B     		ldr	r3, [sp, #16]
+  86              	.LBE5:
+ 238:Src/main.c    **** 
+ 239:Src/main.c    ****   /*Configure GPIO pin Output Level */
+ 240:Src/main.c    ****   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+  87              		.loc 1 240 0
+  88 005a 2246     		mov	r2, r4
+  89 005c 2021     		movs	r1, #32
+  90 005e 4FF09040 		mov	r0, #1207959552
+  91 0062 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  92              	.LVL0:
+ 241:Src/main.c    **** 
+ 242:Src/main.c    ****   /*Configure GPIO pin : B1_Pin */
+ 243:Src/main.c    ****   GPIO_InitStruct.Pin = B1_Pin;
+  93              		.loc 1 243 0
+  94 0066 4FF40053 		mov	r3, #8192
+  95 006a 0593     		str	r3, [sp, #20]
+ 244:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  96              		.loc 1 244 0
+  97 006c 0A4B     		ldr	r3, .L3+4
+  98 006e 0693     		str	r3, [sp, #24]
+ 245:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 7
+
+
+  99              		.loc 1 245 0
+ 100 0070 0794     		str	r4, [sp, #28]
+ 246:Src/main.c    ****   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+ 101              		.loc 1 246 0
+ 102 0072 05A9     		add	r1, sp, #20
+ 103 0074 0948     		ldr	r0, .L3+8
+ 104 0076 FFF7FEFF 		bl	HAL_GPIO_Init
+ 105              	.LVL1:
+ 247:Src/main.c    **** 
+ 248:Src/main.c    ****   /*Configure GPIO pin : LD2_Pin */
+ 249:Src/main.c    ****   GPIO_InitStruct.Pin = LD2_Pin;
+ 106              		.loc 1 249 0
+ 107 007a 2023     		movs	r3, #32
+ 108 007c 0593     		str	r3, [sp, #20]
+ 250:Src/main.c    ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 109              		.loc 1 250 0
+ 110 007e 0123     		movs	r3, #1
+ 111 0080 0693     		str	r3, [sp, #24]
+ 251:Src/main.c    ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 112              		.loc 1 251 0
+ 113 0082 0794     		str	r4, [sp, #28]
+ 252:Src/main.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 114              		.loc 1 252 0
+ 115 0084 0894     		str	r4, [sp, #32]
+ 253:Src/main.c    ****   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+ 116              		.loc 1 253 0
+ 117 0086 05A9     		add	r1, sp, #20
+ 118 0088 4FF09040 		mov	r0, #1207959552
+ 119 008c FFF7FEFF 		bl	HAL_GPIO_Init
+ 120              	.LVL2:
+ 254:Src/main.c    **** 
+ 255:Src/main.c    **** }
+ 121              		.loc 1 255 0
+ 122 0090 0AB0     		add	sp, sp, #40
+ 123              	.LCFI2:
+ 124              		.cfi_def_cfa_offset 8
+ 125              		@ sp needed
+ 126 0092 10BD     		pop	{r4, pc}
+ 127              	.L4:
+ 128              		.align	2
+ 129              	.L3:
+ 130 0094 00100240 		.word	1073876992
+ 131 0098 00002110 		.word	270598144
+ 132 009c 00080048 		.word	1207961600
+ 133              		.cfi_endproc
+ 134              	.LFE136:
+ 136              		.section	.text.MX_USART2_UART_Init,"ax",%progbits
+ 137              		.align	1
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 141              		.fpu fpv4-sp-d16
+ 143              	MX_USART2_UART_Init:
+ 144              	.LFB135:
+ 195:Src/main.c    **** 
+ 145              		.loc 1 195 0
+ 146              		.cfi_startproc
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 8
+
+
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149 0000 08B5     		push	{r3, lr}
+ 150              	.LCFI3:
+ 151              		.cfi_def_cfa_offset 8
+ 152              		.cfi_offset 3, -8
+ 153              		.cfi_offset 14, -4
+ 204:Src/main.c    ****   huart2.Init.BaudRate = 115200;
+ 154              		.loc 1 204 0
+ 155 0002 0948     		ldr	r0, .L7
+ 156 0004 094B     		ldr	r3, .L7+4
+ 157 0006 0360     		str	r3, [r0]
+ 205:Src/main.c    ****   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+ 158              		.loc 1 205 0
+ 159 0008 4FF4E133 		mov	r3, #115200
+ 160 000c 4360     		str	r3, [r0, #4]
+ 206:Src/main.c    ****   huart2.Init.StopBits = UART_STOPBITS_1;
+ 161              		.loc 1 206 0
+ 162 000e 0023     		movs	r3, #0
+ 163 0010 8360     		str	r3, [r0, #8]
+ 207:Src/main.c    ****   huart2.Init.Parity = UART_PARITY_NONE;
+ 164              		.loc 1 207 0
+ 165 0012 C360     		str	r3, [r0, #12]
+ 208:Src/main.c    ****   huart2.Init.Mode = UART_MODE_TX_RX;
+ 166              		.loc 1 208 0
+ 167 0014 0361     		str	r3, [r0, #16]
+ 209:Src/main.c    ****   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+ 168              		.loc 1 209 0
+ 169 0016 0C22     		movs	r2, #12
+ 170 0018 4261     		str	r2, [r0, #20]
+ 210:Src/main.c    ****   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+ 171              		.loc 1 210 0
+ 172 001a 8361     		str	r3, [r0, #24]
+ 211:Src/main.c    ****   huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+ 173              		.loc 1 211 0
+ 174 001c C361     		str	r3, [r0, #28]
+ 212:Src/main.c    ****   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+ 175              		.loc 1 212 0
+ 176 001e 0362     		str	r3, [r0, #32]
+ 213:Src/main.c    ****   if (HAL_UART_Init(&huart2) != HAL_OK)
+ 177              		.loc 1 213 0
+ 178 0020 4362     		str	r3, [r0, #36]
+ 214:Src/main.c    ****   {
+ 179              		.loc 1 214 0
+ 180 0022 FFF7FEFF 		bl	HAL_UART_Init
+ 181              	.LVL3:
+ 222:Src/main.c    **** 
+ 182              		.loc 1 222 0
+ 183 0026 08BD     		pop	{r3, pc}
+ 184              	.L8:
+ 185              		.align	2
+ 186              	.L7:
+ 187 0028 00000000 		.word	huart2
+ 188 002c 00440040 		.word	1073759232
+ 189              		.cfi_endproc
+ 190              	.LFE135:
+ 192              		.section	.text.ReCallActiveAppAddrFromMemory,"ax",%progbits
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 9
+
+
+ 193              		.align	1
+ 194              		.global	ReCallActiveAppAddrFromMemory
+ 195              		.syntax unified
+ 196              		.thumb
+ 197              		.thumb_func
+ 198              		.fpu fpv4-sp-d16
+ 200              	ReCallActiveAppAddrFromMemory:
+ 201              	.LFB131:
+  87:Src/main.c    ****     unsigned char Success = 0;
+ 202              		.loc 1 87 0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206 0000 08B5     		push	{r3, lr}
+ 207              	.LCFI4:
+ 208              		.cfi_def_cfa_offset 8
+ 209              		.cfi_offset 3, -8
+ 210              		.cfi_offset 14, -4
+ 211              	.LVL4:
+  91:Src/main.c    **** 
+ 212              		.loc 1 91 0
+ 213 0002 0349     		ldr	r1, .L11
+ 214 0004 0320     		movs	r0, #3
+ 215 0006 FFF7FEFF 		bl	MDM_ReCallGMD
+ 216              	.LVL5:
+  97:Src/main.c    **** 
+ 217              		.loc 1 97 0
+ 218 000a C0B2     		uxtb	r0, r0
+ 219 000c 08BD     		pop	{r3, pc}
+ 220              	.L12:
+ 221 000e 00BF     		.align	2
+ 222              	.L11:
+ 223 0010 00000000 		.word	ActiveApp
+ 224              		.cfi_endproc
+ 225              	.LFE131:
+ 227              		.section	.text.SaveActiveApp,"ax",%progbits
+ 228              		.align	1
+ 229              		.global	SaveActiveApp
+ 230              		.syntax unified
+ 231              		.thumb
+ 232              		.thumb_func
+ 233              		.fpu fpv4-sp-d16
+ 235              	SaveActiveApp:
+ 236              	.LFB132:
+ 104:Src/main.c    ****     unsigned char Success = 0;
+ 237              		.loc 1 104 0
+ 238              		.cfi_startproc
+ 239              		@ args = 0, pretend = 0, frame = 8
+ 240              		@ frame_needed = 0, uses_anonymous_args = 0
+ 241              	.LVL6:
+ 242 0000 00B5     		push	{lr}
+ 243              	.LCFI5:
+ 244              		.cfi_def_cfa_offset 4
+ 245              		.cfi_offset 14, -4
+ 246 0002 83B0     		sub	sp, sp, #12
+ 247              	.LCFI6:
+ 248              		.cfi_def_cfa_offset 16
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 10
+
+
+ 249              	.LVL7:
+ 108:Src/main.c    **** 
+ 250              		.loc 1 108 0
+ 251 0004 02A9     		add	r1, sp, #8
+ 252 0006 41F8040D 		str	r0, [r1, #-4]!
+ 110:Src/main.c    ****     NecessityToSaveMetaDataManager = 1;
+ 253              		.loc 1 110 0
+ 254 000a 0320     		movs	r0, #3
+ 255              	.LVL8:
+ 256 000c FFF7FEFF 		bl	MDM_SaveGMD
+ 257              	.LVL9:
+ 111:Src/main.c    **** 
+ 258              		.loc 1 111 0
+ 259 0010 034B     		ldr	r3, .L15
+ 260 0012 0122     		movs	r2, #1
+ 261 0014 1A60     		str	r2, [r3]
+ 114:Src/main.c    **** 
+ 262              		.loc 1 114 0
+ 263 0016 C0B2     		uxtb	r0, r0
+ 264 0018 03B0     		add	sp, sp, #12
+ 265              	.LCFI7:
+ 266              		.cfi_def_cfa_offset 4
+ 267              		@ sp needed
+ 268 001a 5DF804FB 		ldr	pc, [sp], #4
+ 269              	.L16:
+ 270 001e 00BF     		.align	2
+ 271              	.L15:
+ 272 0020 00000000 		.word	NecessityToSaveMetaDataManager
+ 273              		.cfi_endproc
+ 274              	.LFE132:
+ 276              		.section	.text.SaveNodeName,"ax",%progbits
+ 277              		.align	1
+ 278              		.global	SaveNodeName
+ 279              		.syntax unified
+ 280              		.thumb
+ 281              		.thumb_func
+ 282              		.fpu fpv4-sp-d16
+ 284              	SaveNodeName:
+ 285              	.LFB133:
+ 121:Src/main.c    ****     unsigned char Success = 0;
+ 286              		.loc 1 121 0
+ 287              		.cfi_startproc
+ 288              		@ args = 0, pretend = 0, frame = 8
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 290              	.LVL10:
+ 291 0000 00B5     		push	{lr}
+ 292              	.LCFI8:
+ 293              		.cfi_def_cfa_offset 4
+ 294              		.cfi_offset 14, -4
+ 295 0002 83B0     		sub	sp, sp, #12
+ 296              	.LCFI9:
+ 297              		.cfi_def_cfa_offset 16
+ 298              	.LVL11:
+ 299              	.LBB6:
+ 126:Src/main.c    ****         nameToSave[i] = data[i];
+ 300              		.loc 1 126 0
+ 301 0004 0023     		movs	r3, #0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 11
+
+
+ 302 0006 05E0     		b	.L18
+ 303              	.LVL12:
+ 304              	.L19:
+ 127:Src/main.c    ****     }
+ 305              		.loc 1 127 0 discriminator 3
+ 306 0008 C15C     		ldrb	r1, [r0, r3]	@ zero_extendqisi2
+ 307 000a 02AA     		add	r2, sp, #8
+ 308 000c 1A44     		add	r2, r2, r3
+ 309 000e 02F8081C 		strb	r1, [r2, #-8]
+ 126:Src/main.c    ****         nameToSave[i] = data[i];
+ 310              		.loc 1 126 0 discriminator 3
+ 311 0012 0133     		adds	r3, r3, #1
+ 312              	.LVL13:
+ 313              	.L18:
+ 126:Src/main.c    ****         nameToSave[i] = data[i];
+ 314              		.loc 1 126 0 is_stmt 0 discriminator 1
+ 315 0014 072B     		cmp	r3, #7
+ 316 0016 F7DD     		ble	.L19
+ 317              	.LBE6:
+ 130:Src/main.c    ****     NecessityToSaveMetaDataManager = 1;
+ 318              		.loc 1 130 0 is_stmt 1
+ 319 0018 6946     		mov	r1, sp
+ 320 001a 0120     		movs	r0, #1
+ 321              	.LVL14:
+ 322 001c FFF7FEFF 		bl	MDM_SaveGMD
+ 323              	.LVL15:
+ 131:Src/main.c    **** 
+ 324              		.loc 1 131 0
+ 325 0020 034B     		ldr	r3, .L21
+ 326 0022 0122     		movs	r2, #1
+ 327 0024 1A60     		str	r2, [r3]
+ 134:Src/main.c    **** 
+ 328              		.loc 1 134 0
+ 329 0026 C0B2     		uxtb	r0, r0
+ 330 0028 03B0     		add	sp, sp, #12
+ 331              	.LCFI10:
+ 332              		.cfi_def_cfa_offset 4
+ 333              		@ sp needed
+ 334 002a 5DF804FB 		ldr	pc, [sp], #4
+ 335              	.L22:
+ 336 002e 00BF     		.align	2
+ 337              	.L21:
+ 338 0030 00000000 		.word	NecessityToSaveMetaDataManager
+ 339              		.cfi_endproc
+ 340              	.LFE133:
+ 342              		.section	.text.SystemClock_Config,"ax",%progbits
+ 343              		.align	1
+ 344              		.global	SystemClock_Config
+ 345              		.syntax unified
+ 346              		.thumb
+ 347              		.thumb_func
+ 348              		.fpu fpv4-sp-d16
+ 350              	SystemClock_Config:
+ 351              	.LFB134:
+ 141:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 352              		.loc 1 141 0
+ 353              		.cfi_startproc
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 12
+
+
+ 354              		@ args = 0, pretend = 0, frame = 224
+ 355              		@ frame_needed = 0, uses_anonymous_args = 0
+ 356 0000 30B5     		push	{r4, r5, lr}
+ 357              	.LCFI11:
+ 358              		.cfi_def_cfa_offset 12
+ 359              		.cfi_offset 4, -12
+ 360              		.cfi_offset 5, -8
+ 361              		.cfi_offset 14, -4
+ 362 0002 B9B0     		sub	sp, sp, #228
+ 363              	.LCFI12:
+ 364              		.cfi_def_cfa_offset 240
+ 142:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 365              		.loc 1 142 0
+ 366 0004 2422     		movs	r2, #36
+ 367 0006 0021     		movs	r1, #0
+ 368 0008 28A8     		add	r0, sp, #160
+ 369 000a FFF7FEFF 		bl	memset
+ 370              	.LVL16:
+ 143:Src/main.c    ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+ 371              		.loc 1 143 0
+ 372 000e 0024     		movs	r4, #0
+ 373 0010 2294     		str	r4, [sp, #136]
+ 374 0012 2394     		str	r4, [sp, #140]
+ 375 0014 2494     		str	r4, [sp, #144]
+ 376 0016 2594     		str	r4, [sp, #148]
+ 377 0018 2694     		str	r4, [sp, #152]
+ 144:Src/main.c    **** 
+ 378              		.loc 1 144 0
+ 379 001a 8822     		movs	r2, #136
+ 380 001c 2146     		mov	r1, r4
+ 381 001e 6846     		mov	r0, sp
+ 382 0020 FFF7FEFF 		bl	memset
+ 383              	.LVL17:
+ 148:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 384              		.loc 1 148 0
+ 385 0024 0225     		movs	r5, #2
+ 386 0026 2795     		str	r5, [sp, #156]
+ 149:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 387              		.loc 1 149 0
+ 388 0028 4FF48073 		mov	r3, #256
+ 389 002c 2A93     		str	r3, [sp, #168]
+ 150:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 390              		.loc 1 150 0
+ 391 002e 1023     		movs	r3, #16
+ 392 0030 2B93     		str	r3, [sp, #172]
+ 151:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+ 393              		.loc 1 151 0
+ 394 0032 3195     		str	r5, [sp, #196]
+ 152:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 1;
+ 395              		.loc 1 152 0
+ 396 0034 3295     		str	r5, [sp, #200]
+ 153:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 10;
+ 397              		.loc 1 153 0
+ 398 0036 0123     		movs	r3, #1
+ 399 0038 3393     		str	r3, [sp, #204]
+ 154:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
+ 400              		.loc 1 154 0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 13
+
+
+ 401 003a 0A23     		movs	r3, #10
+ 402 003c 3493     		str	r3, [sp, #208]
+ 155:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+ 403              		.loc 1 155 0
+ 404 003e 0723     		movs	r3, #7
+ 405 0040 3593     		str	r3, [sp, #212]
+ 156:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+ 406              		.loc 1 156 0
+ 407 0042 3695     		str	r5, [sp, #216]
+ 157:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 408              		.loc 1 157 0
+ 409 0044 3795     		str	r5, [sp, #220]
+ 158:Src/main.c    ****   {
+ 410              		.loc 1 158 0
+ 411 0046 27A8     		add	r0, sp, #156
+ 412 0048 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 413              	.LVL18:
+ 164:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 414              		.loc 1 164 0
+ 415 004c 0F23     		movs	r3, #15
+ 416 004e 2293     		str	r3, [sp, #136]
+ 166:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 417              		.loc 1 166 0
+ 418 0050 0323     		movs	r3, #3
+ 419 0052 2393     		str	r3, [sp, #140]
+ 167:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 420              		.loc 1 167 0
+ 421 0054 2494     		str	r4, [sp, #144]
+ 168:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 422              		.loc 1 168 0
+ 423 0056 2594     		str	r4, [sp, #148]
+ 169:Src/main.c    **** 
+ 424              		.loc 1 169 0
+ 425 0058 2694     		str	r4, [sp, #152]
+ 171:Src/main.c    ****   {
+ 426              		.loc 1 171 0
+ 427 005a 0421     		movs	r1, #4
+ 428 005c 22A8     		add	r0, sp, #136
+ 429 005e FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 430              	.LVL19:
+ 175:Src/main.c    ****   PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+ 431              		.loc 1 175 0
+ 432 0062 0095     		str	r5, [sp]
+ 176:Src/main.c    ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+ 433              		.loc 1 176 0
+ 434 0064 0F94     		str	r4, [sp, #60]
+ 177:Src/main.c    ****   {
+ 435              		.loc 1 177 0
+ 436 0066 6846     		mov	r0, sp
+ 437 0068 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 438              	.LVL20:
+ 183:Src/main.c    ****   {
+ 439              		.loc 1 183 0
+ 440 006c 4FF40070 		mov	r0, #512
+ 441 0070 FFF7FEFF 		bl	HAL_PWREx_ControlVoltageScaling
+ 442              	.LVL21:
+ 187:Src/main.c    **** 
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 14
+
+
+ 443              		.loc 1 187 0
+ 444 0074 39B0     		add	sp, sp, #228
+ 445              	.LCFI13:
+ 446              		.cfi_def_cfa_offset 12
+ 447              		@ sp needed
+ 448 0076 30BD     		pop	{r4, r5, pc}
+ 449              		.cfi_endproc
+ 450              	.LFE134:
+ 452              		.section	.text.main,"ax",%progbits
+ 453              		.align	1
+ 454              		.global	main
+ 455              		.syntax unified
+ 456              		.thumb
+ 457              		.thumb_func
+ 458              		.fpu fpv4-sp-d16
+ 460              	main:
+ 461              	.LFB130:
+  53:Src/main.c    ****   HAL_Init();
+ 462              		.loc 1 53 0
+ 463              		.cfi_startproc
+ 464              		@ args = 0, pretend = 0, frame = 0
+ 465              		@ frame_needed = 0, uses_anonymous_args = 0
+ 466 0000 08B5     		push	{r3, lr}
+ 467              	.LCFI14:
+ 468              		.cfi_def_cfa_offset 8
+ 469              		.cfi_offset 3, -8
+ 470              		.cfi_offset 14, -4
+  54:Src/main.c    ****   SystemClock_Config();
+ 471              		.loc 1 54 0
+ 472 0002 FFF7FEFF 		bl	HAL_Init
+ 473              	.LVL22:
+  55:Src/main.c    ****   MX_GPIO_Init();
+ 474              		.loc 1 55 0
+ 475 0006 FFF7FEFF 		bl	SystemClock_Config
+ 476              	.LVL23:
+  56:Src/main.c    ****   MX_USART2_UART_Init();
+ 477              		.loc 1 56 0
+ 478 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 479              	.LVL24:
+  57:Src/main.c    **** 
+ 480              		.loc 1 57 0
+ 481 000e FFF7FEFF 		bl	MX_USART2_UART_Init
+ 482              	.LVL25:
+  59:Src/main.c    **** 
+ 483              		.loc 1 59 0
+ 484 0012 0022     		movs	r2, #0
+ 485 0014 0121     		movs	r1, #1
+ 486 0016 0748     		ldr	r0, .L27
+ 487 0018 FFF7FEFF 		bl	InitMetaDataManager
+ 488              	.LVL26:
+  77:Src/main.c    **** 
+ 489              		.loc 1 77 0
+ 490 001c FFF7FEFF 		bl	EraseMetaDataManager
+ 491              	.LVL27:
+  79:Src/main.c    **** }
+ 492              		.loc 1 79 0
+ 493 0020 4FF47A73 		mov	r3, #1000
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 15
+
+
+ 494 0024 1622     		movs	r2, #22
+ 495 0026 0449     		ldr	r1, .L27+4
+ 496 0028 0448     		ldr	r0, .L27+8
+ 497 002a FFF7FEFF 		bl	HAL_UART_Transmit
+ 498              	.LVL28:
+  80:Src/main.c    **** 
+ 499              		.loc 1 80 0
+ 500 002e 0020     		movs	r0, #0
+ 501 0030 08BD     		pop	{r3, pc}
+ 502              	.L28:
+ 503 0032 00BF     		.align	2
+ 504              	.L27:
+ 505 0034 00000000 		.word	.LANCHOR0
+ 506 0038 00000000 		.word	.LC0
+ 507 003c 00000000 		.word	huart2
+ 508              		.cfi_endproc
+ 509              	.LFE130:
+ 511              		.section	.text.Error_Handler,"ax",%progbits
+ 512              		.align	1
+ 513              		.global	Error_Handler
+ 514              		.syntax unified
+ 515              		.thumb
+ 516              		.thumb_func
+ 517              		.fpu fpv4-sp-d16
+ 519              	Error_Handler:
+ 520              	.LFB137:
+ 256:Src/main.c    **** 
+ 257:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 258:Src/main.c    **** 
+ 259:Src/main.c    **** /* USER CODE END 4 */
+ 260:Src/main.c    **** 
+ 261:Src/main.c    **** /**
+ 262:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 263:Src/main.c    ****   * @retval None
+ 264:Src/main.c    ****   */
+ 265:Src/main.c    **** void Error_Handler(void)
+ 266:Src/main.c    **** {
+ 521              		.loc 1 266 0
+ 522              		.cfi_startproc
+ 523              		@ args = 0, pretend = 0, frame = 0
+ 524              		@ frame_needed = 0, uses_anonymous_args = 0
+ 525              		@ link register save eliminated.
+ 267:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 268:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ 269:Src/main.c    **** 
+ 270:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
+ 271:Src/main.c    **** }
+ 526              		.loc 1 271 0
+ 527 0000 7047     		bx	lr
+ 528              		.cfi_endproc
+ 529              	.LFE137:
+ 531              		.global	known_MetaData
+ 532              		.comm	ActiveApp,4,4
+ 533              		.comm	APIToken,32,4
+ 534              		.comm	NodeName,8,4
+ 535              		.comm	huart2,128,4
+ 536              		.section	.data.known_MetaData,"aw",%progbits
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 16
+
+
+ 537              		.align	2
+ 538              		.set	.LANCHOR0,. + 0
+ 541              	known_MetaData:
+ 542 0000 01       		.byte	1
+ 543 0001 000000   		.space	3
+ 544 0004 08000000 		.word	8
+ 545 0008 02       		.byte	2
+ 546 0009 000000   		.space	3
+ 547 000c 20000000 		.word	32
+ 548 0010 03       		.byte	3
+ 549 0011 000000   		.space	3
+ 550 0014 04000000 		.word	4
+ 551 0018 00       		.byte	0
+ 552 0019 000000   		.space	3
+ 553 001c 00000000 		.word	0
+ 554              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 555              		.align	2
+ 556              	.LC0:
+ 557 0000 50726F67 		.ascii	"Programme started...\015\012\000"
+ 557      72616D6D 
+ 557      65207374 
+ 557      61727465 
+ 557      642E2E2E 
+ 558              		.text
+ 559              	.Letext0:
+ 560              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
+ 561              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
+ 562              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 563              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 564              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 565              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 566              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h"
+ 567              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h"
+ 568              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h"
+ 569              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 570              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 571              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 572              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 573              		.file 15 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
+ 574              		.file 16 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
+ 575              		.file 17 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.
+ 576              		.file 18 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
+ 577              		.file 19 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
+ 578              		.file 20 "STM32_MetaDataManager/MetaDataManager.h"
+ 579              		.file 21 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h"
+ 580              		.file 22 "<built-in>"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:18     .text.MX_GPIO_Init:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:130    .text.MX_GPIO_Init:0000000000000094 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:137    .text.MX_USART2_UART_Init:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:143    .text.MX_USART2_UART_Init:0000000000000000 MX_USART2_UART_Init
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:187    .text.MX_USART2_UART_Init:0000000000000028 $d
+                            *COM*:0000000000000080 huart2
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:193    .text.ReCallActiveAppAddrFromMemory:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:200    .text.ReCallActiveAppAddrFromMemory:0000000000000000 ReCallActiveAppAddrFromMemory
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:223    .text.ReCallActiveAppAddrFromMemory:0000000000000010 $d
+                            *COM*:0000000000000004 ActiveApp
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:228    .text.SaveActiveApp:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:235    .text.SaveActiveApp:0000000000000000 SaveActiveApp
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:272    .text.SaveActiveApp:0000000000000020 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:277    .text.SaveNodeName:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:284    .text.SaveNodeName:0000000000000000 SaveNodeName
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:338    .text.SaveNodeName:0000000000000030 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:343    .text.SystemClock_Config:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:350    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:453    .text.main:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:460    .text.main:0000000000000000 main
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:505    .text.main:0000000000000034 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:512    .text.Error_Handler:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:519    .text.Error_Handler:0000000000000000 Error_Handler
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:541    .data.known_MetaData:0000000000000000 known_MetaData
+                            *COM*:0000000000000020 APIToken
+                            *COM*:0000000000000008 NodeName
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:537    .data.known_MetaData:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccEW5YmF.s:555    .rodata.main.str1.4:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+HAL_UART_Init
+MDM_ReCallGMD
+MDM_SaveGMD
+NecessityToSaveMetaDataManager
+memset
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_RCCEx_PeriphCLKConfig
+HAL_PWREx_ControlVoltageScaling
+HAL_Init
+InitMetaDataManager
+EraseMetaDataManager
+HAL_UART_Transmit

@@ -1,0 +1,2704 @@
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"MetaDataManager.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.ReCallMetaDataManager,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv4-sp-d16
+  24              	ReCallMetaDataManager:
+  25              	.LFB134:
+  26              		.file 1 "STM32_MetaDataManager/MetaDataManager.c"
+   1:STM32_MetaDataManager/MetaDataManager.c **** /**
+   2:STM32_MetaDataManager/MetaDataManager.c ****   ******************************************************************************
+   3:STM32_MetaDataManager/MetaDataManager.c ****   * @file    MetaDataManager.c
+   4:STM32_MetaDataManager/MetaDataManager.c ****   * @author  Central LAB
+   5:STM32_MetaDataManager/MetaDataManager.c ****   * @version V0.11.0
+   6:STM32_MetaDataManager/MetaDataManager.c ****   * @date    8-February-2018
+   7:STM32_MetaDataManager/MetaDataManager.c ****   * @brief   Meta Data Manager APIs implementation
+   8:STM32_MetaDataManager/MetaDataManager.c ****   ******************************************************************************
+   9:STM32_MetaDataManager/MetaDataManager.c ****   * @attention
+  10:STM32_MetaDataManager/MetaDataManager.c ****   *
+  11:STM32_MetaDataManager/MetaDataManager.c ****   * <h2><center>&copy; COPYRIGHT(c) 2018 STMicroelectronics</center></h2>
+  12:STM32_MetaDataManager/MetaDataManager.c ****   *
+  13:STM32_MetaDataManager/MetaDataManager.c ****   * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+  14:STM32_MetaDataManager/MetaDataManager.c ****   * You may not use this file except in compliance with the License.
+  15:STM32_MetaDataManager/MetaDataManager.c ****   * You may obtain a copy of the License at:
+  16:STM32_MetaDataManager/MetaDataManager.c ****   *
+  17:STM32_MetaDataManager/MetaDataManager.c ****   *        http://www.st.com/software_license_agreement_liberty_v2
+  18:STM32_MetaDataManager/MetaDataManager.c ****   *
+  19:STM32_MetaDataManager/MetaDataManager.c ****   * Redistribution and use in source and binary forms, with or without modification,
+  20:STM32_MetaDataManager/MetaDataManager.c ****   * are permitted provided that the following conditions are met:
+  21:STM32_MetaDataManager/MetaDataManager.c ****   *   1. Redistributions of source code must retain the above copyright notice,
+  22:STM32_MetaDataManager/MetaDataManager.c ****   *      this list of conditions and the following disclaimer.
+  23:STM32_MetaDataManager/MetaDataManager.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  24:STM32_MetaDataManager/MetaDataManager.c ****   *      this list of conditions and the following disclaimer in the documentation
+  25:STM32_MetaDataManager/MetaDataManager.c ****   *      and/or other materials provided with the distribution.
+  26:STM32_MetaDataManager/MetaDataManager.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  27:STM32_MetaDataManager/MetaDataManager.c ****   *      may be used to endorse or promote products derived from this software
+  28:STM32_MetaDataManager/MetaDataManager.c ****   *      without specific prior written permission.
+  29:STM32_MetaDataManager/MetaDataManager.c ****   *
+  30:STM32_MetaDataManager/MetaDataManager.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  31:STM32_MetaDataManager/MetaDataManager.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  32:STM32_MetaDataManager/MetaDataManager.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 2
+
+
+  33:STM32_MetaDataManager/MetaDataManager.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  34:STM32_MetaDataManager/MetaDataManager.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  35:STM32_MetaDataManager/MetaDataManager.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  36:STM32_MetaDataManager/MetaDataManager.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  37:STM32_MetaDataManager/MetaDataManager.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  38:STM32_MetaDataManager/MetaDataManager.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  39:STM32_MetaDataManager/MetaDataManager.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  40:STM32_MetaDataManager/MetaDataManager.c ****   *
+  41:STM32_MetaDataManager/MetaDataManager.c ****   ******************************************************************************
+  42:STM32_MetaDataManager/MetaDataManager.c ****   */
+  43:STM32_MetaDataManager/MetaDataManager.c **** #include <stdarg.h>
+  44:STM32_MetaDataManager/MetaDataManager.c **** #include <stdio.h>
+  45:STM32_MetaDataManager/MetaDataManager.c **** #include <string.h>
+  46:STM32_MetaDataManager/MetaDataManager.c **** #include "MetaDataManager.h"
+  47:STM32_MetaDataManager/MetaDataManager.c **** 
+  48:STM32_MetaDataManager/MetaDataManager.c **** /* Local variables --------------------------------------------------*/
+  49:STM32_MetaDataManager/MetaDataManager.c **** /* We move to the first MetaData position after the Meta Data Manager header */
+  50:STM32_MetaDataManager/MetaDataManager.c **** /* Vector of Meta Data Header + Meta Data.
+  51:STM32_MetaDataManager/MetaDataManager.c ****  * Static allocation for avoiding runtime problems */
+  52:STM32_MetaDataManager/MetaDataManager.c **** static uint64_t uint64_MetaDataVector[MDM_MAX_DATASIZE_64];
+  53:STM32_MetaDataManager/MetaDataManager.c **** 
+  54:STM32_MetaDataManager/MetaDataManager.c **** static uint8_t *puint8_RW_MetaData = ((uint8_t *) uint64_MetaDataVector)+8;
+  55:STM32_MetaDataManager/MetaDataManager.c **** 
+  56:STM32_MetaDataManager/MetaDataManager.c **** static MDM_MetaDataManagerHeader_t *pMetaDataManagerHeader = (MDM_MetaDataManagerHeader_t *) uint64
+  57:STM32_MetaDataManager/MetaDataManager.c **** 
+  58:STM32_MetaDataManager/MetaDataManager.c **** static uint32_t NumberOfKnownLic=0;
+  59:STM32_MetaDataManager/MetaDataManager.c **** static uint32_t NumberOfKnownGMD=0;
+  60:STM32_MetaDataManager/MetaDataManager.c **** 
+  61:STM32_MetaDataManager/MetaDataManager.c **** MDM_knownOsxLicense_t known_OsxLic[]={
+  62:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_END,"LAST",""}/* THIS MUST BE THE LAST ONE */
+  63:STM32_MetaDataManager/MetaDataManager.c **** };
+  64:STM32_MetaDataManager/MetaDataManager.c **** 
+  65:STM32_MetaDataManager/MetaDataManager.c **** /* Exported Variables ------------------------------------------ */
+  66:STM32_MetaDataManager/MetaDataManager.c **** 
+  67:STM32_MetaDataManager/MetaDataManager.c **** uint32_t NecessityToSaveMetaDataManager=0;
+  68:STM32_MetaDataManager/MetaDataManager.c **** 
+  69:STM32_MetaDataManager/MetaDataManager.c **** /* Table used for osxLicense Mapping */
+  70:STM32_MetaDataManager/MetaDataManager.c **** MDM_TableLicElement_t MDM_LicTable[OSX_LICENSE_NUM] = {
+  71:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_END        ,"00","NULL"    ,0},
+  72:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_MOTION_FX  ,"FX","Motion"  ,0},
+  73:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_MOTION_AR  ,"AR","Motion"  ,0},
+  74:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_MOTION_CP  ,"CP","Motion"  ,0},
+  75:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_MOTION_GR  ,"GR","Motion"  ,0},
+  76:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_MOTION_PM  ,"PM","Motion"  ,0},
+  77:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_ACOUSTIC_SL,"SL","Acoustic",0},
+  78:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_ACOUSTIC_BF,"BF","Acoustic",0},
+  79:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_AUDIO_BV   ,"BV","Audio"   ,0},
+  80:STM32_MetaDataManager/MetaDataManager.c ****   {OSX_MOTION_ID  ,"ID","Motion"  ,0},
+  81:STM32_MetaDataManager/MetaDataManager.c **** };
+  82:STM32_MetaDataManager/MetaDataManager.c **** 
+  83:STM32_MetaDataManager/MetaDataManager.c **** /* Table used for Generic Meta Data Mapping */
+  84:STM32_MetaDataManager/MetaDataManager.c **** MDM_TableGMDElement_t MDM_GMDTable[GMD_NUM] = {
+  85:STM32_MetaDataManager/MetaDataManager.c ****   {GMD_END               ,"NULL"           ,0,0},
+  86:STM32_MetaDataManager/MetaDataManager.c ****   {GMD_NODE_NAME         ,"NODE_NAME"      ,0,0},
+  87:STM32_MetaDataManager/MetaDataManager.c ****   {GMD_API_TOKEN         ,"API_TOKEN"      ,0,0},
+  88:STM32_MetaDataManager/MetaDataManager.c ****   {GMD_ACTIVE_APP        ,"ACTIVE_APP"     ,0,0}
+  89:STM32_MetaDataManager/MetaDataManager.c **** };
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 3
+
+
+  90:STM32_MetaDataManager/MetaDataManager.c **** 
+  91:STM32_MetaDataManager/MetaDataManager.c **** 
+  92:STM32_MetaDataManager/MetaDataManager.c **** 
+  93:STM32_MetaDataManager/MetaDataManager.c **** /* Imported Functions -----------------------------------------------*/
+  94:STM32_MetaDataManager/MetaDataManager.c **** 
+  95:STM32_MetaDataManager/MetaDataManager.c **** /* Local prototypes -------------------------------------------------*/
+  96:STM32_MetaDataManager/MetaDataManager.c **** static uint32_t ReCallMetaDataManager(void);
+  97:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_ENABLE_PRINTF
+  98:STM32_MetaDataManager/MetaDataManager.c **** static void PrintOut_MDM_LicenseStatus(void);
+  99:STM32_MetaDataManager/MetaDataManager.c **** static void PrintOut_MDM_GMDStatus(void);
+ 100:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_ENABLE_PRINTF */
+ 101:STM32_MetaDataManager/MetaDataManager.c **** 
+ 102:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 103:STM32_MetaDataManager/MetaDataManager.c ****   * @brief  Initialize the MetaData manager
+ 104:STM32_MetaDataManager/MetaDataManager.c ****   * @param  void *Ptr list to the couple of MetaData&MetaDataType
+ 105:STM32_MetaDataManager/MetaDataManager.c ****   * @retval None
+ 106:STM32_MetaDataManager/MetaDataManager.c ****   */
+ 107:STM32_MetaDataManager/MetaDataManager.c **** void InitMetaDataManager(void *Ptr,...) {
+ 108:STM32_MetaDataManager/MetaDataManager.c ****   MDM_MetaDataHeader_t *pMetaDataHeader;
+ 109:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t NumberofFoundedLic=0;
+ 110:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t NumberofFoundedGMD=0;
+ 111:STM32_MetaDataManager/MetaDataManager.c ****   void *KnownMetaDataTable;
+ 112:STM32_MetaDataManager/MetaDataManager.c ****   va_list ap;
+ 113:STM32_MetaDataManager/MetaDataManager.c **** 
+ 114:STM32_MetaDataManager/MetaDataManager.c ****   /* At the Init we start always from the beginning */
+ 115:STM32_MetaDataManager/MetaDataManager.c ****   puint8_RW_MetaData = ((uint8_t *) uint64_MetaDataVector)+8;
+ 116:STM32_MetaDataManager/MetaDataManager.c **** 
+ 117:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 118:STM32_MetaDataManager/MetaDataManager.c ****   MDM_PRINTF("Initial Value puint8_RW_MetaData=%x\r\n",puint8_RW_MetaData);
+ 119:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 120:STM32_MetaDataManager/MetaDataManager.c ****   
+ 121:STM32_MetaDataManager/MetaDataManager.c ****   /* Read the Meta Data Manager from FLASH */
+ 122:STM32_MetaDataManager/MetaDataManager.c ****   if(ReCallMetaDataManager()==0) {
+ 123:STM32_MetaDataManager/MetaDataManager.c ****     /* Meta Data Manager not present or not Compatible */
+ 124:STM32_MetaDataManager/MetaDataManager.c ****     ReseMetaDataManager();
+ 125:STM32_MetaDataManager/MetaDataManager.c ****     NumberofFoundedLic=0;
+ 126:STM32_MetaDataManager/MetaDataManager.c ****     NumberofFoundedGMD=0;
+ 127:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 128:STM32_MetaDataManager/MetaDataManager.c **** 
+ 129:STM32_MetaDataManager/MetaDataManager.c ****   /* Initialize the argument list. */
+ 130:STM32_MetaDataManager/MetaDataManager.c ****   va_start (ap, Ptr);
+ 131:STM32_MetaDataManager/MetaDataManager.c **** 
+ 132:STM32_MetaDataManager/MetaDataManager.c ****   KnownMetaDataTable= Ptr;
+ 133:STM32_MetaDataManager/MetaDataManager.c ****   while(KnownMetaDataTable!=NULL) {
+ 134:STM32_MetaDataManager/MetaDataManager.c ****     uint32_t Index;
+ 135:STM32_MetaDataManager/MetaDataManager.c ****     MDM_knownOsxLicense_t *known_OsxLic=NULL;
+ 136:STM32_MetaDataManager/MetaDataManager.c ****     MDM_knownGMD_t *known_GMD=NULL;
+ 137:STM32_MetaDataManager/MetaDataManager.c **** 
+ 138:STM32_MetaDataManager/MetaDataManager.c ****     MDM_MetaDataType_t  MetaDataType = (MDM_MetaDataType_t) va_arg(ap,int);
+ 139:STM32_MetaDataManager/MetaDataManager.c **** 
+ 140:STM32_MetaDataManager/MetaDataManager.c ****     switch(MetaDataType) {
+ 141:STM32_MetaDataManager/MetaDataManager.c ****       case MDM_DATA_TYPE_LIC:
+ 142:STM32_MetaDataManager/MetaDataManager.c ****         known_OsxLic = (MDM_knownOsxLicense_t *) KnownMetaDataTable;
+ 143:STM32_MetaDataManager/MetaDataManager.c ****         /* Compute the Number of known Licenses */
+ 144:STM32_MetaDataManager/MetaDataManager.c ****         for(Index =0; known_OsxLic[Index].LicEnum!=OSX_END ;Index++) {
+ 145:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownLic++;
+ 146:STM32_MetaDataManager/MetaDataManager.c ****         }
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 4
+
+
+ 147:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 148:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PRINTF("Init MDM with %d osxLicenses\r\n",NumberOfKnownLic);
+ 149:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 150:STM32_MetaDataManager/MetaDataManager.c ****       break;
+ 151:STM32_MetaDataManager/MetaDataManager.c ****      case MDM_DATA_TYPE_GMD:
+ 152:STM32_MetaDataManager/MetaDataManager.c ****         known_GMD = (MDM_knownGMD_t *) KnownMetaDataTable;
+ 153:STM32_MetaDataManager/MetaDataManager.c ****         /* Compute the Number of known Generic Meta Data Types */
+ 154:STM32_MetaDataManager/MetaDataManager.c ****         for(Index =0; known_GMD[Index].GMDType!=GMD_END ;Index++) {
+ 155:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownGMD++;
+ 156:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 157:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 158:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PRINTF("Init MDM with %d Generic Meta Data\r\n",NumberOfKnownGMD);
+ 159:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 160:STM32_MetaDataManager/MetaDataManager.c ****       break;
+ 161:STM32_MetaDataManager/MetaDataManager.c ****       default:
+ 162:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PRINTF("Error Unknow Meta Data Type\r\n");
+ 163:STM32_MetaDataManager/MetaDataManager.c ****         return;
+ 164:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 165:STM32_MetaDataManager/MetaDataManager.c **** 
+ 166:STM32_MetaDataManager/MetaDataManager.c ****     /* Parse the Actual Content of MetaData Vector starting from beginning */
+ 167:STM32_MetaDataManager/MetaDataManager.c ****     pMetaDataHeader = (MDM_MetaDataHeader_t *) pMetaDataManagerHeader->puint8_MetaData;
+ 168:STM32_MetaDataManager/MetaDataManager.c **** 
+ 169:STM32_MetaDataManager/MetaDataManager.c ****     while(pMetaDataHeader->Type!=MDM_DATA_TYPE_END) {
+ 170:STM32_MetaDataManager/MetaDataManager.c ****       /* Until we reach the end of the Meta Data Manager */
+ 171:STM32_MetaDataManager/MetaDataManager.c **** 
+ 172:STM32_MetaDataManager/MetaDataManager.c ****       if(pMetaDataHeader->Type == MDM_DATA_TYPE_LIC) {
+ 173:STM32_MetaDataManager/MetaDataManager.c ****         /* The Meta Data is one osx License...we need to understand if we know it */
+ 174:STM32_MetaDataManager/MetaDataManager.c ****         int32_t found=0;
+ 175:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PayLoadLic_t *PayLoad = (MDM_PayLoadLic_t *) pMetaDataHeader->puint8_PayLoad;
+ 176:STM32_MetaDataManager/MetaDataManager.c **** 
+ 177:STM32_MetaDataManager/MetaDataManager.c ****         /* Loop over all the known osx Licenses */
+ 178:STM32_MetaDataManager/MetaDataManager.c ****         for(Index =0; ((Index<NumberOfKnownLic) & (found==0));Index++) {
+ 179:STM32_MetaDataManager/MetaDataManager.c **** 
+ 180:STM32_MetaDataManager/MetaDataManager.c ****           /* Check If we know this License */
+ 181:STM32_MetaDataManager/MetaDataManager.c ****           if(known_OsxLic[Index].LicEnum==PayLoad->LicEnum) {
+ 182:STM32_MetaDataManager/MetaDataManager.c ****             found =1;
+ 183:STM32_MetaDataManager/MetaDataManager.c ****             MDM_LicTable[PayLoad->LicEnum].Address = (uint32_t)PayLoad;
+ 184:STM32_MetaDataManager/MetaDataManager.c ****             NumberofFoundedLic++;
+ 185:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 186:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 187:STM32_MetaDataManager/MetaDataManager.c ****       } else if(pMetaDataHeader->Type == MDM_DATA_TYPE_GMD) {
+ 188:STM32_MetaDataManager/MetaDataManager.c ****         /* The Meta Data is one Generic Meta Data type ...we need to understand if we know it */
+ 189:STM32_MetaDataManager/MetaDataManager.c ****         int32_t found=0;
+ 190:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PayLoadGMD_t *PayLoad = (MDM_PayLoadGMD_t *) pMetaDataHeader->puint8_PayLoad;
+ 191:STM32_MetaDataManager/MetaDataManager.c **** 
+ 192:STM32_MetaDataManager/MetaDataManager.c ****         /* Loop over all the known Generic Meta Data Types */
+ 193:STM32_MetaDataManager/MetaDataManager.c ****         for(Index =0; ((Index<NumberOfKnownGMD) & (found==0));Index++) {
+ 194:STM32_MetaDataManager/MetaDataManager.c ****           /* Check If we know this Generic Meta Data */
+ 195:STM32_MetaDataManager/MetaDataManager.c ****           if(known_GMD[Index].GMDType==PayLoad->GMDTypeEnum) {
+ 196:STM32_MetaDataManager/MetaDataManager.c ****             found =1;
+ 197:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[PayLoad->GMDTypeEnum].Address = (uint32_t)PayLoad;
+ 198:STM32_MetaDataManager/MetaDataManager.c ****             NumberofFoundedGMD++;
+ 199:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[PayLoad->GMDTypeEnum].GMDSize = PayLoad->GMDSize;
+ 200:STM32_MetaDataManager/MetaDataManager.c ****             if(known_GMD[Index].GMDSize!=PayLoad->GMDSize) {
+ 201:STM32_MetaDataManager/MetaDataManager.c ****               MDM_PRINTF("Warning: The Meta Data Manager Contains for %s Generic Meta Data a size=%
+ 202:STM32_MetaDataManager/MetaDataManager.c ****                          MDM_GMDTable[known_GMD[Index].GMDType].GMDName,
+ 203:STM32_MetaDataManager/MetaDataManager.c ****                          PayLoad->GMDSize,
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 5
+
+
+ 204:STM32_MetaDataManager/MetaDataManager.c ****                          known_GMD[Index].GMDSize);
+ 205:STM32_MetaDataManager/MetaDataManager.c ****               ReseMetaDataManager();
+ 206:STM32_MetaDataManager/MetaDataManager.c ****               NumberofFoundedLic=0;
+ 207:STM32_MetaDataManager/MetaDataManager.c ****               NumberofFoundedGMD=0;
+ 208:STM32_MetaDataManager/MetaDataManager.c ****               goto MDM_ADD_META_DATA;
+ 209:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 210:STM32_MetaDataManager/MetaDataManager.c ****             } else {
+ 211:STM32_MetaDataManager/MetaDataManager.c ****               MDM_PRINTF("The Meta Data Manager Contains already %s Generic Meta Data with size=%d\
+ 212:STM32_MetaDataManager/MetaDataManager.c ****                          MDM_GMDTable[known_GMD[Index].GMDType].GMDName,
+ 213:STM32_MetaDataManager/MetaDataManager.c ****                          PayLoad->GMDSize);
+ 214:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 215:STM32_MetaDataManager/MetaDataManager.c ****             }
+ 216:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 217:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 218:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 219:STM32_MetaDataManager/MetaDataManager.c ****       /* Move the next Meta Data Header */
+ 220:STM32_MetaDataManager/MetaDataManager.c ****       pMetaDataHeader = (MDM_MetaDataHeader_t *) (((uint32_t) pMetaDataHeader)+pMetaDataHeader->Len
+ 221:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 222:STM32_MetaDataManager/MetaDataManager.c **** 
+ 223:STM32_MetaDataManager/MetaDataManager.c **** MDM_ADD_META_DATA:
+ 224:STM32_MetaDataManager/MetaDataManager.c ****      /* Add all new Meta Data if it's necessary */
+ 225:STM32_MetaDataManager/MetaDataManager.c ****     if(MetaDataType==MDM_DATA_TYPE_LIC) {
+ 226:STM32_MetaDataManager/MetaDataManager.c ****       /* osx Licenses Section */
+ 227:STM32_MetaDataManager/MetaDataManager.c ****       if(NumberofFoundedLic<NumberOfKnownLic) {
+ 228:STM32_MetaDataManager/MetaDataManager.c ****         NecessityToSaveMetaDataManager = 1;
+ 229:STM32_MetaDataManager/MetaDataManager.c ****         /* Check if we have enough space... if not... reset everything */
+ 230:STM32_MetaDataManager/MetaDataManager.c ****         if(((((uint32_t) puint8_RW_MetaData)+8/* for the MDM_DATA_TYPE_END */) -
+ 231:STM32_MetaDataManager/MetaDataManager.c ****              ((uint32_t)uint64_MetaDataVector) +
+ 232:STM32_MetaDataManager/MetaDataManager.c ****              (NumberOfKnownLic-NumberofFoundedLic)*(sizeof(MDM_PayLoadLic_t) + 8 /* MetaDataHeader 
+ 233:STM32_MetaDataManager/MetaDataManager.c ****           /* We don't have enough spaces.... Reset everything */
+ 234:STM32_MetaDataManager/MetaDataManager.c ****           MDM_PRINTF("Meta Data Manager has not enough free space.. It will be reseted\r\n");
+ 235:STM32_MetaDataManager/MetaDataManager.c ****           puint8_RW_MetaData = ((uint8_t *) uint64_MetaDataVector)+8;
+ 236:STM32_MetaDataManager/MetaDataManager.c ****           for(Index=1;Index<OSX_LICENSE_NUM;Index++) {
+ 237:STM32_MetaDataManager/MetaDataManager.c ****             MDM_LicTable[Index].Address =0;
+ 238:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 239:STM32_MetaDataManager/MetaDataManager.c ****           NumberofFoundedLic = 0;
+ 240:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 241:STM32_MetaDataManager/MetaDataManager.c **** 
+ 242:STM32_MetaDataManager/MetaDataManager.c ****         /* Add all the known Licenses */
+ 243:STM32_MetaDataManager/MetaDataManager.c ****         for(Index=0;Index<NumberOfKnownLic; Index++) {
+ 244:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 245:STM32_MetaDataManager/MetaDataManager.c ****           MDM_PRINTF("Testing License=%d ->%s ",Index,MDM_LicTable[known_OsxLic[Index].LicEnum].Lic
+ 246:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 247:STM32_MetaDataManager/MetaDataManager.c ****           if(MDM_LicTable[known_OsxLic[Index].LicEnum].Address==0) {
+ 248:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PayLoadLic_t *PayLoad;
+ 249:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 250:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("License Not yet allocated\r\n");
+ 251:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 252:STM32_MetaDataManager/MetaDataManager.c ****             /* License Not Yet Allocated */
+ 253:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader = (MDM_MetaDataHeader_t *) (puint8_RW_MetaData);
+ 254:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 255:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("pMetaDataHeader=%x ",puint8_RW_MetaData);
+ 256:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 257:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader->Type = MDM_DATA_TYPE_LIC;
+ 258:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader->Lenght = sizeof(MDM_PayLoadLic_t) + 8 /* For Meta Data Header */;
+ 259:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad = (MDM_PayLoadLic_t *) pMetaDataHeader->puint8_PayLoad;
+ 260:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 6
+
+
+ 261:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("PayLoad=%x ",PayLoad);
+ 262:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 263:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad->LicEnum = known_OsxLic[Index].LicEnum;
+ 264:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad->osxLicenseInitialized = 0;
+ 265:STM32_MetaDataManager/MetaDataManager.c ****             sprintf((char *)PayLoad->osxLibVersion,known_OsxLic[Index].osxLibVersion);
+ 266:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("Adding=%s%s Version=%s\r\n",MDM_LicTable[known_OsxLic[Index].LicEnum].LicTy
+ 267:STM32_MetaDataManager/MetaDataManager.c ****             MDM_LicTable[PayLoad->LicEnum].Address = (uint32_t)PayLoad;
+ 268:STM32_MetaDataManager/MetaDataManager.c ****             /* Move the R/W pointer */
+ 269:STM32_MetaDataManager/MetaDataManager.c ****             puint8_RW_MetaData +=pMetaDataHeader->Lenght;
+ 270:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 271:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 272:STM32_MetaDataManager/MetaDataManager.c ****           else {
+ 273:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("License Already allocated\r\n");
+ 274:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 275:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 276:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 277:STM32_MetaDataManager/MetaDataManager.c ****         /* Write the Termination Meta Data */
+ 278:STM32_MetaDataManager/MetaDataManager.c ****         *((uint32_t *) puint8_RW_MetaData)     = MDM_DATA_TYPE_END;
+ 279:STM32_MetaDataManager/MetaDataManager.c ****         *((uint32_t *) (puint8_RW_MetaData+4)) = 0; /* No Payload */
+ 280:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 281:STM32_MetaDataManager/MetaDataManager.c ****     } else if(MetaDataType==MDM_DATA_TYPE_GMD){
+ 282:STM32_MetaDataManager/MetaDataManager.c ****       /* Generic Meta Data */
+ 283:STM32_MetaDataManager/MetaDataManager.c ****       if(NumberofFoundedGMD<NumberOfKnownGMD) {
+ 284:STM32_MetaDataManager/MetaDataManager.c ****         /* We need to Add some Generic Meta Data */
+ 285:STM32_MetaDataManager/MetaDataManager.c ****         uint32_t HowManyExtraSpaceINeed =0;
+ 286:STM32_MetaDataManager/MetaDataManager.c ****         int32_t Index;
+ 287:STM32_MetaDataManager/MetaDataManager.c ****         NecessityToSaveMetaDataManager = 1;
+ 288:STM32_MetaDataManager/MetaDataManager.c ****         /* Compute how many amount of Memory I need */
+ 289:STM32_MetaDataManager/MetaDataManager.c ****         for(Index =0; Index<NumberOfKnownGMD ;Index++) {
+ 290:STM32_MetaDataManager/MetaDataManager.c ****           if(MDM_GMDTable[known_GMD[Index].GMDType].Address==0) {
+ 291:STM32_MetaDataManager/MetaDataManager.c ****             HowManyExtraSpaceINeed += (((known_GMD[Index].GMDSize+7)>>3)<<3) /* Round to Multiple o
+ 292:STM32_MetaDataManager/MetaDataManager.c ****               8 + 8 /* For Meta Data Header */;
+ 293:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 294:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 295:STM32_MetaDataManager/MetaDataManager.c ****         /* Check if there is enough space */
+ 296:STM32_MetaDataManager/MetaDataManager.c ****         if(((((uint32_t) puint8_RW_MetaData)+8/* for the MDM_DATA_TYPE_END */) -
+ 297:STM32_MetaDataManager/MetaDataManager.c ****              ((uint32_t)uint64_MetaDataVector) +
+ 298:STM32_MetaDataManager/MetaDataManager.c ****              HowManyExtraSpaceINeed)>(MDM_MAX_DATASIZE_64<<3)) {
+ 299:STM32_MetaDataManager/MetaDataManager.c ****           /* We don't have enough spaces.... Reset everything */
+ 300:STM32_MetaDataManager/MetaDataManager.c ****           MDM_PRINTF("Meta Data Manager has not enough free space.. It will be reseted\r\n");
+ 301:STM32_MetaDataManager/MetaDataManager.c ****           puint8_RW_MetaData = ((uint8_t *) uint64_MetaDataVector)+8;
+ 302:STM32_MetaDataManager/MetaDataManager.c ****           for(Index=1;Index<GMD_NUM;Index++) {
+ 303:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[Index].Address =0;
+ 304:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 305:STM32_MetaDataManager/MetaDataManager.c ****           NumberofFoundedGMD = 0;
+ 306:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 307:STM32_MetaDataManager/MetaDataManager.c **** 
+ 308:STM32_MetaDataManager/MetaDataManager.c ****         /* Add all the known Generic Meta Data Types */
+ 309:STM32_MetaDataManager/MetaDataManager.c ****         for(Index=0;Index<NumberOfKnownGMD; Index++) {
+ 310:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 311:STM32_MetaDataManager/MetaDataManager.c ****           MDM_PRINTF("Testing Generic Meta Data=%d ->%s ",Index,MDM_GMDTable[known_GMD[Index].GMDTy
+ 312:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 313:STM32_MetaDataManager/MetaDataManager.c ****           if(MDM_GMDTable[known_GMD[Index].GMDType].Address==0) {
+ 314:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PayLoadGMD_t *PayLoad;
+ 315:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 316:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("Generic Meta Data Not yet allocated\r\n");
+ 317:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 7
+
+
+ 318:STM32_MetaDataManager/MetaDataManager.c ****             /* License Not Yet Allocated */
+ 319:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader = (MDM_MetaDataHeader_t *) (puint8_RW_MetaData);
+ 320:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 321:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("pMetaDataHeader=%x ",puint8_RW_MetaData);
+ 322:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 323:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader->Type = MDM_DATA_TYPE_GMD;
+ 324:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader->Lenght = (((known_GMD[Index].GMDSize+7)>>3)<<3) /* Round to Multiple o
+ 325:STM32_MetaDataManager/MetaDataManager.c ****               8 + 8 /* For Meta Data Header */;
+ 326:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad = (MDM_PayLoadGMD_t *) pMetaDataHeader->puint8_PayLoad;
+ 327:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 328:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("PayLoad=%x ",PayLoad);
+ 329:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 330:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad->GMDTypeEnum = known_GMD[Index].GMDType;
+ 331:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad->GMDSize     = known_GMD[Index].GMDSize;
+ 332:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[known_GMD[Index].GMDType].Address = (uint32_t)PayLoad;
+ 333:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[known_GMD[Index].GMDType].GMDSize = PayLoad->GMDSize;
+ 334:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("Adding=%s (Pos=%d) Size=%ld\r\n",MDM_GMDTable[known_GMD[Index].GMDType].GMD
+ 335:STM32_MetaDataManager/MetaDataManager.c ****                        known_GMD[Index].GMDType,
+ 336:STM32_MetaDataManager/MetaDataManager.c ****                        MDM_GMDTable[known_GMD[Index].GMDType].GMDSize);
+ 337:STM32_MetaDataManager/MetaDataManager.c ****             /* Move the R/W pointer */
+ 338:STM32_MetaDataManager/MetaDataManager.c ****             puint8_RW_MetaData +=pMetaDataHeader->Lenght;
+ 339:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 340:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 341:STM32_MetaDataManager/MetaDataManager.c ****           else {
+ 342:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("Generic Meta Data already allocated\r\n");
+ 343:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 344:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 345:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 346:STM32_MetaDataManager/MetaDataManager.c ****         /* Write the Termination Meta Data */
+ 347:STM32_MetaDataManager/MetaDataManager.c ****         *((uint32_t *) puint8_RW_MetaData)     = MDM_DATA_TYPE_END;
+ 348:STM32_MetaDataManager/MetaDataManager.c ****         *((uint32_t *) (puint8_RW_MetaData+4)) = 0; /* No Payload */
+ 349:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 350:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 351:STM32_MetaDataManager/MetaDataManager.c ****     KnownMetaDataTable= va_arg(ap,void *);
+ 352:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 353:STM32_MetaDataManager/MetaDataManager.c **** 
+ 354:STM32_MetaDataManager/MetaDataManager.c ****   /* Clean up. */
+ 355:STM32_MetaDataManager/MetaDataManager.c ****   va_end (ap);
+ 356:STM32_MetaDataManager/MetaDataManager.c **** 
+ 357:STM32_MetaDataManager/MetaDataManager.c ****   if(NecessityToSaveMetaDataManager) {
+ 358:STM32_MetaDataManager/MetaDataManager.c ****     uint32_t Success = EraseMetaDataManager();
+ 359:STM32_MetaDataManager/MetaDataManager.c ****     if(Success) {
+ 360:STM32_MetaDataManager/MetaDataManager.c ****       SaveMetaDataManager();
+ 361:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 362:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 363:STM32_MetaDataManager/MetaDataManager.c **** 
+ 364:STM32_MetaDataManager/MetaDataManager.c ****   /* Print Out the MDM status */
+ 365:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_ENABLE_PRINTF
+ 366:STM32_MetaDataManager/MetaDataManager.c ****   MDM_PRINTF("Meta Data Manager version=%ld.%ld.%ld\r\n",
+ 367:STM32_MetaDataManager/MetaDataManager.c ****                ((pMetaDataManagerHeader->Version)>>16),
+ 368:STM32_MetaDataManager/MetaDataManager.c ****                ((pMetaDataManagerHeader->Version)>> 8)&0xFF,
+ 369:STM32_MetaDataManager/MetaDataManager.c ****                ((pMetaDataManagerHeader->Version)    )&0xFF);
+ 370:STM32_MetaDataManager/MetaDataManager.c ****   if((NumberOfKnownLic!=0) | (NumberofFoundedLic!=0)) {
+ 371:STM32_MetaDataManager/MetaDataManager.c ****     PrintOut_MDM_LicenseStatus();
+ 372:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 373:STM32_MetaDataManager/MetaDataManager.c ****   if((NumberOfKnownGMD!=0) | (NumberofFoundedGMD!=0)) {
+ 374:STM32_MetaDataManager/MetaDataManager.c ****     PrintOut_MDM_GMDStatus();
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 8
+
+
+ 375:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 376:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_ENABLE_PRINTF */
+ 377:STM32_MetaDataManager/MetaDataManager.c **** }
+ 378:STM32_MetaDataManager/MetaDataManager.c **** 
+ 379:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 380:STM32_MetaDataManager/MetaDataManager.c ****  * @brief  Check if there is a valid Meta Data Manager in Flash and read it
+ 381:STM32_MetaDataManager/MetaDataManager.c ****  * @param None
+ 382:STM32_MetaDataManager/MetaDataManager.c ****  * @retval uint32_t Success/Not Success
+ 383:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 384:STM32_MetaDataManager/MetaDataManager.c **** static uint32_t ReCallMetaDataManager(void)
+ 385:STM32_MetaDataManager/MetaDataManager.c **** {
+  27              		.loc 1 385 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 30B4     		push	{r4, r5}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 5, -4
+  37 0002 82B0     		sub	sp, sp, #8
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 16
+  40              	.LVL0:
+ 386:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t Address = MDM_FLASH_ADD;
+ 387:STM32_MetaDataManager/MetaDataManager.c ****   __IO uint32_t data32 = *(__IO uint32_t*) Address;
+  41              		.loc 1 387 0
+  42 0004 244B     		ldr	r3, .L13
+  43 0006 1B68     		ldr	r3, [r3]
+  44 0008 0193     		str	r3, [sp, #4]
+  45              	.LVL1:
+ 388:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t RetValue=0;
+ 389:STM32_MetaDataManager/MetaDataManager.c **** 
+ 390:STM32_MetaDataManager/MetaDataManager.c ****   if(data32== MDM_VALID_META_DATA_MANAGER){
+  46              		.loc 1 390 0
+  47 000a 019A     		ldr	r2, [sp, #4]
+  48 000c 234B     		ldr	r3, .L13+4
+  49 000e 9A42     		cmp	r2, r3
+  50 0010 03D0     		beq	.L10
+ 388:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t RetValue=0;
+  51              		.loc 1 388 0
+  52 0012 0020     		movs	r0, #0
+  53              	.LVL2:
+  54              	.L1:
+ 391:STM32_MetaDataManager/MetaDataManager.c ****     /* Read the Meta Data Manager Header */
+ 392:STM32_MetaDataManager/MetaDataManager.c ****     pMetaDataManagerHeader->IsIntialized = data32;
+ 393:STM32_MetaDataManager/MetaDataManager.c ****     Address+=4;
+ 394:STM32_MetaDataManager/MetaDataManager.c **** 
+ 395:STM32_MetaDataManager/MetaDataManager.c ****     data32 = *(__IO uint32_t*) Address;
+ 396:STM32_MetaDataManager/MetaDataManager.c ****     pMetaDataManagerHeader->Version = data32;
+ 397:STM32_MetaDataManager/MetaDataManager.c ****     Address+=4;
+ 398:STM32_MetaDataManager/MetaDataManager.c ****     
+ 399:STM32_MetaDataManager/MetaDataManager.c ****     if(pMetaDataManagerHeader->Version !=  MDM_VERSION) {
+ 400:STM32_MetaDataManager/MetaDataManager.c ****       MDM_PRINTF("Warning: The Meta Data Manager in FLASH is not Compatible\r\n\tIt will be ERASED\
+ 401:STM32_MetaDataManager/MetaDataManager.c ****       return RetValue;
+ 402:STM32_MetaDataManager/MetaDataManager.c ****     }
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 9
+
+
+ 403:STM32_MetaDataManager/MetaDataManager.c **** 
+ 404:STM32_MetaDataManager/MetaDataManager.c ****     /* Read the all Meta Datas */
+ 405:STM32_MetaDataManager/MetaDataManager.c ****     data32 = *(__IO uint32_t*) Address;
+ 406:STM32_MetaDataManager/MetaDataManager.c **** 
+ 407:STM32_MetaDataManager/MetaDataManager.c ****     while(data32!=MDM_DATA_TYPE_END) {
+ 408:STM32_MetaDataManager/MetaDataManager.c ****       /* Next Meta Data is Valid */
+ 409:STM32_MetaDataManager/MetaDataManager.c ****       MDM_MetaDataHeader_t *pMetaDataHeader;
+ 410:STM32_MetaDataManager/MetaDataManager.c ****       MDM_MetaDataType_t Type;
+ 411:STM32_MetaDataManager/MetaDataManager.c ****       uint32_t Lenght;
+ 412:STM32_MetaDataManager/MetaDataManager.c ****       uint32_t Index;
+ 413:STM32_MetaDataManager/MetaDataManager.c ****       uint32_t *puint32_MetaData;
+ 414:STM32_MetaDataManager/MetaDataManager.c ****       RetValue =1;
+ 415:STM32_MetaDataManager/MetaDataManager.c **** 
+ 416:STM32_MetaDataManager/MetaDataManager.c ****       /* Meta Data Type */
+ 417:STM32_MetaDataManager/MetaDataManager.c ****       Type = (MDM_MetaDataType_t) data32;
+ 418:STM32_MetaDataManager/MetaDataManager.c ****       Address+=4;
+ 419:STM32_MetaDataManager/MetaDataManager.c ****       /* Read the Meta Data Lenght */
+ 420:STM32_MetaDataManager/MetaDataManager.c ****       data32 = *(__IO uint32_t*) Address;
+ 421:STM32_MetaDataManager/MetaDataManager.c ****       Lenght = data32;
+ 422:STM32_MetaDataManager/MetaDataManager.c ****       Address+=4;
+ 423:STM32_MetaDataManager/MetaDataManager.c **** 
+ 424:STM32_MetaDataManager/MetaDataManager.c ****       pMetaDataHeader = (MDM_MetaDataHeader_t *) puint8_RW_MetaData;
+ 425:STM32_MetaDataManager/MetaDataManager.c ****       pMetaDataHeader->Type = Type;
+ 426:STM32_MetaDataManager/MetaDataManager.c ****       pMetaDataHeader->Lenght =  Lenght;      
+ 427:STM32_MetaDataManager/MetaDataManager.c ****       puint32_MetaData = (uint32_t *) pMetaDataHeader->puint8_PayLoad;
+ 428:STM32_MetaDataManager/MetaDataManager.c ****       puint8_RW_MetaData +=8;
+ 429:STM32_MetaDataManager/MetaDataManager.c **** 
+ 430:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 431:STM32_MetaDataManager/MetaDataManager.c ****       MDM_PRINTF("Found one MetaData puint8_RW_MetaData=%x Type=%d Lenght=%d\r\n",puint8_RW_MetaDat
+ 432:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_DEBUG_PARSING */
+ 433:STM32_MetaDataManager/MetaDataManager.c **** 
+ 434:STM32_MetaDataManager/MetaDataManager.c ****       /* Fill the Meta Data Payload (Word read) */
+ 435:STM32_MetaDataManager/MetaDataManager.c ****       for(Index=0;Index<(Lenght-8);Index+=4) {
+ 436:STM32_MetaDataManager/MetaDataManager.c ****         data32 = *(__IO uint32_t*) (Address+Index);
+ 437:STM32_MetaDataManager/MetaDataManager.c ****         puint32_MetaData[Index>>2] = data32;
+ 438:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 439:STM32_MetaDataManager/MetaDataManager.c ****       /* Move to next Meta Data Type */
+ 440:STM32_MetaDataManager/MetaDataManager.c ****       Address +=Lenght-8;
+ 441:STM32_MetaDataManager/MetaDataManager.c ****       puint8_RW_MetaData +=Lenght-8;
+ 442:STM32_MetaDataManager/MetaDataManager.c ****       data32 = *(__IO uint32_t*) Address;
+ 443:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 444:STM32_MetaDataManager/MetaDataManager.c **** 
+ 445:STM32_MetaDataManager/MetaDataManager.c ****     /* We are reached the Meta Data that Close the Values */
+ 446:STM32_MetaDataManager/MetaDataManager.c ****     *((uint32_t *) puint8_RW_MetaData)     = MDM_DATA_TYPE_END;
+ 447:STM32_MetaDataManager/MetaDataManager.c ****     *(((uint32_t *) puint8_RW_MetaData)+4) = 0; /* No Payload */
+ 448:STM32_MetaDataManager/MetaDataManager.c **** 
+ 449:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("Meta Data Manager read from Flash\r\n");
+ 450:STM32_MetaDataManager/MetaDataManager.c ****   } else {
+ 451:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("Meta Data Manager not present in FLASH\r\n");
+ 452:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 453:STM32_MetaDataManager/MetaDataManager.c ****   return RetValue;
+ 454:STM32_MetaDataManager/MetaDataManager.c **** }
+  55              		.loc 1 454 0
+  56 0014 02B0     		add	sp, sp, #8
+  57              	.LCFI2:
+  58              		.cfi_remember_state
+  59              		.cfi_def_cfa_offset 8
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 10
+
+
+  60              		@ sp needed
+  61 0016 30BC     		pop	{r4, r5}
+  62              	.LCFI3:
+  63              		.cfi_restore 5
+  64              		.cfi_restore 4
+  65              		.cfi_def_cfa_offset 0
+  66 0018 7047     		bx	lr
+  67              	.LVL3:
+  68              	.L10:
+  69              	.LCFI4:
+  70              		.cfi_restore_state
+ 392:STM32_MetaDataManager/MetaDataManager.c ****     Address+=4;
+  71              		.loc 1 392 0
+  72 001a 019B     		ldr	r3, [sp, #4]
+  73 001c 204A     		ldr	r2, .L13+8
+  74 001e 1360     		str	r3, [r2]
+  75              	.LVL4:
+ 395:STM32_MetaDataManager/MetaDataManager.c ****     pMetaDataManagerHeader->Version = data32;
+  76              		.loc 1 395 0
+  77 0020 204B     		ldr	r3, .L13+12
+  78 0022 1B68     		ldr	r3, [r3]
+  79 0024 0193     		str	r3, [sp, #4]
+ 396:STM32_MetaDataManager/MetaDataManager.c ****     Address+=4;
+  80              		.loc 1 396 0
+  81 0026 019B     		ldr	r3, [sp, #4]
+  82 0028 5360     		str	r3, [r2, #4]
+  83              	.LVL5:
+ 399:STM32_MetaDataManager/MetaDataManager.c ****       MDM_PRINTF("Warning: The Meta Data Manager in FLASH is not Compatible\r\n\tIt will be ERASED\
+  84              		.loc 1 399 0
+  85 002a B3F5406F 		cmp	r3, #3072
+  86 002e 01D0     		beq	.L11
+ 401:STM32_MetaDataManager/MetaDataManager.c ****     }
+  87              		.loc 1 401 0
+  88 0030 0020     		movs	r0, #0
+  89 0032 EFE7     		b	.L1
+  90              	.L11:
+ 405:STM32_MetaDataManager/MetaDataManager.c **** 
+  91              		.loc 1 405 0
+  92 0034 1C4C     		ldr	r4, .L13+16
+  93 0036 2368     		ldr	r3, [r4]
+  94 0038 0193     		str	r3, [sp, #4]
+ 388:STM32_MetaDataManager/MetaDataManager.c **** 
+  95              		.loc 1 388 0
+  96 003a 0020     		movs	r0, #0
+ 407:STM32_MetaDataManager/MetaDataManager.c ****       /* Next Meta Data is Valid */
+  97              		.loc 1 407 0
+  98 003c 14E0     		b	.L3
+  99              	.LVL6:
+ 100              	.L5:
+ 101              	.LBB2:
+ 436:STM32_MetaDataManager/MetaDataManager.c ****         puint32_MetaData[Index>>2] = data32;
+ 102              		.loc 1 436 0 discriminator 3
+ 103 003e 1959     		ldr	r1, [r3, r4]
+ 104 0040 0191     		str	r1, [sp, #4]
+ 437:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 105              		.loc 1 437 0 discriminator 3
+ 106 0042 9908     		lsrs	r1, r3, #2
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 11
+
+
+ 107 0044 019D     		ldr	r5, [sp, #4]
+ 108 0046 42F82150 		str	r5, [r2, r1, lsl #2]
+ 435:STM32_MetaDataManager/MetaDataManager.c ****         data32 = *(__IO uint32_t*) (Address+Index);
+ 109              		.loc 1 435 0 discriminator 3
+ 110 004a 0433     		adds	r3, r3, #4
+ 111              	.LVL7:
+ 112              	.L4:
+ 435:STM32_MetaDataManager/MetaDataManager.c ****         data32 = *(__IO uint32_t*) (Address+Index);
+ 113              		.loc 1 435 0 is_stmt 0 discriminator 1
+ 114 004c A0F10801 		sub	r1, r0, #8
+ 115 0050 9942     		cmp	r1, r3
+ 116 0052 F4D8     		bhi	.L5
+ 440:STM32_MetaDataManager/MetaDataManager.c ****       puint8_RW_MetaData +=Lenght-8;
+ 117              		.loc 1 440 0 is_stmt 1
+ 118 0054 2044     		add	r0, r0, r4
+ 119              	.LVL8:
+ 120 0056 A0F10804 		sub	r4, r0, #8
+ 121              	.LVL9:
+ 441:STM32_MetaDataManager/MetaDataManager.c ****       data32 = *(__IO uint32_t*) Address;
+ 122              		.loc 1 441 0
+ 123 005a 0A44     		add	r2, r2, r1
+ 124              	.LVL10:
+ 125 005c 134B     		ldr	r3, .L13+20
+ 126              	.LVL11:
+ 127 005e 1A60     		str	r2, [r3]
+ 128              	.LVL12:
+ 442:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 129              		.loc 1 442 0
+ 130 0060 50F8083C 		ldr	r3, [r0, #-8]
+ 131 0064 0193     		str	r3, [sp, #4]
+ 414:STM32_MetaDataManager/MetaDataManager.c **** 
+ 132              		.loc 1 414 0
+ 133 0066 0120     		movs	r0, #1
+ 134              	.LVL13:
+ 135              	.L3:
+ 136              	.LBE2:
+ 407:STM32_MetaDataManager/MetaDataManager.c ****       /* Next Meta Data is Valid */
+ 137              		.loc 1 407 0
+ 138 0068 019B     		ldr	r3, [sp, #4]
+ 139 006a FF2B     		cmp	r3, #255
+ 140 006c 0DD0     		beq	.L12
+ 141              	.LVL14:
+ 142              	.LBB3:
+ 417:STM32_MetaDataManager/MetaDataManager.c ****       Address+=4;
+ 143              		.loc 1 417 0
+ 144 006e 019B     		ldr	r3, [sp, #4]
+ 145              	.LVL15:
+ 420:STM32_MetaDataManager/MetaDataManager.c ****       Lenght = data32;
+ 146              		.loc 1 420 0
+ 147 0070 6268     		ldr	r2, [r4, #4]
+ 148 0072 0192     		str	r2, [sp, #4]
+ 421:STM32_MetaDataManager/MetaDataManager.c ****       Address+=4;
+ 149              		.loc 1 421 0
+ 150 0074 0198     		ldr	r0, [sp, #4]
+ 151              	.LVL16:
+ 422:STM32_MetaDataManager/MetaDataManager.c **** 
+ 152              		.loc 1 422 0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 12
+
+
+ 153 0076 0834     		adds	r4, r4, #8
+ 154              	.LVL17:
+ 424:STM32_MetaDataManager/MetaDataManager.c ****       pMetaDataHeader->Type = Type;
+ 155              		.loc 1 424 0
+ 156 0078 0C49     		ldr	r1, .L13+20
+ 157 007a 0A68     		ldr	r2, [r1]
+ 158              	.LVL18:
+ 425:STM32_MetaDataManager/MetaDataManager.c ****       pMetaDataHeader->Lenght =  Lenght;      
+ 159              		.loc 1 425 0
+ 160 007c DBB2     		uxtb	r3, r3
+ 161 007e 1360     		str	r3, [r2]
+ 426:STM32_MetaDataManager/MetaDataManager.c ****       puint32_MetaData = (uint32_t *) pMetaDataHeader->puint8_PayLoad;
+ 162              		.loc 1 426 0
+ 163 0080 5060     		str	r0, [r2, #4]
+ 427:STM32_MetaDataManager/MetaDataManager.c ****       puint8_RW_MetaData +=8;
+ 164              		.loc 1 427 0
+ 165 0082 0832     		adds	r2, r2, #8
+ 166              	.LVL19:
+ 428:STM32_MetaDataManager/MetaDataManager.c **** 
+ 167              		.loc 1 428 0
+ 168 0084 0A60     		str	r2, [r1]
+ 169              	.LVL20:
+ 435:STM32_MetaDataManager/MetaDataManager.c ****         data32 = *(__IO uint32_t*) (Address+Index);
+ 170              		.loc 1 435 0
+ 171 0086 0023     		movs	r3, #0
+ 172              	.LVL21:
+ 173 0088 E0E7     		b	.L4
+ 174              	.LVL22:
+ 175              	.L12:
+ 176              	.LBE3:
+ 446:STM32_MetaDataManager/MetaDataManager.c ****     *(((uint32_t *) puint8_RW_MetaData)+4) = 0; /* No Payload */
+ 177              		.loc 1 446 0
+ 178 008a 084B     		ldr	r3, .L13+20
+ 179 008c 1B68     		ldr	r3, [r3]
+ 180 008e FF22     		movs	r2, #255
+ 181 0090 1A60     		str	r2, [r3]
+ 447:STM32_MetaDataManager/MetaDataManager.c **** 
+ 182              		.loc 1 447 0
+ 183 0092 0022     		movs	r2, #0
+ 184 0094 1A61     		str	r2, [r3, #16]
+ 185 0096 BDE7     		b	.L1
+ 186              	.L14:
+ 187              		.align	2
+ 188              	.L13:
+ 189 0098 00F00F08 		.word	135262208
+ 190 009c 78563412 		.word	305419896
+ 191 00a0 00000000 		.word	uint64_MetaDataVector
+ 192 00a4 04F00F08 		.word	135262212
+ 193 00a8 08F00F08 		.word	135262216
+ 194 00ac 00000000 		.word	.LANCHOR0
+ 195              		.cfi_endproc
+ 196              	.LFE134:
+ 198              		.section	.text.PrintOut_MDM_LicenseStatus,"ax",%progbits
+ 199              		.align	1
+ 200              		.syntax unified
+ 201              		.thumb
+ 202              		.thumb_func
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 13
+
+
+ 203              		.fpu fpv4-sp-d16
+ 205              	PrintOut_MDM_LicenseStatus:
+ 206              	.LFB138:
+ 455:STM32_MetaDataManager/MetaDataManager.c **** 
+ 456:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 457:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Reset the Meta Data Manager in RAM
+ 458:STM32_MetaDataManager/MetaDataManager.c ****  * @param None
+ 459:STM32_MetaDataManager/MetaDataManager.c ****  * @retval None
+ 460:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 461:STM32_MetaDataManager/MetaDataManager.c **** void ReseMetaDataManager(void) {
+ 462:STM32_MetaDataManager/MetaDataManager.c ****   MDM_OsxLicenseType_t osxLic;
+ 463:STM32_MetaDataManager/MetaDataManager.c ****   MDM_GenericMetaDataType_t GMD;
+ 464:STM32_MetaDataManager/MetaDataManager.c **** 
+ 465:STM32_MetaDataManager/MetaDataManager.c ****   NecessityToSaveMetaDataManager=1;
+ 466:STM32_MetaDataManager/MetaDataManager.c ****   puint8_RW_MetaData = ((uint8_t *) uint64_MetaDataVector)+8;
+ 467:STM32_MetaDataManager/MetaDataManager.c ****   pMetaDataManagerHeader->IsIntialized = MDM_VALID_META_DATA_MANAGER;
+ 468:STM32_MetaDataManager/MetaDataManager.c ****   pMetaDataManagerHeader->Version = MDM_VERSION;
+ 469:STM32_MetaDataManager/MetaDataManager.c ****   /* add the MetaData Teminitation */
+ 470:STM32_MetaDataManager/MetaDataManager.c ****   *((uint32_t *) puint8_RW_MetaData)     = MDM_DATA_TYPE_END;
+ 471:STM32_MetaDataManager/MetaDataManager.c ****   *((uint32_t *) (puint8_RW_MetaData+4)) = 0; /* No Payload */
+ 472:STM32_MetaDataManager/MetaDataManager.c **** 
+ 473:STM32_MetaDataManager/MetaDataManager.c ****   /* Reset all the Payload pointers */
+ 474:STM32_MetaDataManager/MetaDataManager.c ****   for(osxLic=OSX_MOTION_FX;osxLic<OSX_LICENSE_NUM;osxLic++) {
+ 475:STM32_MetaDataManager/MetaDataManager.c ****     MDM_LicTable[osxLic].Address =0;
+ 476:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 477:STM32_MetaDataManager/MetaDataManager.c ****   // for(GMD=GMD_WIFI;GMD<GMD_NUM;GMD++){
+ 478:STM32_MetaDataManager/MetaDataManager.c ****   //   MDM_GMDTable[GMD].Address =0;
+ 479:STM32_MetaDataManager/MetaDataManager.c ****   // }
+ 480:STM32_MetaDataManager/MetaDataManager.c **** }
+ 481:STM32_MetaDataManager/MetaDataManager.c **** 
+ 482:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 483:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Erase the Meta Data Manager in FLASH
+ 484:STM32_MetaDataManager/MetaDataManager.c ****  * @param uint32_t Success/NotSuccess [1/0]
+ 485:STM32_MetaDataManager/MetaDataManager.c ****  * @retval None
+ 486:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 487:STM32_MetaDataManager/MetaDataManager.c **** uint32_t EraseMetaDataManager(void) {
+ 488:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t Success = UserFunctionForErasingFlash();
+ 489:STM32_MetaDataManager/MetaDataManager.c ****   if(Success) {
+ 490:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("Meta Data Manager erased in FLASH\r\n");
+ 491:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 492:STM32_MetaDataManager/MetaDataManager.c ****   return Success;
+ 493:STM32_MetaDataManager/MetaDataManager.c **** }
+ 494:STM32_MetaDataManager/MetaDataManager.c **** 
+ 495:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 496:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Save the Meta Data Manager in Flash
+ 497:STM32_MetaDataManager/MetaDataManager.c ****  * @param None
+ 498:STM32_MetaDataManager/MetaDataManager.c ****  * @retval None
+ 499:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 500:STM32_MetaDataManager/MetaDataManager.c **** void SaveMetaDataManager(void)
+ 501:STM32_MetaDataManager/MetaDataManager.c **** {
+ 502:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t Success = UserFunctionForSavingFlash((void *)uint64_MetaDataVector,(void *)(puint8_RW_Me
+ 503:STM32_MetaDataManager/MetaDataManager.c **** 
+ 504:STM32_MetaDataManager/MetaDataManager.c ****   if(Success) {
+ 505:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("Meta Data Manager Saved in FLASH\r\n");
+ 506:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 507:STM32_MetaDataManager/MetaDataManager.c ****   NecessityToSaveMetaDataManager=0;
+ 508:STM32_MetaDataManager/MetaDataManager.c **** }
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 14
+
+
+ 509:STM32_MetaDataManager/MetaDataManager.c **** 
+ 510:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_ENABLE_PRINTF
+ 511:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 512:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Prints out the Actual licenses content of Meta Data Manager
+ 513:STM32_MetaDataManager/MetaDataManager.c ****  * @param None
+ 514:STM32_MetaDataManager/MetaDataManager.c ****  * @retval None
+ 515:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 516:STM32_MetaDataManager/MetaDataManager.c **** static void PrintOut_MDM_LicenseStatus(void)
+ 517:STM32_MetaDataManager/MetaDataManager.c **** {
+ 207              		.loc 1 517 0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 0
+ 210              		@ frame_needed = 0, uses_anonymous_args = 0
+ 211              		@ link register save eliminated.
+ 212              	.LVL23:
+ 518:STM32_MetaDataManager/MetaDataManager.c ****   MDM_OsxLicenseType_t osxLic;
+ 519:STM32_MetaDataManager/MetaDataManager.c **** //  MDM_PRINTF("\tLicenses found:\r\n");
+ 520:STM32_MetaDataManager/MetaDataManager.c ****   for(osxLic=OSX_MOTION_FX;osxLic<OSX_LICENSE_NUM;osxLic++) {
+ 213              		.loc 1 520 0
+ 214 0000 0123     		movs	r3, #1
+ 215 0002 01E0     		b	.L16
+ 216              	.LVL24:
+ 217              	.L17:
+ 218 0004 0133     		adds	r3, r3, #1
+ 219              	.LVL25:
+ 220 0006 DBB2     		uxtb	r3, r3
+ 221              	.LVL26:
+ 222              	.L16:
+ 223              		.loc 1 520 0 is_stmt 0 discriminator 1
+ 224 0008 092B     		cmp	r3, #9
+ 225 000a FBD9     		bls	.L17
+ 521:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PayLoadLic_t *PayLoad = (MDM_PayLoadLic_t *) MDM_LicTable[osxLic].Address;
+ 522:STM32_MetaDataManager/MetaDataManager.c ****     if(PayLoad) {
+ 523:STM32_MetaDataManager/MetaDataManager.c **** //      MDM_PRINTF("\t\t %s%s %s (%s)\r\n",MDM_LicTable[PayLoad->LicEnum].LicType,MDM_LicTable[PayL
+ 524:STM32_MetaDataManager/MetaDataManager.c **** //                 PayLoad->osxLicenseInitialized ? "Init  " : "NoInit",
+ 525:STM32_MetaDataManager/MetaDataManager.c **** //                 PayLoad->osxLibVersion);
+ 526:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 527:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 528:STM32_MetaDataManager/MetaDataManager.c **** }
+ 226              		.loc 1 528 0 is_stmt 1
+ 227 000c 7047     		bx	lr
+ 228              		.cfi_endproc
+ 229              	.LFE138:
+ 231              		.section	.text.ReseMetaDataManager,"ax",%progbits
+ 232              		.align	1
+ 233              		.global	ReseMetaDataManager
+ 234              		.syntax unified
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.fpu fpv4-sp-d16
+ 239              	ReseMetaDataManager:
+ 240              	.LFB135:
+ 461:STM32_MetaDataManager/MetaDataManager.c ****   MDM_OsxLicenseType_t osxLic;
+ 241              		.loc 1 461 0
+ 242              		.cfi_startproc
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 15
+
+
+ 245              		@ link register save eliminated.
+ 465:STM32_MetaDataManager/MetaDataManager.c ****   puint8_RW_MetaData = ((uint8_t *) uint64_MetaDataVector)+8;
+ 246              		.loc 1 465 0
+ 247 0000 0123     		movs	r3, #1
+ 248 0002 0E4A     		ldr	r2, .L21
+ 249 0004 1360     		str	r3, [r2]
+ 466:STM32_MetaDataManager/MetaDataManager.c ****   pMetaDataManagerHeader->IsIntialized = MDM_VALID_META_DATA_MANAGER;
+ 250              		.loc 1 466 0
+ 251 0006 0E49     		ldr	r1, .L21+4
+ 252 0008 0E4A     		ldr	r2, .L21+8
+ 253 000a 1160     		str	r1, [r2]
+ 467:STM32_MetaDataManager/MetaDataManager.c ****   pMetaDataManagerHeader->Version = MDM_VERSION;
+ 254              		.loc 1 467 0
+ 255 000c A1F10802 		sub	r2, r1, #8
+ 256 0010 0D48     		ldr	r0, .L21+12
+ 257 0012 41F8080C 		str	r0, [r1, #-8]
+ 468:STM32_MetaDataManager/MetaDataManager.c ****   /* add the MetaData Teminitation */
+ 258              		.loc 1 468 0
+ 259 0016 4FF44061 		mov	r1, #3072
+ 260 001a 5160     		str	r1, [r2, #4]
+ 470:STM32_MetaDataManager/MetaDataManager.c ****   *((uint32_t *) (puint8_RW_MetaData+4)) = 0; /* No Payload */
+ 261              		.loc 1 470 0
+ 262 001c FF21     		movs	r1, #255
+ 263 001e 9160     		str	r1, [r2, #8]
+ 471:STM32_MetaDataManager/MetaDataManager.c **** 
+ 264              		.loc 1 471 0
+ 265 0020 0021     		movs	r1, #0
+ 266 0022 D160     		str	r1, [r2, #12]
+ 267              	.LVL27:
+ 474:STM32_MetaDataManager/MetaDataManager.c ****     MDM_LicTable[osxLic].Address =0;
+ 268              		.loc 1 474 0
+ 269 0024 06E0     		b	.L19
+ 270              	.LVL28:
+ 271              	.L20:
+ 475:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 272              		.loc 1 475 0 discriminator 3
+ 273 0026 094A     		ldr	r2, .L21+16
+ 274 0028 02EB4312 		add	r2, r2, r3, lsl #5
+ 275 002c 0021     		movs	r1, #0
+ 276 002e D161     		str	r1, [r2, #28]
+ 474:STM32_MetaDataManager/MetaDataManager.c ****     MDM_LicTable[osxLic].Address =0;
+ 277              		.loc 1 474 0 discriminator 3
+ 278 0030 0133     		adds	r3, r3, #1
+ 279              	.LVL29:
+ 280 0032 DBB2     		uxtb	r3, r3
+ 281              	.LVL30:
+ 282              	.L19:
+ 474:STM32_MetaDataManager/MetaDataManager.c ****     MDM_LicTable[osxLic].Address =0;
+ 283              		.loc 1 474 0 is_stmt 0 discriminator 1
+ 284 0034 092B     		cmp	r3, #9
+ 285 0036 F6D9     		bls	.L20
+ 480:STM32_MetaDataManager/MetaDataManager.c **** 
+ 286              		.loc 1 480 0 is_stmt 1
+ 287 0038 7047     		bx	lr
+ 288              	.L22:
+ 289 003a 00BF     		.align	2
+ 290              	.L21:
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 16
+
+
+ 291 003c 00000000 		.word	.LANCHOR1
+ 292 0040 08000000 		.word	uint64_MetaDataVector+8
+ 293 0044 00000000 		.word	.LANCHOR0
+ 294 0048 78563412 		.word	305419896
+ 295 004c 00000000 		.word	.LANCHOR2
+ 296              		.cfi_endproc
+ 297              	.LFE135:
+ 299              		.section	.text.EraseMetaDataManager,"ax",%progbits
+ 300              		.align	1
+ 301              		.global	EraseMetaDataManager
+ 302              		.syntax unified
+ 303              		.thumb
+ 304              		.thumb_func
+ 305              		.fpu fpv4-sp-d16
+ 307              	EraseMetaDataManager:
+ 308              	.LFB136:
+ 487:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t Success = UserFunctionForErasingFlash();
+ 309              		.loc 1 487 0
+ 310              		.cfi_startproc
+ 311              		@ args = 0, pretend = 0, frame = 0
+ 312              		@ frame_needed = 0, uses_anonymous_args = 0
+ 313 0000 08B5     		push	{r3, lr}
+ 314              	.LCFI5:
+ 315              		.cfi_def_cfa_offset 8
+ 316              		.cfi_offset 3, -8
+ 317              		.cfi_offset 14, -4
+ 488:STM32_MetaDataManager/MetaDataManager.c ****   if(Success) {
+ 318              		.loc 1 488 0
+ 319 0002 FFF7FEFF 		bl	UserFunctionForErasingFlash
+ 320              	.LVL31:
+ 493:STM32_MetaDataManager/MetaDataManager.c **** 
+ 321              		.loc 1 493 0
+ 322 0006 08BD     		pop	{r3, pc}
+ 323              		.cfi_endproc
+ 324              	.LFE136:
+ 326              		.section	.text.SaveMetaDataManager,"ax",%progbits
+ 327              		.align	1
+ 328              		.global	SaveMetaDataManager
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 332              		.fpu fpv4-sp-d16
+ 334              	SaveMetaDataManager:
+ 335              	.LFB137:
+ 501:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t Success = UserFunctionForSavingFlash((void *)uint64_MetaDataVector,(void *)(puint8_RW_Me
+ 336              		.loc 1 501 0
+ 337              		.cfi_startproc
+ 338              		@ args = 0, pretend = 0, frame = 0
+ 339              		@ frame_needed = 0, uses_anonymous_args = 0
+ 340 0000 08B5     		push	{r3, lr}
+ 341              	.LCFI6:
+ 342              		.cfi_def_cfa_offset 8
+ 343              		.cfi_offset 3, -8
+ 344              		.cfi_offset 14, -4
+ 502:STM32_MetaDataManager/MetaDataManager.c **** 
+ 345              		.loc 1 502 0
+ 346 0002 054B     		ldr	r3, .L27
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 17
+
+
+ 347 0004 1968     		ldr	r1, [r3]
+ 348 0006 0831     		adds	r1, r1, #8
+ 349 0008 0448     		ldr	r0, .L27+4
+ 350 000a FFF7FEFF 		bl	UserFunctionForSavingFlash
+ 351              	.LVL32:
+ 507:STM32_MetaDataManager/MetaDataManager.c **** }
+ 352              		.loc 1 507 0
+ 353 000e 044B     		ldr	r3, .L27+8
+ 354 0010 0022     		movs	r2, #0
+ 355 0012 1A60     		str	r2, [r3]
+ 508:STM32_MetaDataManager/MetaDataManager.c **** 
+ 356              		.loc 1 508 0
+ 357 0014 08BD     		pop	{r3, pc}
+ 358              	.L28:
+ 359 0016 00BF     		.align	2
+ 360              	.L27:
+ 361 0018 00000000 		.word	.LANCHOR0
+ 362 001c 00000000 		.word	uint64_MetaDataVector
+ 363 0020 00000000 		.word	.LANCHOR1
+ 364              		.cfi_endproc
+ 365              	.LFE137:
+ 367              		.section	.text.InitMetaDataManager,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	InitMetaDataManager
+ 370              		.syntax unified
+ 371              		.thumb
+ 372              		.thumb_func
+ 373              		.fpu fpv4-sp-d16
+ 375              	InitMetaDataManager:
+ 376              	.LFB133:
+ 107:STM32_MetaDataManager/MetaDataManager.c ****   MDM_MetaDataHeader_t *pMetaDataHeader;
+ 377              		.loc 1 107 0
+ 378              		.cfi_startproc
+ 379              		@ args = 4, pretend = 16, frame = 8
+ 380              		@ frame_needed = 0, uses_anonymous_args = 1
+ 381              	.LVL33:
+ 382 0000 0FB4     		push	{r0, r1, r2, r3}
+ 383              	.LCFI7:
+ 384              		.cfi_def_cfa_offset 16
+ 385              		.cfi_offset 0, -16
+ 386              		.cfi_offset 1, -12
+ 387              		.cfi_offset 2, -8
+ 388              		.cfi_offset 3, -4
+ 389 0002 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 390              	.LCFI8:
+ 391              		.cfi_def_cfa_offset 48
+ 392              		.cfi_offset 4, -48
+ 393              		.cfi_offset 5, -44
+ 394              		.cfi_offset 6, -40
+ 395              		.cfi_offset 7, -36
+ 396              		.cfi_offset 8, -32
+ 397              		.cfi_offset 9, -28
+ 398              		.cfi_offset 10, -24
+ 399              		.cfi_offset 14, -20
+ 400 0006 82B0     		sub	sp, sp, #8
+ 401              	.LCFI9:
+ 402              		.cfi_def_cfa_offset 56
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 18
+
+
+ 403 0008 0A9C     		ldr	r4, [sp, #40]
+ 404              	.LVL34:
+ 115:STM32_MetaDataManager/MetaDataManager.c **** 
+ 405              		.loc 1 115 0
+ 406 000a A74B     		ldr	r3, .L85
+ 407 000c A74A     		ldr	r2, .L85+4
+ 408 000e 1A60     		str	r2, [r3]
+ 122:STM32_MetaDataManager/MetaDataManager.c ****     /* Meta Data Manager not present or not Compatible */
+ 409              		.loc 1 122 0
+ 410 0010 FFF7FEFF 		bl	ReCallMetaDataManager
+ 411              	.LVL35:
+ 412 0014 20B1     		cbz	r0, .L74
+ 413              	.L30:
+ 130:STM32_MetaDataManager/MetaDataManager.c **** 
+ 414              		.loc 1 130 0
+ 415 0016 0BAB     		add	r3, sp, #44
+ 416 0018 0193     		str	r3, [sp, #4]
+ 417              	.LVL36:
+ 133:STM32_MetaDataManager/MetaDataManager.c ****     uint32_t Index;
+ 418              		.loc 1 133 0
+ 419 001a 0027     		movs	r7, #0
+ 420 001c 3E46     		mov	r6, r7
+ 421 001e 53E0     		b	.L31
+ 422              	.LVL37:
+ 423              	.L74:
+ 124:STM32_MetaDataManager/MetaDataManager.c ****     NumberofFoundedLic=0;
+ 424              		.loc 1 124 0
+ 425 0020 FFF7FEFF 		bl	ReseMetaDataManager
+ 426              	.LVL38:
+ 427 0024 F7E7     		b	.L30
+ 428              	.LVL39:
+ 429              	.L35:
+ 430              	.LBB4:
+ 145:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 431              		.loc 1 145 0 discriminator 3
+ 432 0026 A249     		ldr	r1, .L85+8
+ 433 0028 0B68     		ldr	r3, [r1]
+ 434 002a 0133     		adds	r3, r3, #1
+ 435 002c 0B60     		str	r3, [r1]
+ 144:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownLic++;
+ 436              		.loc 1 144 0 discriminator 3
+ 437 002e 0132     		adds	r2, r2, #1
+ 438              	.LVL40:
+ 439              	.L33:
+ 144:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownLic++;
+ 440              		.loc 1 144 0 is_stmt 0 discriminator 1
+ 441 0030 02EB4203 		add	r3, r2, r2, lsl #1
+ 442 0034 C3EB0313 		rsb	r3, r3, r3, lsl #4
+ 443 0038 E35C     		ldrb	r3, [r4, r3]	@ zero_extendqisi2
+ 444 003a 002B     		cmp	r3, #0
+ 445 003c F3D1     		bne	.L35
+ 136:STM32_MetaDataManager/MetaDataManager.c **** 
+ 446              		.loc 1 136 0 is_stmt 1
+ 447 003e 0025     		movs	r5, #0
+ 448              	.LVL41:
+ 449              	.L36:
+ 167:STM32_MetaDataManager/MetaDataManager.c **** 
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 19
+
+
+ 450              		.loc 1 167 0
+ 451 0040 9A49     		ldr	r1, .L85+4
+ 452              	.LVL42:
+ 169:STM32_MetaDataManager/MetaDataManager.c ****       /* Until we reach the end of the Meta Data Manager */
+ 453              		.loc 1 169 0
+ 454 0042 82E0     		b	.L38
+ 455              	.LVL43:
+ 456              	.L70:
+ 144:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownLic++;
+ 457              		.loc 1 144 0
+ 458 0044 0022     		movs	r2, #0
+ 459 0046 F3E7     		b	.L33
+ 460              	.LVL44:
+ 461              	.L37:
+ 155:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 462              		.loc 1 155 0 discriminator 3
+ 463 0048 9A49     		ldr	r1, .L85+12
+ 464 004a 0B68     		ldr	r3, [r1]
+ 465 004c 0133     		adds	r3, r3, #1
+ 466 004e 0B60     		str	r3, [r1]
+ 154:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownGMD++;
+ 467              		.loc 1 154 0 discriminator 3
+ 468 0050 0132     		adds	r2, r2, #1
+ 469              	.LVL45:
+ 470              	.L34:
+ 154:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownGMD++;
+ 471              		.loc 1 154 0 is_stmt 0 discriminator 1
+ 472 0052 14F83230 		ldrb	r3, [r4, r2, lsl #3]	@ zero_extendqisi2
+ 473 0056 002B     		cmp	r3, #0
+ 474 0058 F6D1     		bne	.L37
+ 152:STM32_MetaDataManager/MetaDataManager.c ****         /* Compute the Number of known Generic Meta Data Types */
+ 475              		.loc 1 152 0 is_stmt 1
+ 476 005a 2546     		mov	r5, r4
+ 135:STM32_MetaDataManager/MetaDataManager.c ****     MDM_knownGMD_t *known_GMD=NULL;
+ 477              		.loc 1 135 0
+ 478 005c 0024     		movs	r4, #0
+ 479              	.LVL46:
+ 480 005e EFE7     		b	.L36
+ 481              	.LVL47:
+ 482              	.L71:
+ 154:STM32_MetaDataManager/MetaDataManager.c ****           NumberOfKnownGMD++;
+ 483              		.loc 1 154 0
+ 484 0060 0022     		movs	r2, #0
+ 485 0062 F6E7     		b	.L34
+ 486              	.LVL48:
+ 487              	.L78:
+ 488              	.LBB5:
+ 175:STM32_MetaDataManager/MetaDataManager.c **** 
+ 489              		.loc 1 175 0
+ 490 0064 01F1080E 		add	lr, r1, #8
+ 491              	.LVL49:
+ 174:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PayLoadLic_t *PayLoad = (MDM_PayLoadLic_t *) pMetaDataHeader->puint8_PayLoad;
+ 492              		.loc 1 174 0
+ 493 0068 4FF0000C 		mov	ip, #0
+ 178:STM32_MetaDataManager/MetaDataManager.c **** 
+ 494              		.loc 1 178 0
+ 495 006c 00E0     		b	.L40
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 20
+
+
+ 496              	.LVL50:
+ 497              	.L41:
+ 178:STM32_MetaDataManager/MetaDataManager.c **** 
+ 498              		.loc 1 178 0 is_stmt 0 discriminator 2
+ 499 006e 0133     		adds	r3, r3, #1
+ 500              	.LVL51:
+ 501              	.L40:
+ 178:STM32_MetaDataManager/MetaDataManager.c **** 
+ 502              		.loc 1 178 0 discriminator 1
+ 503 0070 8F4A     		ldr	r2, .L85+8
+ 504 0072 1068     		ldr	r0, [r2]
+ 505 0074 8CF00102 		eor	r2, ip, #1
+ 506 0078 9842     		cmp	r0, r3
+ 507 007a 94BF     		ite	ls
+ 508 007c 0022     		movls	r2, #0
+ 509 007e 02F00102 		andhi	r2, r2, #1
+ 510 0082 002A     		cmp	r2, #0
+ 511 0084 5FD0     		beq	.L43
+ 181:STM32_MetaDataManager/MetaDataManager.c ****             found =1;
+ 512              		.loc 1 181 0 is_stmt 1
+ 513 0086 03EB4302 		add	r2, r3, r3, lsl #1
+ 514 008a C2EB0212 		rsb	r2, r2, r2, lsl #4
+ 515 008e A05C     		ldrb	r0, [r4, r2]	@ zero_extendqisi2
+ 516 0090 8A68     		ldr	r2, [r1, #8]
+ 517 0092 9042     		cmp	r0, r2
+ 518 0094 EBD1     		bne	.L41
+ 519              	.LVL52:
+ 183:STM32_MetaDataManager/MetaDataManager.c ****             NumberofFoundedLic++;
+ 520              		.loc 1 183 0
+ 521 0096 8848     		ldr	r0, .L85+16
+ 522 0098 00EB4212 		add	r2, r0, r2, lsl #5
+ 523 009c C2F81CE0 		str	lr, [r2, #28]
+ 184:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 524              		.loc 1 184 0
+ 525 00a0 0136     		adds	r6, r6, #1
+ 526              	.LVL53:
+ 182:STM32_MetaDataManager/MetaDataManager.c ****             MDM_LicTable[PayLoad->LicEnum].Address = (uint32_t)PayLoad;
+ 527              		.loc 1 182 0
+ 528 00a2 4FF0010C 		mov	ip, #1
+ 529 00a6 E2E7     		b	.L41
+ 530              	.LVL54:
+ 531              	.L77:
+ 532              	.LBE5:
+ 533              	.LBB6:
+ 205:STM32_MetaDataManager/MetaDataManager.c ****               NumberofFoundedLic=0;
+ 534              		.loc 1 205 0
+ 535 00a8 FFF7FEFF 		bl	ReseMetaDataManager
+ 536              	.LVL55:
+ 207:STM32_MetaDataManager/MetaDataManager.c ****               goto MDM_ADD_META_DATA;
+ 537              		.loc 1 207 0
+ 538 00ac 0027     		movs	r7, #0
+ 206:STM32_MetaDataManager/MetaDataManager.c ****               NumberofFoundedGMD=0;
+ 539              		.loc 1 206 0
+ 540 00ae 3E46     		mov	r6, r7
+ 541              	.LVL56:
+ 542              	.L46:
+ 543              	.LBE6:
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 21
+
+
+ 225:STM32_MetaDataManager/MetaDataManager.c ****       /* osx Licenses Section */
+ 544              		.loc 1 225 0
+ 545 00b0 B8F1000F 		cmp	r8, #0
+ 546 00b4 40F0B380 		bne	.L49
+ 227:STM32_MetaDataManager/MetaDataManager.c ****         NecessityToSaveMetaDataManager = 1;
+ 547              		.loc 1 227 0
+ 548 00b8 7D4B     		ldr	r3, .L85+8
+ 549 00ba 1B68     		ldr	r3, [r3]
+ 550 00bc B342     		cmp	r3, r6
+ 551 00be 51D8     		bhi	.L75
+ 552              	.LVL57:
+ 553              	.L50:
+ 351:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 554              		.loc 1 351 0
+ 555 00c0 019B     		ldr	r3, [sp, #4]
+ 556 00c2 1A1D     		adds	r2, r3, #4
+ 557 00c4 0192     		str	r2, [sp, #4]
+ 558 00c6 1C68     		ldr	r4, [r3]
+ 559              	.LVL58:
+ 560              	.L31:
+ 561              	.LBE4:
+ 133:STM32_MetaDataManager/MetaDataManager.c ****     uint32_t Index;
+ 562              		.loc 1 133 0
+ 563 00c8 002C     		cmp	r4, #0
+ 564 00ca 00F03F81 		beq	.L76
+ 565              	.LVL59:
+ 566              	.LBB12:
+ 138:STM32_MetaDataManager/MetaDataManager.c **** 
+ 567              		.loc 1 138 0
+ 568 00ce 019B     		ldr	r3, [sp, #4]
+ 569 00d0 1A1D     		adds	r2, r3, #4
+ 570 00d2 0192     		str	r2, [sp, #4]
+ 571 00d4 93F80080 		ldrb	r8, [r3]	@ zero_extendqisi2
+ 572              	.LVL60:
+ 140:STM32_MetaDataManager/MetaDataManager.c ****       case MDM_DATA_TYPE_LIC:
+ 573              		.loc 1 140 0
+ 574 00d8 B8F1000F 		cmp	r8, #0
+ 575 00dc B2D0     		beq	.L70
+ 576 00de B8F1010F 		cmp	r8, #1
+ 577 00e2 BDD0     		beq	.L71
+ 578              	.LVL61:
+ 579              	.L29:
+ 580              	.LBE12:
+ 377:STM32_MetaDataManager/MetaDataManager.c **** 
+ 581              		.loc 1 377 0
+ 582 00e4 02B0     		add	sp, sp, #8
+ 583              	.LCFI10:
+ 584              		.cfi_remember_state
+ 585              		.cfi_def_cfa_offset 48
+ 586              		@ sp needed
+ 587 00e6 BDE8F047 		pop	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 588              	.LCFI11:
+ 589              		.cfi_restore 14
+ 590              		.cfi_restore 10
+ 591              		.cfi_restore 9
+ 592              		.cfi_restore 8
+ 593              		.cfi_restore 7
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 22
+
+
+ 594              		.cfi_restore 6
+ 595              		.cfi_restore 5
+ 596              		.cfi_restore 4
+ 597              		.cfi_def_cfa_offset 16
+ 598              	.LVL62:
+ 599 00ea 04B0     		add	sp, sp, #16
+ 600              	.LCFI12:
+ 601              		.cfi_restore 3
+ 602              		.cfi_restore 2
+ 603              		.cfi_restore 1
+ 604              		.cfi_restore 0
+ 605              		.cfi_def_cfa_offset 0
+ 606 00ec 7047     		bx	lr
+ 607              	.LVL63:
+ 608              	.L45:
+ 609              	.LCFI13:
+ 610              		.cfi_restore_state
+ 611              	.LBB13:
+ 612              	.LBB7:
+ 193:STM32_MetaDataManager/MetaDataManager.c ****           /* Check If we know this Generic Meta Data */
+ 613              		.loc 1 193 0 discriminator 2
+ 614 00ee 0133     		adds	r3, r3, #1
+ 615              	.LVL64:
+ 616              	.L44:
+ 193:STM32_MetaDataManager/MetaDataManager.c ****           /* Check If we know this Generic Meta Data */
+ 617              		.loc 1 193 0 is_stmt 0 discriminator 1
+ 618 00f0 704A     		ldr	r2, .L85+12
+ 619 00f2 1068     		ldr	r0, [r2]
+ 620 00f4 8EF00102 		eor	r2, lr, #1
+ 621 00f8 9842     		cmp	r0, r3
+ 622 00fa 94BF     		ite	ls
+ 623 00fc 0022     		movls	r2, #0
+ 624 00fe 02F00102 		andhi	r2, r2, #1
+ 625 0102 02B3     		cbz	r2, .L43
+ 195:STM32_MetaDataManager/MetaDataManager.c ****             found =1;
+ 626              		.loc 1 195 0 is_stmt 1
+ 627 0104 05EBC309 		add	r9, r5, r3, lsl #3
+ 628 0108 15F83300 		ldrb	r0, [r5, r3, lsl #3]	@ zero_extendqisi2
+ 629 010c 8A68     		ldr	r2, [r1, #8]
+ 630 010e 9042     		cmp	r0, r2
+ 631 0110 EDD1     		bne	.L45
+ 632              	.LVL65:
+ 197:STM32_MetaDataManager/MetaDataManager.c ****             NumberofFoundedGMD++;
+ 633              		.loc 1 197 0
+ 634 0112 DFF8B0E1 		ldr	lr, .L85+28
+ 635 0116 C2EBC202 		rsb	r2, r2, r2, lsl #3
+ 636 011a 9000     		lsls	r0, r2, #2
+ 637 011c 7044     		add	r0, r0, lr
+ 638 011e C0F818C0 		str	ip, [r0, #24]
+ 198:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[PayLoad->GMDTypeEnum].GMDSize = PayLoad->GMDSize;
+ 639              		.loc 1 198 0
+ 640 0122 0137     		adds	r7, r7, #1
+ 641              	.LVL66:
+ 199:STM32_MetaDataManager/MetaDataManager.c ****             if(known_GMD[Index].GMDSize!=PayLoad->GMDSize) {
+ 642              		.loc 1 199 0
+ 643 0124 8868     		ldr	r0, [r1, #8]
+ 644 0126 CA68     		ldr	r2, [r1, #12]
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 23
+
+
+ 645 0128 C0EBC000 		rsb	r0, r0, r0, lsl #3
+ 646 012c 4FEA800A 		lsl	r10, r0, #2
+ 647 0130 D644     		add	lr, lr, r10
+ 648 0132 CEF81420 		str	r2, [lr, #20]
+ 200:STM32_MetaDataManager/MetaDataManager.c ****               MDM_PRINTF("Warning: The Meta Data Manager Contains for %s Generic Meta Data a size=%
+ 649              		.loc 1 200 0
+ 650 0136 D9F80400 		ldr	r0, [r9, #4]
+ 651 013a CA68     		ldr	r2, [r1, #12]
+ 652 013c 9042     		cmp	r0, r2
+ 653 013e B3D1     		bne	.L77
+ 196:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[PayLoad->GMDTypeEnum].Address = (uint32_t)PayLoad;
+ 654              		.loc 1 196 0
+ 655 0140 4FF0010E 		mov	lr, #1
+ 656 0144 D3E7     		b	.L45
+ 657              	.LVL67:
+ 658              	.L43:
+ 659              	.LBE7:
+ 220:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 660              		.loc 1 220 0
+ 661 0146 4B68     		ldr	r3, [r1, #4]
+ 662 0148 1944     		add	r1, r1, r3
+ 663              	.LVL68:
+ 664              	.L38:
+ 169:STM32_MetaDataManager/MetaDataManager.c ****       /* Until we reach the end of the Meta Data Manager */
+ 665              		.loc 1 169 0
+ 666 014a 0B68     		ldr	r3, [r1]
+ 667 014c FF2B     		cmp	r3, #255
+ 668 014e AFD0     		beq	.L46
+ 172:STM32_MetaDataManager/MetaDataManager.c ****         /* The Meta Data is one osx License...we need to understand if we know it */
+ 669              		.loc 1 172 0
+ 670 0150 002B     		cmp	r3, #0
+ 671 0152 87D0     		beq	.L78
+ 187:STM32_MetaDataManager/MetaDataManager.c ****         /* The Meta Data is one Generic Meta Data type ...we need to understand if we know it */
+ 672              		.loc 1 187 0
+ 673 0154 012B     		cmp	r3, #1
+ 674 0156 F6D1     		bne	.L43
+ 675              	.LVL69:
+ 676              	.LBB8:
+ 190:STM32_MetaDataManager/MetaDataManager.c **** 
+ 677              		.loc 1 190 0
+ 678 0158 01F1080C 		add	ip, r1, #8
+ 679              	.LVL70:
+ 189:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PayLoadGMD_t *PayLoad = (MDM_PayLoadGMD_t *) pMetaDataHeader->puint8_PayLoad;
+ 680              		.loc 1 189 0
+ 681 015c 4FF0000E 		mov	lr, #0
+ 193:STM32_MetaDataManager/MetaDataManager.c ****           /* Check If we know this Generic Meta Data */
+ 682              		.loc 1 193 0
+ 683 0160 7346     		mov	r3, lr
+ 684 0162 C5E7     		b	.L44
+ 685              	.LVL71:
+ 686              	.L75:
+ 687              	.LBE8:
+ 228:STM32_MetaDataManager/MetaDataManager.c ****         /* Check if we have enough space... if not... reset everything */
+ 688              		.loc 1 228 0
+ 689 0164 554A     		ldr	r2, .L85+20
+ 690 0166 0121     		movs	r1, #1
+ 691 0168 1160     		str	r1, [r2]
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 24
+
+
+ 232:STM32_MetaDataManager/MetaDataManager.c ****           /* We don't have enough spaces.... Reset everything */
+ 692              		.loc 1 232 0
+ 693 016a 9B1B     		subs	r3, r3, r6
+ 230:STM32_MetaDataManager/MetaDataManager.c ****              ((uint32_t)uint64_MetaDataVector) +
+ 694              		.loc 1 230 0
+ 695 016c 4E4A     		ldr	r2, .L85
+ 696 016e 1268     		ldr	r2, [r2]
+ 231:STM32_MetaDataManager/MetaDataManager.c ****              (NumberOfKnownLic-NumberofFoundedLic)*(sizeof(MDM_PayLoadLic_t) + 8 /* MetaDataHeader 
+ 697              		.loc 1 231 0
+ 698 0170 A421     		movs	r1, #164
+ 699 0172 01FB0323 		mla	r3, r1, r3, r2
+ 700 0176 524A     		ldr	r2, .L85+24
+ 701 0178 C2F10802 		rsb	r2, r2, #8
+ 702 017c 1344     		add	r3, r3, r2
+ 230:STM32_MetaDataManager/MetaDataManager.c ****              ((uint32_t)uint64_MetaDataVector) +
+ 703              		.loc 1 230 0
+ 704 017e B3F5805F 		cmp	r3, #4096
+ 705 0182 01D8     		bhi	.L79
+ 706              	.LVL72:
+ 707              	.L51:
+ 243:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 708              		.loc 1 243 0
+ 709 0184 0025     		movs	r5, #0
+ 710              	.LVL73:
+ 711 0186 0FE0     		b	.L54
+ 712              	.LVL74:
+ 713              	.L79:
+ 235:STM32_MetaDataManager/MetaDataManager.c ****           for(Index=1;Index<OSX_LICENSE_NUM;Index++) {
+ 714              		.loc 1 235 0
+ 715 0188 474B     		ldr	r3, .L85
+ 716 018a 484A     		ldr	r2, .L85+4
+ 717 018c 1A60     		str	r2, [r3]
+ 718              	.LVL75:
+ 236:STM32_MetaDataManager/MetaDataManager.c ****             MDM_LicTable[Index].Address =0;
+ 719              		.loc 1 236 0
+ 720 018e 0123     		movs	r3, #1
+ 721 0190 05E0     		b	.L52
+ 722              	.LVL76:
+ 723              	.L53:
+ 237:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 724              		.loc 1 237 0 discriminator 3
+ 725 0192 494A     		ldr	r2, .L85+16
+ 726 0194 02EB4312 		add	r2, r2, r3, lsl #5
+ 727 0198 0021     		movs	r1, #0
+ 728 019a D161     		str	r1, [r2, #28]
+ 236:STM32_MetaDataManager/MetaDataManager.c ****             MDM_LicTable[Index].Address =0;
+ 729              		.loc 1 236 0 discriminator 3
+ 730 019c 0133     		adds	r3, r3, #1
+ 731              	.LVL77:
+ 732              	.L52:
+ 236:STM32_MetaDataManager/MetaDataManager.c ****             MDM_LicTable[Index].Address =0;
+ 733              		.loc 1 236 0 is_stmt 0 discriminator 1
+ 734 019e 092B     		cmp	r3, #9
+ 735 01a0 F7D9     		bls	.L53
+ 239:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 736              		.loc 1 239 0 is_stmt 1
+ 737 01a2 0026     		movs	r6, #0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 25
+
+
+ 738              	.LVL78:
+ 739 01a4 EEE7     		b	.L51
+ 740              	.LVL79:
+ 741              	.L55:
+ 243:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 742              		.loc 1 243 0 discriminator 2
+ 743 01a6 0135     		adds	r5, r5, #1
+ 744              	.LVL80:
+ 745              	.L54:
+ 243:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 746              		.loc 1 243 0 is_stmt 0 discriminator 1
+ 747 01a8 414B     		ldr	r3, .L85+8
+ 748 01aa 1B68     		ldr	r3, [r3]
+ 749 01ac AB42     		cmp	r3, r5
+ 750 01ae 2FD9     		bls	.L80
+ 247:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PayLoadLic_t *PayLoad;
+ 751              		.loc 1 247 0 is_stmt 1
+ 752 01b0 05EB4503 		add	r3, r5, r5, lsl #1
+ 753 01b4 C3EB0313 		rsb	r3, r3, r3, lsl #4
+ 754 01b8 E118     		adds	r1, r4, r3
+ 755 01ba E05C     		ldrb	r0, [r4, r3]	@ zero_extendqisi2
+ 756 01bc 3E4A     		ldr	r2, .L85+16
+ 757 01be 02EB4012 		add	r2, r2, r0, lsl #5
+ 758 01c2 D269     		ldr	r2, [r2, #28]
+ 759 01c4 002A     		cmp	r2, #0
+ 760 01c6 EED1     		bne	.L55
+ 761              	.LBB9:
+ 253:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 762              		.loc 1 253 0
+ 763 01c8 DFF8DC90 		ldr	r9, .L85
+ 764 01cc D9F80080 		ldr	r8, [r9]
+ 765              	.LVL81:
+ 257:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader->Lenght = sizeof(MDM_PayLoadLic_t) + 8 /* For Meta Data Header */;
+ 766              		.loc 1 257 0
+ 767 01d0 C8F80020 		str	r2, [r8]
+ 258:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad = (MDM_PayLoadLic_t *) pMetaDataHeader->puint8_PayLoad;
+ 768              		.loc 1 258 0
+ 769 01d4 A420     		movs	r0, #164
+ 770 01d6 C8F80400 		str	r0, [r8, #4]
+ 259:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 771              		.loc 1 259 0
+ 772 01da 08F1080A 		add	r10, r8, #8
+ 773              	.LVL82:
+ 263:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad->osxLicenseInitialized = 0;
+ 774              		.loc 1 263 0
+ 775 01de E35C     		ldrb	r3, [r4, r3]	@ zero_extendqisi2
+ 776 01e0 C8F80830 		str	r3, [r8, #8]
+ 264:STM32_MetaDataManager/MetaDataManager.c ****             sprintf((char *)PayLoad->osxLibVersion,known_OsxLic[Index].osxLibVersion);
+ 777              		.loc 1 264 0
+ 778 01e4 C8F80C20 		str	r2, [r8, #12]
+ 265:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("Adding=%s%s Version=%s\r\n",MDM_LicTable[known_OsxLic[Index].LicEnum].LicTy
+ 779              		.loc 1 265 0
+ 780 01e8 0931     		adds	r1, r1, #9
+ 781 01ea 08F11000 		add	r0, r8, #16
+ 782 01ee FFF7FEFF 		bl	sprintf
+ 783              	.LVL83:
+ 267:STM32_MetaDataManager/MetaDataManager.c ****             /* Move the R/W pointer */
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 26
+
+
+ 784              		.loc 1 267 0
+ 785 01f2 D8F80820 		ldr	r2, [r8, #8]
+ 786 01f6 304B     		ldr	r3, .L85+16
+ 787 01f8 03EB4213 		add	r3, r3, r2, lsl #5
+ 788 01fc C3F81CA0 		str	r10, [r3, #28]
+ 269:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 789              		.loc 1 269 0
+ 790 0200 D8F80420 		ldr	r2, [r8, #4]
+ 791 0204 D9F80030 		ldr	r3, [r9]
+ 792 0208 1344     		add	r3, r3, r2
+ 793 020a C9F80030 		str	r3, [r9]
+ 794 020e CAE7     		b	.L55
+ 795              	.LVL84:
+ 796              	.L80:
+ 797              	.LBE9:
+ 278:STM32_MetaDataManager/MetaDataManager.c ****         *((uint32_t *) (puint8_RW_MetaData+4)) = 0; /* No Payload */
+ 798              		.loc 1 278 0
+ 799 0210 254B     		ldr	r3, .L85
+ 800 0212 1B68     		ldr	r3, [r3]
+ 801 0214 FF22     		movs	r2, #255
+ 802 0216 1A60     		str	r2, [r3]
+ 279:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 803              		.loc 1 279 0
+ 804 0218 0022     		movs	r2, #0
+ 805 021a 5A60     		str	r2, [r3, #4]
+ 806 021c 50E7     		b	.L50
+ 807              	.LVL85:
+ 808              	.L49:
+ 281:STM32_MetaDataManager/MetaDataManager.c ****       /* Generic Meta Data */
+ 809              		.loc 1 281 0
+ 810 021e B8F1010F 		cmp	r8, #1
+ 811 0222 7FF44DAF 		bne	.L50
+ 283:STM32_MetaDataManager/MetaDataManager.c ****         /* We need to Add some Generic Meta Data */
+ 812              		.loc 1 283 0
+ 813 0226 234B     		ldr	r3, .L85+12
+ 814 0228 1868     		ldr	r0, [r3]
+ 815 022a B842     		cmp	r0, r7
+ 816 022c 7FF648AF 		bls	.L50
+ 817              	.LVL86:
+ 818              	.LBB10:
+ 287:STM32_MetaDataManager/MetaDataManager.c ****         /* Compute how many amount of Memory I need */
+ 819              		.loc 1 287 0
+ 820 0230 224B     		ldr	r3, .L85+20
+ 821 0232 0122     		movs	r2, #1
+ 822 0234 1A60     		str	r2, [r3]
+ 823              	.LVL87:
+ 289:STM32_MetaDataManager/MetaDataManager.c ****           if(MDM_GMDTable[known_GMD[Index].GMDType].Address==0) {
+ 824              		.loc 1 289 0
+ 825 0236 0022     		movs	r2, #0
+ 285:STM32_MetaDataManager/MetaDataManager.c ****         int32_t Index;
+ 826              		.loc 1 285 0
+ 827 0238 9446     		mov	ip, r2
+ 289:STM32_MetaDataManager/MetaDataManager.c ****           if(MDM_GMDTable[known_GMD[Index].GMDType].Address==0) {
+ 828              		.loc 1 289 0
+ 829 023a 00E0     		b	.L57
+ 830              	.LVL88:
+ 831              	.L58:
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 27
+
+
+ 289:STM32_MetaDataManager/MetaDataManager.c ****           if(MDM_GMDTable[known_GMD[Index].GMDType].Address==0) {
+ 832              		.loc 1 289 0 is_stmt 0 discriminator 2
+ 833 023c 0132     		adds	r2, r2, #1
+ 834              	.LVL89:
+ 835              	.L57:
+ 289:STM32_MetaDataManager/MetaDataManager.c ****           if(MDM_GMDTable[known_GMD[Index].GMDType].Address==0) {
+ 836              		.loc 1 289 0 discriminator 1
+ 837 023e 9042     		cmp	r0, r2
+ 838 0240 14D9     		bls	.L81
+ 290:STM32_MetaDataManager/MetaDataManager.c ****             HowManyExtraSpaceINeed += (((known_GMD[Index].GMDSize+7)>>3)<<3) /* Round to Multiple o
+ 839              		.loc 1 290 0 is_stmt 1
+ 840 0242 05EBC20E 		add	lr, r5, r2, lsl #3
+ 841 0246 15F83230 		ldrb	r3, [r5, r2, lsl #3]	@ zero_extendqisi2
+ 842 024a C3EBC303 		rsb	r3, r3, r3, lsl #3
+ 843 024e 9C00     		lsls	r4, r3, #2
+ 844 0250 1C49     		ldr	r1, .L85+28
+ 845 0252 2144     		add	r1, r1, r4
+ 846 0254 8B69     		ldr	r3, [r1, #24]
+ 847 0256 002B     		cmp	r3, #0
+ 848 0258 F0D1     		bne	.L58
+ 291:STM32_MetaDataManager/MetaDataManager.c ****               8 + 8 /* For Meta Data Header */;
+ 849              		.loc 1 291 0
+ 850 025a DEF80430 		ldr	r3, [lr, #4]
+ 851 025e 0733     		adds	r3, r3, #7
+ 852 0260 23F00703 		bic	r3, r3, #7
+ 853 0264 6344     		add	r3, r3, ip
+ 854 0266 03F1100C 		add	ip, r3, #16
+ 855              	.LVL90:
+ 856 026a E7E7     		b	.L58
+ 857              	.L81:
+ 296:STM32_MetaDataManager/MetaDataManager.c ****              ((uint32_t)uint64_MetaDataVector) +
+ 858              		.loc 1 296 0
+ 859 026c 0E4B     		ldr	r3, .L85
+ 860 026e 1B68     		ldr	r3, [r3]
+ 297:STM32_MetaDataManager/MetaDataManager.c ****              HowManyExtraSpaceINeed)>(MDM_MAX_DATASIZE_64<<3)) {
+ 861              		.loc 1 297 0
+ 862 0270 6344     		add	r3, r3, ip
+ 863 0272 134A     		ldr	r2, .L85+24
+ 864              	.LVL91:
+ 865 0274 C2F10802 		rsb	r2, r2, #8
+ 866 0278 1344     		add	r3, r3, r2
+ 296:STM32_MetaDataManager/MetaDataManager.c ****              ((uint32_t)uint64_MetaDataVector) +
+ 867              		.loc 1 296 0
+ 868 027a B3F5805F 		cmp	r3, #4096
+ 869 027e 01D8     		bhi	.L82
+ 870              	.LVL92:
+ 871              	.L60:
+ 309:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 872              		.loc 1 309 0
+ 873 0280 0023     		movs	r3, #0
+ 874 0282 22E0     		b	.L63
+ 875              	.LVL93:
+ 876              	.L82:
+ 301:STM32_MetaDataManager/MetaDataManager.c ****           for(Index=1;Index<GMD_NUM;Index++) {
+ 877              		.loc 1 301 0
+ 878 0284 084B     		ldr	r3, .L85
+ 879 0286 094A     		ldr	r2, .L85+4
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 28
+
+
+ 880 0288 1A60     		str	r2, [r3]
+ 881              	.LVL94:
+ 302:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[Index].Address =0;
+ 882              		.loc 1 302 0
+ 883 028a 0123     		movs	r3, #1
+ 884 028c 07E0     		b	.L61
+ 885              	.LVL95:
+ 886              	.L62:
+ 303:STM32_MetaDataManager/MetaDataManager.c ****           }
+ 887              		.loc 1 303 0 discriminator 3
+ 888 028e C3EBC302 		rsb	r2, r3, r3, lsl #3
+ 889 0292 9100     		lsls	r1, r2, #2
+ 890 0294 0B4A     		ldr	r2, .L85+28
+ 891 0296 0A44     		add	r2, r2, r1
+ 892 0298 0021     		movs	r1, #0
+ 893 029a 9161     		str	r1, [r2, #24]
+ 302:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[Index].Address =0;
+ 894              		.loc 1 302 0 discriminator 3
+ 895 029c 0133     		adds	r3, r3, #1
+ 896              	.LVL96:
+ 897              	.L61:
+ 302:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[Index].Address =0;
+ 898              		.loc 1 302 0 is_stmt 0 discriminator 1
+ 899 029e 032B     		cmp	r3, #3
+ 900 02a0 F5DD     		ble	.L62
+ 305:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 901              		.loc 1 305 0 is_stmt 1
+ 902 02a2 0027     		movs	r7, #0
+ 903              	.LVL97:
+ 904 02a4 ECE7     		b	.L60
+ 905              	.L86:
+ 906 02a6 00BF     		.align	2
+ 907              	.L85:
+ 908 02a8 00000000 		.word	.LANCHOR0
+ 909 02ac 08000000 		.word	uint64_MetaDataVector+8
+ 910 02b0 00000000 		.word	.LANCHOR3
+ 911 02b4 00000000 		.word	.LANCHOR4
+ 912 02b8 00000000 		.word	.LANCHOR2
+ 913 02bc 00000000 		.word	.LANCHOR1
+ 914 02c0 00000000 		.word	uint64_MetaDataVector
+ 915 02c4 00000000 		.word	.LANCHOR5
+ 916              	.LVL98:
+ 917              	.L64:
+ 309:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 918              		.loc 1 309 0 discriminator 2
+ 919 02c8 0133     		adds	r3, r3, #1
+ 920              	.LVL99:
+ 921              	.L63:
+ 309:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 922              		.loc 1 309 0 is_stmt 0 discriminator 1
+ 923 02ca 9842     		cmp	r0, r3
+ 924 02cc 37D9     		bls	.L83
+ 313:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PayLoadGMD_t *PayLoad;
+ 925              		.loc 1 313 0 is_stmt 1
+ 926 02ce 05EBC304 		add	r4, r5, r3, lsl #3
+ 927 02d2 15F83320 		ldrb	r2, [r5, r3, lsl #3]	@ zero_extendqisi2
+ 928 02d6 C2EBC202 		rsb	r2, r2, r2, lsl #3
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 29
+
+
+ 929 02da 9100     		lsls	r1, r2, #2
+ 930 02dc 244A     		ldr	r2, .L87
+ 931 02de 0A44     		add	r2, r2, r1
+ 932 02e0 9269     		ldr	r2, [r2, #24]
+ 933 02e2 002A     		cmp	r2, #0
+ 934 02e4 F0D1     		bne	.L64
+ 935              	.LBB11:
+ 319:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 936              		.loc 1 319 0
+ 937 02e6 DFF88CC0 		ldr	ip, .L87+4
+ 938 02ea DCF80020 		ldr	r2, [ip]
+ 939              	.LVL100:
+ 323:STM32_MetaDataManager/MetaDataManager.c ****             pMetaDataHeader->Lenght = (((known_GMD[Index].GMDSize+7)>>3)<<3) /* Round to Multiple o
+ 940              		.loc 1 323 0
+ 941 02ee 0121     		movs	r1, #1
+ 942 02f0 1160     		str	r1, [r2]
+ 324:STM32_MetaDataManager/MetaDataManager.c ****               8 + 8 /* For Meta Data Header */;
+ 943              		.loc 1 324 0
+ 944 02f2 6168     		ldr	r1, [r4, #4]
+ 945 02f4 0731     		adds	r1, r1, #7
+ 946 02f6 21F00701 		bic	r1, r1, #7
+ 325:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad = (MDM_PayLoadGMD_t *) pMetaDataHeader->puint8_PayLoad;
+ 947              		.loc 1 325 0
+ 948 02fa 1031     		adds	r1, r1, #16
+ 324:STM32_MetaDataManager/MetaDataManager.c ****               8 + 8 /* For Meta Data Header */;
+ 949              		.loc 1 324 0
+ 950 02fc 5160     		str	r1, [r2, #4]
+ 326:STM32_MetaDataManager/MetaDataManager.c **** #ifdef MDM_DEBUG_PARSING
+ 951              		.loc 1 326 0
+ 952 02fe 02F10808 		add	r8, r2, #8
+ 953              	.LVL101:
+ 330:STM32_MetaDataManager/MetaDataManager.c ****             PayLoad->GMDSize     = known_GMD[Index].GMDSize;
+ 954              		.loc 1 330 0
+ 955 0302 15F83310 		ldrb	r1, [r5, r3, lsl #3]	@ zero_extendqisi2
+ 956 0306 9160     		str	r1, [r2, #8]
+ 331:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[known_GMD[Index].GMDType].Address = (uint32_t)PayLoad;
+ 957              		.loc 1 331 0
+ 958 0308 6168     		ldr	r1, [r4, #4]
+ 959 030a D160     		str	r1, [r2, #12]
+ 332:STM32_MetaDataManager/MetaDataManager.c ****             MDM_GMDTable[known_GMD[Index].GMDType].GMDSize = PayLoad->GMDSize;
+ 960              		.loc 1 332 0
+ 961 030c 15F83310 		ldrb	r1, [r5, r3, lsl #3]	@ zero_extendqisi2
+ 962 0310 DFF85CE0 		ldr	lr, .L87
+ 963 0314 C1EBC101 		rsb	r1, r1, r1, lsl #3
+ 964 0318 8C00     		lsls	r4, r1, #2
+ 965 031a 7444     		add	r4, r4, lr
+ 966 031c C4F81880 		str	r8, [r4, #24]
+ 333:STM32_MetaDataManager/MetaDataManager.c ****             MDM_PRINTF("Adding=%s (Pos=%d) Size=%ld\r\n",MDM_GMDTable[known_GMD[Index].GMDType].GMD
+ 967              		.loc 1 333 0
+ 968 0320 15F83340 		ldrb	r4, [r5, r3, lsl #3]	@ zero_extendqisi2
+ 969 0324 D168     		ldr	r1, [r2, #12]
+ 970 0326 C4EBC404 		rsb	r4, r4, r4, lsl #3
+ 971 032a 4FEA8408 		lsl	r8, r4, #2
+ 972              	.LVL102:
+ 973 032e C644     		add	lr, lr, r8
+ 974 0330 CEF81410 		str	r1, [lr, #20]
+ 338:STM32_MetaDataManager/MetaDataManager.c ****           }
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 30
+
+
+ 975              		.loc 1 338 0
+ 976 0334 5168     		ldr	r1, [r2, #4]
+ 977 0336 0A44     		add	r2, r2, r1
+ 978              	.LVL103:
+ 979 0338 CCF80020 		str	r2, [ip]
+ 980              	.LVL104:
+ 981 033c C4E7     		b	.L64
+ 982              	.L83:
+ 983              	.LBE11:
+ 347:STM32_MetaDataManager/MetaDataManager.c ****         *((uint32_t *) (puint8_RW_MetaData+4)) = 0; /* No Payload */
+ 984              		.loc 1 347 0
+ 985 033e 0D4B     		ldr	r3, .L87+4
+ 986              	.LVL105:
+ 987 0340 1B68     		ldr	r3, [r3]
+ 988 0342 FF22     		movs	r2, #255
+ 989 0344 1A60     		str	r2, [r3]
+ 348:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 990              		.loc 1 348 0
+ 991 0346 0022     		movs	r2, #0
+ 992 0348 5A60     		str	r2, [r3, #4]
+ 993 034a B9E6     		b	.L50
+ 994              	.LVL106:
+ 995              	.L76:
+ 996              	.LBE10:
+ 997              	.LBE13:
+ 357:STM32_MetaDataManager/MetaDataManager.c ****     uint32_t Success = EraseMetaDataManager();
+ 998              		.loc 1 357 0
+ 999 034c 0A4B     		ldr	r3, .L87+8
+ 1000 034e 1B68     		ldr	r3, [r3]
+ 1001 0350 3BB9     		cbnz	r3, .L84
+ 1002              	.L67:
+ 370:STM32_MetaDataManager/MetaDataManager.c ****     PrintOut_MDM_LicenseStatus();
+ 1003              		.loc 1 370 0
+ 1004 0352 0A4B     		ldr	r3, .L87+12
+ 1005 0354 1B68     		ldr	r3, [r3]
+ 1006 0356 3343     		orrs	r3, r6, r3
+ 1007 0358 3FF4C4AE 		beq	.L29
+ 371:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 1008              		.loc 1 371 0
+ 1009 035c FFF7FEFF 		bl	PrintOut_MDM_LicenseStatus
+ 1010              	.LVL107:
+ 1011 0360 C0E6     		b	.L29
+ 1012              	.L84:
+ 1013              	.LBB14:
+ 358:STM32_MetaDataManager/MetaDataManager.c ****     if(Success) {
+ 1014              		.loc 1 358 0
+ 1015 0362 FFF7FEFF 		bl	EraseMetaDataManager
+ 1016              	.LVL108:
+ 359:STM32_MetaDataManager/MetaDataManager.c ****       SaveMetaDataManager();
+ 1017              		.loc 1 359 0
+ 1018 0366 0028     		cmp	r0, #0
+ 1019 0368 F3D0     		beq	.L67
+ 360:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 1020              		.loc 1 360 0
+ 1021 036a FFF7FEFF 		bl	SaveMetaDataManager
+ 1022              	.LVL109:
+ 1023 036e F0E7     		b	.L67
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 31
+
+
+ 1024              	.L88:
+ 1025              		.align	2
+ 1026              	.L87:
+ 1027 0370 00000000 		.word	.LANCHOR5
+ 1028 0374 00000000 		.word	.LANCHOR0
+ 1029 0378 00000000 		.word	.LANCHOR1
+ 1030 037c 00000000 		.word	.LANCHOR3
+ 1031              	.LBE14:
+ 1032              		.cfi_endproc
+ 1033              	.LFE133:
+ 1035              		.section	.text.MDM_LicenseParsing,"ax",%progbits
+ 1036              		.align	1
+ 1037              		.global	MDM_LicenseParsing
+ 1038              		.syntax unified
+ 1039              		.thumb
+ 1040              		.thumb_func
+ 1041              		.fpu fpv4-sp-d16
+ 1043              	MDM_LicenseParsing:
+ 1044              	.LFB140:
+ 529:STM32_MetaDataManager/MetaDataManager.c **** 
+ 530:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 531:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Prints out the Actual Generic Meta Data types Included on Meta Data Manager
+ 532:STM32_MetaDataManager/MetaDataManager.c ****  * @param None
+ 533:STM32_MetaDataManager/MetaDataManager.c ****  * @retval None
+ 534:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 535:STM32_MetaDataManager/MetaDataManager.c **** static void PrintOut_MDM_GMDStatus(void)
+ 536:STM32_MetaDataManager/MetaDataManager.c **** {
+ 537:STM32_MetaDataManager/MetaDataManager.c ****   MDM_GenericMetaDataType_t GMD;
+ 538:STM32_MetaDataManager/MetaDataManager.c ****   MDM_PRINTF("\tGeneric Meta Data found:\r\n");
+ 539:STM32_MetaDataManager/MetaDataManager.c ****   // for(GMD=GMD_WIFI;GMD<GMD_NUM;GMD++) {
+ 540:STM32_MetaDataManager/MetaDataManager.c ****   //   MDM_PayLoadGMD_t *PayLoad = (MDM_PayLoadGMD_t *) MDM_GMDTable[GMD].Address;
+ 541:STM32_MetaDataManager/MetaDataManager.c ****   //   if(PayLoad) {
+ 542:STM32_MetaDataManager/MetaDataManager.c ****   //     MDM_PRINTF("\t\t %s Size=%ld [bytes]\r\n",MDM_GMDTable[PayLoad->GMDTypeEnum].GMDName,
+ 543:STM32_MetaDataManager/MetaDataManager.c ****   //                MDM_GMDTable[PayLoad->GMDTypeEnum].GMDSize);
+ 544:STM32_MetaDataManager/MetaDataManager.c ****   //   }
+ 545:STM32_MetaDataManager/MetaDataManager.c ****   // }
+ 546:STM32_MetaDataManager/MetaDataManager.c **** }
+ 547:STM32_MetaDataManager/MetaDataManager.c **** #endif /* MDM_ENABLE_PRINTF */
+ 548:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 549:STM32_MetaDataManager/MetaDataManager.c ****  * @brief  This function makes the parsing of one string for osx License management
+ 550:STM32_MetaDataManager/MetaDataManager.c ****  * @param uint8_t *att_data attribute data
+ 551:STM32_MetaDataManager/MetaDataManager.c ****  * @param uint8_t data_length length of the data
+ 552:STM32_MetaDataManager/MetaDataManager.c ****  * @retval int32_t osxLicenseStart 1/0 if we are o not activating a licenses
+ 553:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 554:STM32_MetaDataManager/MetaDataManager.c **** int32_t MDM_LicenseParsing(uint8_t * att_data, uint8_t data_length)
+ 555:STM32_MetaDataManager/MetaDataManager.c **** {
+ 1045              		.loc 1 555 0
+ 1046              		.cfi_startproc
+ 1047              		@ args = 0, pretend = 0, frame = 0
+ 1048              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1049              	.LVL110:
+ 1050 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 1051              	.LCFI14:
+ 1052              		.cfi_def_cfa_offset 24
+ 1053              		.cfi_offset 4, -24
+ 1054              		.cfi_offset 5, -20
+ 1055              		.cfi_offset 6, -16
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 32
+
+
+ 1056              		.cfi_offset 7, -12
+ 1057              		.cfi_offset 8, -8
+ 1058              		.cfi_offset 14, -4
+ 556:STM32_MetaDataManager/MetaDataManager.c ****   static int32_t osxLicenseStart=0;
+ 557:STM32_MetaDataManager/MetaDataManager.c ****   static uint32_t osxLicenseCount=0;
+ 558:STM32_MetaDataManager/MetaDataManager.c ****   static MDM_OsxLicenseType_t OsxLicense=OSX_END;
+ 559:STM32_MetaDataManager/MetaDataManager.c ****   static uint8_t TmpLicense[4*3*4];
+ 560:STM32_MetaDataManager/MetaDataManager.c ****   
+ 561:STM32_MetaDataManager/MetaDataManager.c ****   if(osxLicenseStart==0){
+ 1059              		.loc 1 561 0
+ 1060 0004 404B     		ldr	r3, .L105
+ 1061 0006 1E68     		ldr	r6, [r3]
+ 1062 0008 002E     		cmp	r6, #0
+ 1063 000a 5CD1     		bne	.L102
+ 1064 000c 0C46     		mov	r4, r1
+ 1065 000e 0546     		mov	r5, r0
+ 1066              	.LVL111:
+ 1067              	.LBB15:
+ 562:STM32_MetaDataManager/MetaDataManager.c ****     /* No osx License activation phase */
+ 563:STM32_MetaDataManager/MetaDataManager.c ****     int32_t found=0;
+ 564:STM32_MetaDataManager/MetaDataManager.c ****     int32_t Index;
+ 565:STM32_MetaDataManager/MetaDataManager.c ****     OsxLicense = OSX_END;
+ 1068              		.loc 1 565 0
+ 1069 0010 3E4B     		ldr	r3, .L105+4
+ 1070 0012 0022     		movs	r2, #0
+ 1071 0014 1A70     		strb	r2, [r3]
+ 1072              	.LVL112:
+ 566:STM32_MetaDataManager/MetaDataManager.c ****     /* Loop over all the known osx Licenses */
+ 567:STM32_MetaDataManager/MetaDataManager.c ****     for(Index =0; ((Index<NumberOfKnownLic) & (found==0));Index++) {
+ 1073              		.loc 1 567 0
+ 1074 0016 3746     		mov	r7, r6
+ 1075              	.LVL113:
+ 1076              	.L91:
+ 1077              		.loc 1 567 0 is_stmt 0 discriminator 1
+ 1078 0018 3D4B     		ldr	r3, .L105+8
+ 1079 001a 1B68     		ldr	r3, [r3]
+ 1080 001c 9F42     		cmp	r7, r3
+ 1081 001e 2CBF     		ite	cs
+ 1082 0020 0022     		movcs	r2, #0
+ 1083 0022 0122     		movcc	r2, #1
+ 1084 0024 002E     		cmp	r6, #0
+ 1085 0026 18BF     		it	ne
+ 1086 0028 0022     		movne	r2, #0
+ 1087 002a 8AB9     		cbnz	r2, .L93
+ 568:STM32_MetaDataManager/MetaDataManager.c ****       /* Check If we know this License */
+ 569:STM32_MetaDataManager/MetaDataManager.c ****       if(!strncmp((char *)MDM_LicTable[known_OsxLic[Index].LicEnum].LicName,(char *)(att_data),2)) 
+ 570:STM32_MetaDataManager/MetaDataManager.c ****         found =1;
+ 571:STM32_MetaDataManager/MetaDataManager.c ****         OsxLicense = (MDM_OsxLicenseType_t) MDM_LicTable[known_OsxLic[Index].LicEnum].LicEnum;
+ 572:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 573:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 574:STM32_MetaDataManager/MetaDataManager.c **** 
+ 575:STM32_MetaDataManager/MetaDataManager.c ****     if(found) {
+ 1088              		.loc 1 575 0 is_stmt 1
+ 1089 002c 002E     		cmp	r6, #0
+ 1090 002e 46D0     		beq	.L94
+ 1091              	.LBB16:
+ 576:STM32_MetaDataManager/MetaDataManager.c ****       int32_t counter;
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 33
+
+
+ 577:STM32_MetaDataManager/MetaDataManager.c ****       MDM_PayLoadLic_t *PayLoad = (MDM_PayLoadLic_t *) MDM_LicTable[OsxLicense].Address;
+ 1092              		.loc 1 577 0
+ 1093 0030 364B     		ldr	r3, .L105+4
+ 1094 0032 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 1095 0034 374B     		ldr	r3, .L105+12
+ 1096 0036 03EB4213 		add	r3, r3, r2, lsl #5
+ 1097 003a DB69     		ldr	r3, [r3, #28]
+ 1098              	.LVL114:
+ 578:STM32_MetaDataManager/MetaDataManager.c ****       
+ 579:STM32_MetaDataManager/MetaDataManager.c ****       if(PayLoad->osxLicenseInitialized==0) {      
+ 1099              		.loc 1 579 0
+ 1100 003c 5B68     		ldr	r3, [r3, #4]
+ 1101              	.LVL115:
+ 1102 003e 63BB     		cbnz	r3, .L95
+ 580:STM32_MetaDataManager/MetaDataManager.c ****         osxLicenseStart=1;
+ 1103              		.loc 1 580 0
+ 1104 0040 314B     		ldr	r3, .L105
+ 1105 0042 0122     		movs	r2, #1
+ 1106              	.LVL116:
+ 1107 0044 1A60     		str	r2, [r3]
+ 581:STM32_MetaDataManager/MetaDataManager.c ****         osxLicenseCount=0;
+ 1108              		.loc 1 581 0
+ 1109 0046 344B     		ldr	r3, .L105+16
+ 1110 0048 0022     		movs	r2, #0
+ 1111 004a 1A60     		str	r2, [r3]
+ 1112              	.LVL117:
+ 582:STM32_MetaDataManager/MetaDataManager.c ****         for(counter=2;counter<data_length;counter++) {
+ 1113              		.loc 1 582 0
+ 1114 004c 0222     		movs	r2, #2
+ 1115 004e 21E0     		b	.L96
+ 1116              	.LVL118:
+ 1117              	.L93:
+ 1118              	.LBE16:
+ 569:STM32_MetaDataManager/MetaDataManager.c ****         found =1;
+ 1119              		.loc 1 569 0
+ 1120 0050 07EB4703 		add	r3, r7, r7, lsl #1
+ 1121 0054 C3EB0313 		rsb	r3, r3, r3, lsl #4
+ 1122 0058 304A     		ldr	r2, .L105+20
+ 1123 005a 12F80380 		ldrb	r8, [r2, r3]	@ zero_extendqisi2
+ 1124 005e 2D48     		ldr	r0, .L105+12
+ 1125 0060 00EB4810 		add	r0, r0, r8, lsl #5
+ 1126 0064 0222     		movs	r2, #2
+ 1127 0066 2946     		mov	r1, r5
+ 1128 0068 0430     		adds	r0, r0, #4
+ 1129 006a FFF7FEFF 		bl	strncmp
+ 1130              	.LVL119:
+ 1131 006e 38B9     		cbnz	r0, .L92
+ 1132              	.LVL120:
+ 571:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 1133              		.loc 1 571 0
+ 1134 0070 4FEA4818 		lsl	r8, r8, #5
+ 1135 0074 274B     		ldr	r3, .L105+12
+ 1136 0076 13F80820 		ldrb	r2, [r3, r8]	@ zero_extendqisi2
+ 1137 007a 244B     		ldr	r3, .L105+4
+ 1138 007c 1A70     		strb	r2, [r3]
+ 570:STM32_MetaDataManager/MetaDataManager.c ****         OsxLicense = (MDM_OsxLicenseType_t) MDM_LicTable[known_OsxLic[Index].LicEnum].LicEnum;
+ 1139              		.loc 1 570 0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 34
+
+
+ 1140 007e 0126     		movs	r6, #1
+ 1141              	.LVL121:
+ 1142              	.L92:
+ 567:STM32_MetaDataManager/MetaDataManager.c ****       /* Check If we know this License */
+ 1143              		.loc 1 567 0 discriminator 2
+ 1144 0080 0137     		adds	r7, r7, #1
+ 1145              	.LVL122:
+ 1146 0082 C9E7     		b	.L91
+ 1147              	.LVL123:
+ 1148              	.L97:
+ 1149              	.LBB17:
+ 583:STM32_MetaDataManager/MetaDataManager.c ****           TmpLicense[osxLicenseCount]=att_data[counter];
+ 1150              		.loc 1 583 0 discriminator 3
+ 1151 0084 2449     		ldr	r1, .L105+16
+ 1152 0086 0B68     		ldr	r3, [r1]
+ 1153 0088 AE5C     		ldrb	r6, [r5, r2]	@ zero_extendqisi2
+ 1154 008a 2548     		ldr	r0, .L105+24
+ 1155 008c C654     		strb	r6, [r0, r3]
+ 584:STM32_MetaDataManager/MetaDataManager.c ****           osxLicenseCount++;
+ 1156              		.loc 1 584 0 discriminator 3
+ 1157 008e 0133     		adds	r3, r3, #1
+ 1158 0090 0B60     		str	r3, [r1]
+ 582:STM32_MetaDataManager/MetaDataManager.c ****           TmpLicense[osxLicenseCount]=att_data[counter];
+ 1159              		.loc 1 582 0 discriminator 3
+ 1160 0092 0132     		adds	r2, r2, #1
+ 1161              	.LVL124:
+ 1162              	.L96:
+ 582:STM32_MetaDataManager/MetaDataManager.c ****           TmpLicense[osxLicenseCount]=att_data[counter];
+ 1163              		.loc 1 582 0 is_stmt 0 discriminator 1
+ 1164 0094 9442     		cmp	r4, r2
+ 1165 0096 F5DC     		bgt	.L97
+ 1166 0098 11E0     		b	.L94
+ 1167              	.LVL125:
+ 1168              	.L95:
+ 585:STM32_MetaDataManager/MetaDataManager.c ****         }
+ 586:STM32_MetaDataManager/MetaDataManager.c ****       } else {
+ 587:STM32_MetaDataManager/MetaDataManager.c ****         OsxLicense = OSX_END;
+ 1169              		.loc 1 587 0 is_stmt 1
+ 1170 009a 1C4B     		ldr	r3, .L105+4
+ 1171 009c 0022     		movs	r2, #0
+ 1172              	.LVL126:
+ 1173 009e 1A70     		strb	r2, [r3]
+ 1174              	.LVL127:
+ 1175 00a0 0DE0     		b	.L94
+ 1176              	.LVL128:
+ 1177              	.L98:
+ 1178              	.LBE17:
+ 1179              	.LBE15:
+ 1180              	.LBB18:
+ 588:STM32_MetaDataManager/MetaDataManager.c ****         MDM_PRINTF("osx%s%s Already Initialized\r\n",known_OsxLic[OsxLicense].osxType,MDM_LicTable[
+ 589:STM32_MetaDataManager/MetaDataManager.c ****       }
+ 590:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 591:STM32_MetaDataManager/MetaDataManager.c ****   } else {
+ 592:STM32_MetaDataManager/MetaDataManager.c ****     /* osx License activation phase */
+ 593:STM32_MetaDataManager/MetaDataManager.c ****     int32_t counter;
+ 594:STM32_MetaDataManager/MetaDataManager.c ****     for(counter=0;counter<data_length;counter++) {
+ 595:STM32_MetaDataManager/MetaDataManager.c ****       TmpLicense[osxLicenseCount]=att_data[counter];
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 35
+
+
+ 1181              		.loc 1 595 0 discriminator 3
+ 1182 00a2 1D4C     		ldr	r4, .L105+16
+ 1183 00a4 2368     		ldr	r3, [r4]
+ 1184 00a6 865C     		ldrb	r6, [r0, r2]	@ zero_extendqisi2
+ 1185 00a8 1D4D     		ldr	r5, .L105+24
+ 1186 00aa EE54     		strb	r6, [r5, r3]
+ 596:STM32_MetaDataManager/MetaDataManager.c ****       osxLicenseCount++;
+ 1187              		.loc 1 596 0 discriminator 3
+ 1188 00ac 0133     		adds	r3, r3, #1
+ 1189 00ae 2360     		str	r3, [r4]
+ 594:STM32_MetaDataManager/MetaDataManager.c ****       TmpLicense[osxLicenseCount]=att_data[counter];
+ 1190              		.loc 1 594 0 discriminator 3
+ 1191 00b0 0132     		adds	r2, r2, #1
+ 1192              	.LVL129:
+ 1193              	.L90:
+ 594:STM32_MetaDataManager/MetaDataManager.c ****       TmpLicense[osxLicenseCount]=att_data[counter];
+ 1194              		.loc 1 594 0 is_stmt 0 discriminator 1
+ 1195 00b2 9142     		cmp	r1, r2
+ 1196 00b4 F5DC     		bgt	.L98
+ 597:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 598:STM32_MetaDataManager/MetaDataManager.c **** 
+ 599:STM32_MetaDataManager/MetaDataManager.c ****     /* if we had received enough License's bytes ...*/
+ 600:STM32_MetaDataManager/MetaDataManager.c ****     if(osxLicenseCount == (3*4*4)) {
+ 1197              		.loc 1 600 0 is_stmt 1
+ 1198 00b6 184B     		ldr	r3, .L105+16
+ 1199 00b8 1B68     		ldr	r3, [r3]
+ 1200 00ba 302B     		cmp	r3, #48
+ 1201 00bc 05D0     		beq	.L104
+ 1202              	.LVL130:
+ 1203              	.L94:
+ 1204              	.LBE18:
+ 601:STM32_MetaDataManager/MetaDataManager.c ****       MDM_PayLoadLic_t *PayLoad = (MDM_PayLoadLic_t *) MDM_LicTable[OsxLicense].Address;
+ 602:STM32_MetaDataManager/MetaDataManager.c ****       uint8_t * DestLicPointer = (uint8_t *) PayLoad->osxLicense;
+ 603:STM32_MetaDataManager/MetaDataManager.c ****       /* Swap endianess */
+ 604:STM32_MetaDataManager/MetaDataManager.c ****       for(counter=0;counter<3*4*4;counter+=4) {
+ 605:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+3] = TmpLicense[counter+0];
+ 606:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+0] = TmpLicense[counter+3];
+ 607:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+2] = TmpLicense[counter+1];
+ 608:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+1] = TmpLicense[counter+2];
+ 609:STM32_MetaDataManager/MetaDataManager.c ****       }      
+ 610:STM32_MetaDataManager/MetaDataManager.c ****       osxLicenseCount=0;
+ 611:STM32_MetaDataManager/MetaDataManager.c ****       osxLicenseStart=0;
+ 612:STM32_MetaDataManager/MetaDataManager.c ****       return -OsxLicense;
+ 613:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 614:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 615:STM32_MetaDataManager/MetaDataManager.c ****   return osxLicenseStart;
+ 1205              		.loc 1 615 0
+ 1206 00be 124B     		ldr	r3, .L105
+ 1207 00c0 1868     		ldr	r0, [r3]
+ 1208              	.L89:
+ 616:STM32_MetaDataManager/MetaDataManager.c **** }
+ 1209              		.loc 1 616 0
+ 1210 00c2 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1211              	.LVL131:
+ 1212              	.L102:
+ 1213              	.LBB20:
+ 594:STM32_MetaDataManager/MetaDataManager.c ****       TmpLicense[osxLicenseCount]=att_data[counter];
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 36
+
+
+ 1214              		.loc 1 594 0
+ 1215 00c6 0022     		movs	r2, #0
+ 1216 00c8 F3E7     		b	.L90
+ 1217              	.LVL132:
+ 1218              	.L104:
+ 1219              	.LBB19:
+ 601:STM32_MetaDataManager/MetaDataManager.c ****       MDM_PayLoadLic_t *PayLoad = (MDM_PayLoadLic_t *) MDM_LicTable[OsxLicense].Address;
+ 1220              		.loc 1 601 0
+ 1221 00ca 104B     		ldr	r3, .L105+4
+ 1222 00cc 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 1223              	.LVL133:
+ 1224 00ce 114B     		ldr	r3, .L105+12
+ 1225 00d0 03EB4013 		add	r3, r3, r0, lsl #5
+ 1226 00d4 D969     		ldr	r1, [r3, #28]
+ 1227              	.LVL134:
+ 602:STM32_MetaDataManager/MetaDataManager.c ****       /* Swap endianess */
+ 1228              		.loc 1 602 0
+ 1229 00d6 2C31     		adds	r1, r1, #44
+ 1230              	.LVL135:
+ 604:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+3] = TmpLicense[counter+0];
+ 1231              		.loc 1 604 0
+ 1232 00d8 0023     		movs	r3, #0
+ 1233              	.LVL136:
+ 1234 00da 0CE0     		b	.L99
+ 1235              	.LVL137:
+ 1236              	.L100:
+ 605:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+0] = TmpLicense[counter+3];
+ 1237              		.loc 1 605 0 discriminator 3
+ 1238 00dc DC1C     		adds	r4, r3, #3
+ 1239 00de 104A     		ldr	r2, .L105+24
+ 1240 00e0 D55C     		ldrb	r5, [r2, r3]	@ zero_extendqisi2
+ 1241 00e2 0D55     		strb	r5, [r1, r4]
+ 606:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+2] = TmpLicense[counter+1];
+ 1242              		.loc 1 606 0 discriminator 3
+ 1243 00e4 145D     		ldrb	r4, [r2, r4]	@ zero_extendqisi2
+ 1244 00e6 CC54     		strb	r4, [r1, r3]
+ 607:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+1] = TmpLicense[counter+2];
+ 1245              		.loc 1 607 0 discriminator 3
+ 1246 00e8 5C1C     		adds	r4, r3, #1
+ 1247 00ea 9D1C     		adds	r5, r3, #2
+ 1248 00ec 165D     		ldrb	r6, [r2, r4]	@ zero_extendqisi2
+ 1249 00ee 4E55     		strb	r6, [r1, r5]
+ 608:STM32_MetaDataManager/MetaDataManager.c ****       }      
+ 1250              		.loc 1 608 0 discriminator 3
+ 1251 00f0 525D     		ldrb	r2, [r2, r5]	@ zero_extendqisi2
+ 1252 00f2 0A55     		strb	r2, [r1, r4]
+ 604:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+3] = TmpLicense[counter+0];
+ 1253              		.loc 1 604 0 discriminator 3
+ 1254 00f4 0433     		adds	r3, r3, #4
+ 1255              	.LVL138:
+ 1256              	.L99:
+ 604:STM32_MetaDataManager/MetaDataManager.c ****         DestLicPointer[counter+3] = TmpLicense[counter+0];
+ 1257              		.loc 1 604 0 is_stmt 0 discriminator 1
+ 1258 00f6 2F2B     		cmp	r3, #47
+ 1259 00f8 F0DD     		ble	.L100
+ 610:STM32_MetaDataManager/MetaDataManager.c ****       osxLicenseStart=0;
+ 1260              		.loc 1 610 0 is_stmt 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 37
+
+
+ 1261 00fa 0023     		movs	r3, #0
+ 1262              	.LVL139:
+ 1263 00fc 064A     		ldr	r2, .L105+16
+ 1264 00fe 1360     		str	r3, [r2]
+ 611:STM32_MetaDataManager/MetaDataManager.c ****       return -OsxLicense;
+ 1265              		.loc 1 611 0
+ 1266 0100 014A     		ldr	r2, .L105
+ 1267 0102 1360     		str	r3, [r2]
+ 612:STM32_MetaDataManager/MetaDataManager.c ****     }
+ 1268              		.loc 1 612 0
+ 1269 0104 4042     		negs	r0, r0
+ 1270 0106 DCE7     		b	.L89
+ 1271              	.L106:
+ 1272              		.align	2
+ 1273              	.L105:
+ 1274 0108 00000000 		.word	.LANCHOR6
+ 1275 010c 00000000 		.word	.LANCHOR7
+ 1276 0110 00000000 		.word	.LANCHOR3
+ 1277 0114 00000000 		.word	.LANCHOR2
+ 1278 0118 00000000 		.word	.LANCHOR9
+ 1279 011c 00000000 		.word	.LANCHOR8
+ 1280 0120 00000000 		.word	.LANCHOR10
+ 1281              	.LBE19:
+ 1282              	.LBE20:
+ 1283              		.cfi_endproc
+ 1284              	.LFE140:
+ 1286              		.section	.text.MetaDataLicenseStatus,"ax",%progbits
+ 1287              		.align	1
+ 1288              		.global	MetaDataLicenseStatus
+ 1289              		.syntax unified
+ 1290              		.thumb
+ 1291              		.thumb_func
+ 1292              		.fpu fpv4-sp-d16
+ 1294              	MetaDataLicenseStatus:
+ 1295              	.LFB141:
+ 617:STM32_MetaDataManager/MetaDataManager.c **** 
+ 618:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 619:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Check the activation status of one osxLicense inside the Media Data Manager
+ 620:STM32_MetaDataManager/MetaDataManager.c ****  * @param uint32_t Activation status [1/0]
+ 621:STM32_MetaDataManager/MetaDataManager.c ****  * @retval None
+ 622:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 623:STM32_MetaDataManager/MetaDataManager.c **** uint32_t MetaDataLicenseStatus(MDM_OsxLicenseType_t osxLic) {  
+ 1296              		.loc 1 623 0
+ 1297              		.cfi_startproc
+ 1298              		@ args = 0, pretend = 0, frame = 0
+ 1299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1300              		@ link register save eliminated.
+ 1301              	.LVL140:
+ 624:STM32_MetaDataManager/MetaDataManager.c ****   MDM_PayLoadLic_t *PayLoad = (MDM_PayLoadLic_t *) MDM_LicTable[osxLic].Address;
+ 1302              		.loc 1 624 0
+ 1303 0000 024B     		ldr	r3, .L108
+ 1304 0002 03EB4010 		add	r0, r3, r0, lsl #5
+ 1305              	.LVL141:
+ 1306 0006 C369     		ldr	r3, [r0, #28]
+ 1307              	.LVL142:
+ 625:STM32_MetaDataManager/MetaDataManager.c ****   return PayLoad->osxLicenseInitialized;
+ 626:STM32_MetaDataManager/MetaDataManager.c **** }
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 38
+
+
+ 1308              		.loc 1 626 0
+ 1309 0008 5868     		ldr	r0, [r3, #4]
+ 1310 000a 7047     		bx	lr
+ 1311              	.L109:
+ 1312              		.align	2
+ 1313              	.L108:
+ 1314 000c 00000000 		.word	.LANCHOR2
+ 1315              		.cfi_endproc
+ 1316              	.LFE141:
+ 1318              		.section	.text.MDM_SaveGMD,"ax",%progbits
+ 1319              		.align	1
+ 1320              		.global	MDM_SaveGMD
+ 1321              		.syntax unified
+ 1322              		.thumb
+ 1323              		.thumb_func
+ 1324              		.fpu fpv4-sp-d16
+ 1326              	MDM_SaveGMD:
+ 1327              	.LFB142:
+ 627:STM32_MetaDataManager/MetaDataManager.c **** 
+ 628:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 629:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Save one Generic Meta Data to Meta Data Manager
+ 630:STM32_MetaDataManager/MetaDataManager.c ****  * @param MDM_GenericMetaDataType_t GMDType Generic Meta Data type that we want to save
+ 631:STM32_MetaDataManager/MetaDataManager.c ****  * @param void *GMD Pointer where find the Generic Meta Data
+ 632:STM32_MetaDataManager/MetaDataManager.c ****  * @retval uin32_t Success/NotSuccess (1/0)
+ 633:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 634:STM32_MetaDataManager/MetaDataManager.c **** uint32_t MDM_SaveGMD(MDM_GenericMetaDataType_t GMDType,void *GMD)
+ 635:STM32_MetaDataManager/MetaDataManager.c **** {
+ 1328              		.loc 1 635 0
+ 1329              		.cfi_startproc
+ 1330              		@ args = 0, pretend = 0, frame = 0
+ 1331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1332              	.LVL143:
+ 1333 0000 08B5     		push	{r3, lr}
+ 1334              	.LCFI15:
+ 1335              		.cfi_def_cfa_offset 8
+ 1336              		.cfi_offset 3, -8
+ 1337              		.cfi_offset 14, -4
+ 1338              	.LVL144:
+ 636:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t RetValue=1;
+ 637:STM32_MetaDataManager/MetaDataManager.c ****   if(MDM_GMDTable[GMDType].Address!=0) {
+ 1339              		.loc 1 637 0
+ 1340 0002 C0EBC000 		rsb	r0, r0, r0, lsl #3
+ 1341              	.LVL145:
+ 1342 0006 8200     		lsls	r2, r0, #2
+ 1343 0008 064B     		ldr	r3, .L114
+ 1344 000a 1344     		add	r3, r3, r2
+ 1345 000c 9869     		ldr	r0, [r3, #24]
+ 1346 000e 00B9     		cbnz	r0, .L113
+ 1347              	.LVL146:
+ 1348              	.L110:
+ 638:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PayLoadGMD_t *MDMPayLoad = (MDM_PayLoadGMD_t *)MDM_GMDTable[GMDType].Address;
+ 639:STM32_MetaDataManager/MetaDataManager.c ****     memcpy((void *)MDMPayLoad->puint8_GMD,GMD,MDMPayLoad->GMDSize);
+ 640:STM32_MetaDataManager/MetaDataManager.c ****     NecessityToSaveMetaDataManager=1;
+ 641:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("Updating the Generic Meta Data type=%s\r\n",MDM_GMDTable[GMDType].GMDName);
+ 642:STM32_MetaDataManager/MetaDataManager.c ****   } else {
+ 643:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("ERROR before saving one Generic Meta Datait's necessary Initializes the MDM with th
+ 644:STM32_MetaDataManager/MetaDataManager.c ****     RetValue=0;
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 39
+
+
+ 645:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 646:STM32_MetaDataManager/MetaDataManager.c ****   return RetValue;
+ 647:STM32_MetaDataManager/MetaDataManager.c **** }
+ 1349              		.loc 1 647 0
+ 1350 0010 08BD     		pop	{r3, pc}
+ 1351              	.LVL147:
+ 1352              	.L113:
+ 1353              	.LBB21:
+ 639:STM32_MetaDataManager/MetaDataManager.c ****     NecessityToSaveMetaDataManager=1;
+ 1354              		.loc 1 639 0
+ 1355 0012 4268     		ldr	r2, [r0, #4]
+ 1356 0014 0830     		adds	r0, r0, #8
+ 1357              	.LVL148:
+ 1358 0016 FFF7FEFF 		bl	memcpy
+ 1359              	.LVL149:
+ 640:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("Updating the Generic Meta Data type=%s\r\n",MDM_GMDTable[GMDType].GMDName);
+ 1360              		.loc 1 640 0
+ 1361 001a 0120     		movs	r0, #1
+ 1362 001c 024B     		ldr	r3, .L114+4
+ 1363 001e 1860     		str	r0, [r3]
+ 1364              	.LBE21:
+ 646:STM32_MetaDataManager/MetaDataManager.c **** }
+ 1365              		.loc 1 646 0
+ 1366 0020 F6E7     		b	.L110
+ 1367              	.L115:
+ 1368 0022 00BF     		.align	2
+ 1369              	.L114:
+ 1370 0024 00000000 		.word	.LANCHOR5
+ 1371 0028 00000000 		.word	.LANCHOR1
+ 1372              		.cfi_endproc
+ 1373              	.LFE142:
+ 1375              		.section	.text.MDM_ReCallGMD,"ax",%progbits
+ 1376              		.align	1
+ 1377              		.global	MDM_ReCallGMD
+ 1378              		.syntax unified
+ 1379              		.thumb
+ 1380              		.thumb_func
+ 1381              		.fpu fpv4-sp-d16
+ 1383              	MDM_ReCallGMD:
+ 1384              	.LFB143:
+ 648:STM32_MetaDataManager/MetaDataManager.c **** 
+ 649:STM32_MetaDataManager/MetaDataManager.c **** /**
+ 650:STM32_MetaDataManager/MetaDataManager.c ****  * @brief Retrieve One Generic Meta Data saved on Meta Data Manager
+ 651:STM32_MetaDataManager/MetaDataManager.c ****  * @param MDM_GenericMetaDataType_t GMDType Generic Meta Data type that we want to retrieve
+ 652:STM32_MetaDataManager/MetaDataManager.c ****  * @param void *GMD Pointer where to save the Generic Meta Data
+ 653:STM32_MetaDataManager/MetaDataManager.c ****  * @retval uin32_t Success/NotSuccess (1/0)
+ 654:STM32_MetaDataManager/MetaDataManager.c ****  */
+ 655:STM32_MetaDataManager/MetaDataManager.c **** uint32_t MDM_ReCallGMD(MDM_GenericMetaDataType_t GMDType,void *GMD)
+ 656:STM32_MetaDataManager/MetaDataManager.c **** {
+ 1385              		.loc 1 656 0
+ 1386              		.cfi_startproc
+ 1387              		@ args = 0, pretend = 0, frame = 0
+ 1388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1389              	.LVL150:
+ 1390 0000 08B5     		push	{r3, lr}
+ 1391              	.LCFI16:
+ 1392              		.cfi_def_cfa_offset 8
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 40
+
+
+ 1393              		.cfi_offset 3, -8
+ 1394              		.cfi_offset 14, -4
+ 1395              	.LVL151:
+ 657:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t RetValue=1;
+ 658:STM32_MetaDataManager/MetaDataManager.c ****   if(MDM_GMDTable[GMDType].Address!=0) {
+ 1396              		.loc 1 658 0
+ 1397 0002 C0EBC000 		rsb	r0, r0, r0, lsl #3
+ 1398              	.LVL152:
+ 1399 0006 8200     		lsls	r2, r0, #2
+ 1400 0008 064B     		ldr	r3, .L120
+ 1401 000a 1344     		add	r3, r3, r2
+ 1402 000c 9869     		ldr	r0, [r3, #24]
+ 1403 000e 00B9     		cbnz	r0, .L119
+ 1404              	.LVL153:
+ 1405              	.L116:
+ 659:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PayLoadGMD_t *MDMPayLoad = (MDM_PayLoadGMD_t *)MDM_GMDTable[GMDType].Address;
+ 660:STM32_MetaDataManager/MetaDataManager.c ****     memcpy(GMD,(void *)MDMPayLoad->puint8_GMD,MDMPayLoad->GMDSize);
+ 661:STM32_MetaDataManager/MetaDataManager.c ****   } else {
+ 662:STM32_MetaDataManager/MetaDataManager.c ****     MDM_PRINTF("ERROR there is not a Generic Meta Data type=%d inside the MDM\r\n",GMDType);
+ 663:STM32_MetaDataManager/MetaDataManager.c ****     RetValue=0;
+ 664:STM32_MetaDataManager/MetaDataManager.c ****   }
+ 665:STM32_MetaDataManager/MetaDataManager.c ****   return RetValue;
+ 666:STM32_MetaDataManager/MetaDataManager.c **** }
+ 1406              		.loc 1 666 0
+ 1407 0010 08BD     		pop	{r3, pc}
+ 1408              	.LVL154:
+ 1409              	.L119:
+ 1410 0012 0B46     		mov	r3, r1
+ 1411              	.LVL155:
+ 1412              	.LBB22:
+ 660:STM32_MetaDataManager/MetaDataManager.c ****   } else {
+ 1413              		.loc 1 660 0
+ 1414 0014 4268     		ldr	r2, [r0, #4]
+ 1415 0016 00F10801 		add	r1, r0, #8
+ 1416              	.LVL156:
+ 1417 001a 1846     		mov	r0, r3
+ 1418              	.LVL157:
+ 1419 001c FFF7FEFF 		bl	memcpy
+ 1420              	.LVL158:
+ 1421              	.LBE22:
+ 657:STM32_MetaDataManager/MetaDataManager.c ****   uint32_t RetValue=1;
+ 1422              		.loc 1 657 0
+ 1423 0020 0120     		movs	r0, #1
+ 665:STM32_MetaDataManager/MetaDataManager.c **** }
+ 1424              		.loc 1 665 0
+ 1425 0022 F5E7     		b	.L116
+ 1426              	.L121:
+ 1427              		.align	2
+ 1428              	.L120:
+ 1429 0024 00000000 		.word	.LANCHOR5
+ 1430              		.cfi_endproc
+ 1431              	.LFE143:
+ 1433              		.global	MDM_GMDTable
+ 1434              		.global	MDM_LicTable
+ 1435              		.global	NecessityToSaveMetaDataManager
+ 1436              		.global	known_OsxLic
+ 1437              		.section	.bss.NecessityToSaveMetaDataManager,"aw",%nobits
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 41
+
+
+ 1438              		.align	2
+ 1439              		.set	.LANCHOR1,. + 0
+ 1442              	NecessityToSaveMetaDataManager:
+ 1443 0000 00000000 		.space	4
+ 1444              		.section	.bss.NumberOfKnownGMD,"aw",%nobits
+ 1445              		.align	2
+ 1446              		.set	.LANCHOR4,. + 0
+ 1449              	NumberOfKnownGMD:
+ 1450 0000 00000000 		.space	4
+ 1451              		.section	.bss.NumberOfKnownLic,"aw",%nobits
+ 1452              		.align	2
+ 1453              		.set	.LANCHOR3,. + 0
+ 1456              	NumberOfKnownLic:
+ 1457 0000 00000000 		.space	4
+ 1458              		.section	.bss.OsxLicense.9957,"aw",%nobits
+ 1459              		.set	.LANCHOR7,. + 0
+ 1462              	OsxLicense.9957:
+ 1463 0000 00       		.space	1
+ 1464              		.section	.bss.TmpLicense.9958,"aw",%nobits
+ 1465              		.align	2
+ 1466              		.set	.LANCHOR10,. + 0
+ 1469              	TmpLicense.9958:
+ 1470 0000 00000000 		.space	48
+ 1470      00000000 
+ 1470      00000000 
+ 1470      00000000 
+ 1470      00000000 
+ 1471              		.section	.bss.osxLicenseCount.9956,"aw",%nobits
+ 1472              		.align	2
+ 1473              		.set	.LANCHOR9,. + 0
+ 1476              	osxLicenseCount.9956:
+ 1477 0000 00000000 		.space	4
+ 1478              		.section	.bss.osxLicenseStart.9955,"aw",%nobits
+ 1479              		.align	2
+ 1480              		.set	.LANCHOR6,. + 0
+ 1483              	osxLicenseStart.9955:
+ 1484 0000 00000000 		.space	4
+ 1485              		.section	.bss.uint64_MetaDataVector,"aw",%nobits
+ 1486              		.align	3
+ 1489              	uint64_MetaDataVector:
+ 1490 0000 00000000 		.space	4096
+ 1490      00000000 
+ 1490      00000000 
+ 1490      00000000 
+ 1490      00000000 
+ 1491              		.section	.data.MDM_GMDTable,"aw",%progbits
+ 1492              		.align	2
+ 1493              		.set	.LANCHOR5,. + 0
+ 1496              	MDM_GMDTable:
+ 1497 0000 00000000 		.word	0
+ 1498 0004 4E554C4C 		.ascii	"NULL\000"
+ 1498      00
+ 1499 0009 00000000 		.space	11
+ 1499      00000000 
+ 1499      000000
+ 1500 0014 00000000 		.word	0
+ 1501 0018 00000000 		.word	0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 42
+
+
+ 1502 001c 01000000 		.word	1
+ 1503 0020 4E4F4445 		.ascii	"NODE_NAME\000"
+ 1503      5F4E414D 
+ 1503      4500
+ 1504 002a 00000000 		.space	6
+ 1504      0000
+ 1505 0030 00000000 		.word	0
+ 1506 0034 00000000 		.word	0
+ 1507 0038 02000000 		.word	2
+ 1508 003c 4150495F 		.ascii	"API_TOKEN\000"
+ 1508      544F4B45 
+ 1508      4E00
+ 1509 0046 00000000 		.space	6
+ 1509      0000
+ 1510 004c 00000000 		.word	0
+ 1511 0050 00000000 		.word	0
+ 1512 0054 03000000 		.word	3
+ 1513 0058 41435449 		.ascii	"ACTIVE_APP\000"
+ 1513      56455F41 
+ 1513      505000
+ 1514 0063 00000000 		.space	5
+ 1514      00
+ 1515 0068 00000000 		.word	0
+ 1516 006c 00000000 		.word	0
+ 1517              		.section	.data.MDM_LicTable,"aw",%progbits
+ 1518              		.align	2
+ 1519              		.set	.LANCHOR2,. + 0
+ 1522              	MDM_LicTable:
+ 1523 0000 00000000 		.word	0
+ 1524 0004 303000   		.ascii	"00\000"
+ 1525 0007 00000000 		.space	9
+ 1525      00000000 
+ 1525      00
+ 1526 0010 4E554C4C 		.ascii	"NULL\000"
+ 1526      00
+ 1527 0015 00000000 		.space	7
+ 1527      000000
+ 1528 001c 00000000 		.word	0
+ 1529 0020 01000000 		.word	1
+ 1530 0024 465800   		.ascii	"FX\000"
+ 1531 0027 00000000 		.space	9
+ 1531      00000000 
+ 1531      00
+ 1532 0030 4D6F7469 		.ascii	"Motion\000"
+ 1532      6F6E00
+ 1533 0037 00000000 		.space	5
+ 1533      00
+ 1534 003c 00000000 		.word	0
+ 1535 0040 02000000 		.word	2
+ 1536 0044 415200   		.ascii	"AR\000"
+ 1537 0047 00000000 		.space	9
+ 1537      00000000 
+ 1537      00
+ 1538 0050 4D6F7469 		.ascii	"Motion\000"
+ 1538      6F6E00
+ 1539 0057 00000000 		.space	5
+ 1539      00
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 43
+
+
+ 1540 005c 00000000 		.word	0
+ 1541 0060 03000000 		.word	3
+ 1542 0064 435000   		.ascii	"CP\000"
+ 1543 0067 00000000 		.space	9
+ 1543      00000000 
+ 1543      00
+ 1544 0070 4D6F7469 		.ascii	"Motion\000"
+ 1544      6F6E00
+ 1545 0077 00000000 		.space	5
+ 1545      00
+ 1546 007c 00000000 		.word	0
+ 1547 0080 04000000 		.word	4
+ 1548 0084 475200   		.ascii	"GR\000"
+ 1549 0087 00000000 		.space	9
+ 1549      00000000 
+ 1549      00
+ 1550 0090 4D6F7469 		.ascii	"Motion\000"
+ 1550      6F6E00
+ 1551 0097 00000000 		.space	5
+ 1551      00
+ 1552 009c 00000000 		.word	0
+ 1553 00a0 05000000 		.word	5
+ 1554 00a4 504D00   		.ascii	"PM\000"
+ 1555 00a7 00000000 		.space	9
+ 1555      00000000 
+ 1555      00
+ 1556 00b0 4D6F7469 		.ascii	"Motion\000"
+ 1556      6F6E00
+ 1557 00b7 00000000 		.space	5
+ 1557      00
+ 1558 00bc 00000000 		.word	0
+ 1559 00c0 06000000 		.word	6
+ 1560 00c4 534C00   		.ascii	"SL\000"
+ 1561 00c7 00000000 		.space	9
+ 1561      00000000 
+ 1561      00
+ 1562 00d0 41636F75 		.ascii	"Acoustic\000"
+ 1562      73746963 
+ 1562      00
+ 1563 00d9 000000   		.space	3
+ 1564 00dc 00000000 		.word	0
+ 1565 00e0 07000000 		.word	7
+ 1566 00e4 424600   		.ascii	"BF\000"
+ 1567 00e7 00000000 		.space	9
+ 1567      00000000 
+ 1567      00
+ 1568 00f0 41636F75 		.ascii	"Acoustic\000"
+ 1568      73746963 
+ 1568      00
+ 1569 00f9 000000   		.space	3
+ 1570 00fc 00000000 		.word	0
+ 1571 0100 08000000 		.word	8
+ 1572 0104 425600   		.ascii	"BV\000"
+ 1573 0107 00000000 		.space	9
+ 1573      00000000 
+ 1573      00
+ 1574 0110 41756469 		.ascii	"Audio\000"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 44
+
+
+ 1574      6F00
+ 1575 0116 00000000 		.space	6
+ 1575      0000
+ 1576 011c 00000000 		.word	0
+ 1577 0120 09000000 		.word	9
+ 1578 0124 494400   		.ascii	"ID\000"
+ 1579 0127 00000000 		.space	9
+ 1579      00000000 
+ 1579      00
+ 1580 0130 4D6F7469 		.ascii	"Motion\000"
+ 1580      6F6E00
+ 1581 0137 00000000 		.space	5
+ 1581      00
+ 1582 013c 00000000 		.word	0
+ 1583              		.section	.data.known_OsxLic,"aw",%progbits
+ 1584              		.align	2
+ 1585              		.set	.LANCHOR8,. + 0
+ 1588              	known_OsxLic:
+ 1589 0000 00       		.byte	0
+ 1590 0001 4C415354 		.ascii	"LAST\000"
+ 1590      00
+ 1591 0006 000000   		.space	3
+ 1592 0009 00       		.ascii	"\000"
+ 1593 000a 00000000 		.space	35
+ 1593      00000000 
+ 1593      00000000 
+ 1593      00000000 
+ 1593      00000000 
+ 1594              		.section	.data.puint8_RW_MetaData,"aw",%progbits
+ 1595              		.align	2
+ 1596              		.set	.LANCHOR0,. + 0
+ 1599              	puint8_RW_MetaData:
+ 1600 0000 08000000 		.word	uint64_MetaDataVector+8
+ 1601              		.text
+ 1602              	.Letext0:
+ 1603              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stdarg.h
+ 1604              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
+ 1605              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
+ 1606              		.file 5 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
+ 1607              		.file 6 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h
+ 1608              		.file 7 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
+ 1609              		.file 8 "<built-in>"
+ 1610              		.file 9 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
+ 1611              		.file 10 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
+ 1612              		.file 11 "Drivers/CMSIS/Include/core_cm4.h"
+ 1613              		.file 12 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 1614              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 1615              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 1616              		.file 15 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 1617              		.file 16 "STM32_MetaDataManager/MetaDataManager.h"
+ 1618              		.file 17 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/string.h"
+ 1619              		.file 18 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdio.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 45
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 MetaDataManager.c
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:18     .text.ReCallMetaDataManager:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:24     .text.ReCallMetaDataManager:0000000000000000 ReCallMetaDataManager
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:189    .text.ReCallMetaDataManager:0000000000000098 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1489   .bss.uint64_MetaDataVector:0000000000000000 uint64_MetaDataVector
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:199    .text.PrintOut_MDM_LicenseStatus:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:205    .text.PrintOut_MDM_LicenseStatus:0000000000000000 PrintOut_MDM_LicenseStatus
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:232    .text.ReseMetaDataManager:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:239    .text.ReseMetaDataManager:0000000000000000 ReseMetaDataManager
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:291    .text.ReseMetaDataManager:000000000000003c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:300    .text.EraseMetaDataManager:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:307    .text.EraseMetaDataManager:0000000000000000 EraseMetaDataManager
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:327    .text.SaveMetaDataManager:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:334    .text.SaveMetaDataManager:0000000000000000 SaveMetaDataManager
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:361    .text.SaveMetaDataManager:0000000000000018 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:368    .text.InitMetaDataManager:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:375    .text.InitMetaDataManager:0000000000000000 InitMetaDataManager
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:908    .text.InitMetaDataManager:00000000000002a8 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:919    .text.InitMetaDataManager:00000000000002c8 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1027   .text.InitMetaDataManager:0000000000000370 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1036   .text.MDM_LicenseParsing:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1043   .text.MDM_LicenseParsing:0000000000000000 MDM_LicenseParsing
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1274   .text.MDM_LicenseParsing:0000000000000108 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1287   .text.MetaDataLicenseStatus:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1294   .text.MetaDataLicenseStatus:0000000000000000 MetaDataLicenseStatus
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1314   .text.MetaDataLicenseStatus:000000000000000c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1319   .text.MDM_SaveGMD:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1326   .text.MDM_SaveGMD:0000000000000000 MDM_SaveGMD
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1370   .text.MDM_SaveGMD:0000000000000024 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1376   .text.MDM_ReCallGMD:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1383   .text.MDM_ReCallGMD:0000000000000000 MDM_ReCallGMD
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1429   .text.MDM_ReCallGMD:0000000000000024 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1496   .data.MDM_GMDTable:0000000000000000 MDM_GMDTable
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1522   .data.MDM_LicTable:0000000000000000 MDM_LicTable
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1442   .bss.NecessityToSaveMetaDataManager:0000000000000000 NecessityToSaveMetaDataManager
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1588   .data.known_OsxLic:0000000000000000 known_OsxLic
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1438   .bss.NecessityToSaveMetaDataManager:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1445   .bss.NumberOfKnownGMD:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1449   .bss.NumberOfKnownGMD:0000000000000000 NumberOfKnownGMD
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1452   .bss.NumberOfKnownLic:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1456   .bss.NumberOfKnownLic:0000000000000000 NumberOfKnownLic
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1462   .bss.OsxLicense.9957:0000000000000000 OsxLicense.9957
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1463   .bss.OsxLicense.9957:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1465   .bss.TmpLicense.9958:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1469   .bss.TmpLicense.9958:0000000000000000 TmpLicense.9958
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1472   .bss.osxLicenseCount.9956:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1476   .bss.osxLicenseCount.9956:0000000000000000 osxLicenseCount.9956
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1479   .bss.osxLicenseStart.9955:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1483   .bss.osxLicenseStart.9955:0000000000000000 osxLicenseStart.9955
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1486   .bss.uint64_MetaDataVector:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1492   .data.MDM_GMDTable:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1518   .data.MDM_LicTable:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1584   .data.known_OsxLic:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1595   .data.puint8_RW_MetaData:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s:1599   .data.puint8_RW_MetaData:0000000000000000 puint8_RW_MetaData
+
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccZ5UYCw.s 			page 46
+
+
+UNDEFINED SYMBOLS
+UserFunctionForErasingFlash
+UserFunctionForSavingFlash
+sprintf
+strncmp
+memcpy
