@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,22 +17,23 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.section	.text.save_rec_fw,"ax",%progbits
+  17              		.section	.text.Save_Rec_FW,"ax",%progbits
   18              		.align	1
-  19              		.global	save_rec_fw
+  19              		.global	Save_Rec_FW
   20              		.syntax unified
   21              		.thumb
   22              		.thumb_func
   23              		.fpu fpv4-sp-d16
-  25              	save_rec_fw:
+  25              	Save_Rec_FW:
   26              	.LFB133:
   27              		.file 1 "Src/flash_firmware.c"
    1:Src/flash_firmware.c **** #include "flash_firmware.h"
-   2:Src/flash_firmware.c **** 
-   3:Src/flash_firmware.c **** void save_rec_fw(char *data_to_flash, uint32_t len, uint32_t address, uint8_t first_package) {
-  28              		.loc 1 3 0
+   2:Src/flash_firmware.c **** #include "usbd_cdc_if.h"
+   3:Src/flash_firmware.c **** 
+   4:Src/flash_firmware.c **** HAL_StatusTypeDef Save_Rec_FW(char *data_to_flash, uint32_t len) {
+  28              		.loc 1 4 0
   29              		.cfi_startproc
-  30              		@ args = 0, pretend = 0, frame = 24
+  30              		@ args = 0, pretend = 0, frame = 96
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              	.LVL0:
   33 0000 F0B5     		push	{r4, r5, r6, r7, lr}
@@ -43,228 +44,283 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 1
   38              		.cfi_offset 6, -12
   39              		.cfi_offset 7, -8
   40              		.cfi_offset 14, -4
-  41 0002 87B0     		sub	sp, sp, #28
+  41 0002 99B0     		sub	sp, sp, #100
   42              	.LCFI1:
-  43              		.cfi_def_cfa_offset 48
+  43              		.cfi_def_cfa_offset 120
   44 0004 0746     		mov	r7, r0
-  45 0006 1546     		mov	r5, r2
-   4:Src/flash_firmware.c **** 
-   5:Src/flash_firmware.c ****     volatile HAL_StatusTypeDef flash_status;
-   6:Src/flash_firmware.c **** 
-   7:Src/flash_firmware.c ****     if (first_package) {
-  46              		.loc 1 7 0
-  47 0008 4BB9     		cbnz	r3, .L9
-  48              	.LVL1:
-  49              	.L2:
-   8:Src/flash_firmware.c ****         FLASH_EraseInitTypeDef EraseInitStruct;
-   9:Src/flash_firmware.c ****         EraseInitStruct.TypeErase   = FLASH_TYPEERASE_PAGES;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 2
+  45 0006 0E46     		mov	r6, r1
+   5:Src/flash_firmware.c **** 
+   6:Src/flash_firmware.c ****     volatile HAL_StatusTypeDef flashStatus = HAL_OK;
+  46              		.loc 1 6 0
+  47 0008 0023     		movs	r3, #0
+  48 000a 8DF85F30 		strb	r3, [sp, #95]
+   7:Src/flash_firmware.c **** 
+   8:Src/flash_firmware.c ****     FLASH_EraseInitTypeDef EraseInitStruct;
+   9:Src/flash_firmware.c ****     EraseInitStruct.TypeErase   = FLASH_TYPEERASE_PAGES;
+  49              		.loc 1 9 0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s 			page 2
 
 
-  10:Src/flash_firmware.c ****         EraseInitStruct.Banks       = FLASH_BANK_1;
-  11:Src/flash_firmware.c ****         EraseInitStruct.Page        = 16;
-  12:Src/flash_firmware.c ****         EraseInitStruct.NbPages     = 240;
+  50 000e 1393     		str	r3, [sp, #76]
+  10:Src/flash_firmware.c ****     EraseInitStruct.Banks       = FLASH_BANK_1;
+  51              		.loc 1 10 0
+  52 0010 0123     		movs	r3, #1
+  53 0012 1493     		str	r3, [sp, #80]
+  11:Src/flash_firmware.c ****     EraseInitStruct.Page        = 16;
+  54              		.loc 1 11 0
+  55 0014 1023     		movs	r3, #16
+  56 0016 1593     		str	r3, [sp, #84]
+  12:Src/flash_firmware.c ****     EraseInitStruct.NbPages     = 240;
+  57              		.loc 1 12 0
+  58 0018 F023     		movs	r3, #240
+  59 001a 1693     		str	r3, [sp, #88]
   13:Src/flash_firmware.c **** 
-  14:Src/flash_firmware.c ****         /* Unlock the Flash to enable the flash control register access *************/
-  15:Src/flash_firmware.c ****         HAL_FLASH_Unlock();
+  14:Src/flash_firmware.c ****     /* Unlock the Flash to enable the flash control register access *************/
+  15:Src/flash_firmware.c ****     HAL_FLASH_Unlock();
+  60              		.loc 1 15 0
+  61 001c FFF7FEFF 		bl	HAL_FLASH_Unlock
+  62              	.LVL1:
   16:Src/flash_firmware.c **** 
-  17:Src/flash_firmware.c ****         uint32_t PageError;
-  18:Src/flash_firmware.c ****         flash_status = HAL_FLASHEx_Erase(&EraseInitStruct, &PageError);
+  17:Src/flash_firmware.c ****     if (firstPackage) {
+  63              		.loc 1 17 0
+  64 0020 2E4B     		ldr	r3, .L10
+  65 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  66 0024 5BB9     		cbnz	r3, .L9
+  67              	.L2:
+  18:Src/flash_firmware.c ****         uint32_t PageError;
+  19:Src/flash_firmware.c ****         flashStatus = HAL_FLASHEx_Erase(&EraseInitStruct, &PageError);
+  20:Src/flash_firmware.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"Erased\r\n", 8, 100);
+  21:Src/flash_firmware.c ****         firstPackage = 0;
+  22:Src/flash_firmware.c ****     }
+  23:Src/flash_firmware.c **** 
+  24:Src/flash_firmware.c ****     char chunk[8];
+  25:Src/flash_firmware.c ****     char sendString[64];
+  26:Src/flash_firmware.c **** 
+  27:Src/flash_firmware.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Flashing\r\n", 10, 100);
+  68              		.loc 1 27 0
+  69 0026 6423     		movs	r3, #100
+  70 0028 0A22     		movs	r2, #10
+  71 002a 2D49     		ldr	r1, .L10+4
+  72 002c 2D48     		ldr	r0, .L10+8
+  73 002e FFF7FEFF 		bl	HAL_UART_Transmit
+  74              	.LVL2:
+  28:Src/flash_firmware.c **** 
+  29:Src/flash_firmware.c ****     if (flashStatus == HAL_OK) {
+  75              		.loc 1 29 0
+  76 0032 9DF85F30 		ldrb	r3, [sp, #95]	@ zero_extendqisi2
+  77 0036 002B     		cmp	r3, #0
+  78 0038 43D1     		bne	.L4
+  79              	.LBB2:
+  30:Src/flash_firmware.c ****         for (int i = 0; i < (int)(len/8); i++) {
+  80              		.loc 1 30 0
+  81 003a 0024     		movs	r4, #0
+  82 003c 10E0     		b	.L3
+  83              	.L9:
+  84              	.LBE2:
+  85              	.LBB3:
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s 			page 3
+
+
   19:Src/flash_firmware.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"Erased\r\n", 8, 100);
-  20:Src/flash_firmware.c ****     }
-  21:Src/flash_firmware.c **** 
-  22:Src/flash_firmware.c ****     const char **fragments;
-  23:Src/flash_firmware.c ****     fragments = malloc(sizeof(*fragments) * 4);
-  50              		.loc 1 23 0
-  51 000a 1020     		movs	r0, #16
-  52 000c FFF7FEFF 		bl	malloc
-  53              	.LVL2:
-  54 0010 0646     		mov	r6, r0
-  55              	.LVL3:
-  24:Src/flash_firmware.c **** 
-  25:Src/flash_firmware.c ****     if (flash_status == HAL_OK) {
-  56              		.loc 1 25 0
-  57 0012 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
-  58 0016 002B     		cmp	r3, #0
-  59 0018 39D1     		bne	.L4
-  60              	.LBB2:
-  26:Src/flash_firmware.c ****         for (int i = 0; i < 8; i++) {
-  61              		.loc 1 26 0
-  62 001a 0024     		movs	r4, #0
-  63 001c 17E0     		b	.L3
-  64              	.LVL4:
-  65              	.L9:
-  66              	.LBE2:
-  67              	.LBB3:
-   9:Src/flash_firmware.c ****         EraseInitStruct.Banks       = FLASH_BANK_1;
-  68              		.loc 1 9 0
-  69 001e 0023     		movs	r3, #0
-  70              	.LVL5:
-  71 0020 0193     		str	r3, [sp, #4]
-  10:Src/flash_firmware.c ****         EraseInitStruct.Page        = 16;
-  72              		.loc 1 10 0
-  73 0022 0123     		movs	r3, #1
-  74 0024 0293     		str	r3, [sp, #8]
-  11:Src/flash_firmware.c ****         EraseInitStruct.NbPages     = 240;
-  75              		.loc 1 11 0
-  76 0026 1023     		movs	r3, #16
-  77 0028 0393     		str	r3, [sp, #12]
-  12:Src/flash_firmware.c **** 
-  78              		.loc 1 12 0
-  79 002a F023     		movs	r3, #240
-  80 002c 0493     		str	r3, [sp, #16]
-  15:Src/flash_firmware.c **** 
-  81              		.loc 1 15 0
-  82 002e FFF7FEFF 		bl	HAL_FLASH_Unlock
-  83              	.LVL6:
-  18:Src/flash_firmware.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"Erased\r\n", 8, 100);
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 3
+  86              		.loc 1 19 0
+  87 003e 6946     		mov	r1, sp
+  88 0040 13A8     		add	r0, sp, #76
+  89 0042 FFF7FEFF 		bl	HAL_FLASHEx_Erase
+  90              	.LVL3:
+  91 0046 8DF85F00 		strb	r0, [sp, #95]
+  20:Src/flash_firmware.c ****         firstPackage = 0;
+  92              		.loc 1 20 0
+  93 004a 6423     		movs	r3, #100
+  94 004c 0822     		movs	r2, #8
+  95 004e 2649     		ldr	r1, .L10+12
+  96 0050 2448     		ldr	r0, .L10+8
+  97 0052 FFF7FEFF 		bl	HAL_UART_Transmit
+  98              	.LVL4:
+  21:Src/flash_firmware.c ****     }
+  99              		.loc 1 21 0
+ 100 0056 214B     		ldr	r3, .L10
+ 101 0058 0022     		movs	r2, #0
+ 102 005a 1A70     		strb	r2, [r3]
+ 103 005c E3E7     		b	.L2
+ 104              	.LVL5:
+ 105              	.L5:
+ 106              	.LBE3:
+ 107              	.LBB4:
+ 108              		.loc 1 30 0 discriminator 2
+ 109 005e 0134     		adds	r4, r4, #1
+ 110              	.LVL6:
+ 111              	.L3:
+ 112              		.loc 1 30 0 is_stmt 0 discriminator 1
+ 113 0060 B4EBD60F 		cmp	r4, r6, lsr #3
+ 114 0064 2DDA     		bge	.L4
+  31:Src/flash_firmware.c ****             // sprintf(sendString, "Add: %ld\r\n", flashAddress);
+  32:Src/flash_firmware.c ****             HAL_UART_Transmit(&huart2, (uint8_t*)sendString, 15, 100);
+ 115              		.loc 1 32 0 is_stmt 1
+ 116 0066 1F4D     		ldr	r5, .L10+8
+ 117 0068 6423     		movs	r3, #100
+ 118 006a 0F22     		movs	r2, #15
+ 119 006c 01A9     		add	r1, sp, #4
+ 120 006e 2846     		mov	r0, r5
+ 121 0070 FFF7FEFF 		bl	HAL_UART_Transmit
+ 122              	.LVL7:
+  33:Src/flash_firmware.c ****             memcpy(chunk, data_to_flash+(i*8), 8);
+ 123              		.loc 1 33 0
+ 124 0074 07EBC402 		add	r2, r7, r4, lsl #3
+ 125 0078 11AB     		add	r3, sp, #68
+ 126 007a 1068     		ldr	r0, [r2]	@ unaligned
+ 127 007c 5168     		ldr	r1, [r2, #4]	@ unaligned
+ 128 007e 03C3     		stmia	r3!, {r0, r1}
+  34:Src/flash_firmware.c ****             flashStatus = HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, flashAddress, *(uint64_t*
+ 129              		.loc 1 34 0
+ 130 0080 0246     		mov	r2, r0
+ 131 0082 129B     		ldr	r3, [sp, #72]
+ 132 0084 1949     		ldr	r1, .L10+16
+ 133 0086 0968     		ldr	r1, [r1]
+ 134 0088 0020     		movs	r0, #0
+ 135 008a FFF7FEFF 		bl	HAL_FLASH_Program
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s 			page 4
 
 
-  84              		.loc 1 18 0
-  85 0032 6946     		mov	r1, sp
-  86 0034 01A8     		add	r0, sp, #4
-  87 0036 FFF7FEFF 		bl	HAL_FLASHEx_Erase
-  88              	.LVL7:
-  89 003a 8DF81700 		strb	r0, [sp, #23]
-  19:Src/flash_firmware.c ****     }
-  90              		.loc 1 19 0
-  91 003e 6423     		movs	r3, #100
-  92 0040 0822     		movs	r2, #8
-  93 0042 1549     		ldr	r1, .L10
-  94 0044 1548     		ldr	r0, .L10+4
-  95 0046 FFF7FEFF 		bl	HAL_UART_Transmit
-  96              	.LVL8:
-  97 004a DEE7     		b	.L2
-  98              	.LVL9:
-  99              	.L5:
- 100              	.LBE3:
- 101              	.LBB4:
- 102              		.loc 1 26 0 discriminator 2
- 103 004c 0134     		adds	r4, r4, #1
- 104              	.LVL10:
- 105              	.L3:
- 106              		.loc 1 26 0 is_stmt 0 discriminator 1
- 107 004e 072C     		cmp	r4, #7
- 108 0050 1DDC     		bgt	.L4
-  27:Src/flash_firmware.c ****             fragments[i] = strndup(data_to_flash + 8 * i, 8);
- 109              		.loc 1 27 0 is_stmt 1
- 110 0052 0821     		movs	r1, #8
- 111 0054 07EBC400 		add	r0, r7, r4, lsl #3
- 112 0058 FFF7FEFF 		bl	strndup
- 113              	.LVL11:
- 114 005c 46F82400 		str	r0, [r6, r4, lsl #2]
-  28:Src/flash_firmware.c ****             flash_status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, address, *(uint64_t*)fra
- 115              		.loc 1 28 0
- 116 0060 D0E90023 		ldrd	r2, [r0]
- 117 0064 2946     		mov	r1, r5
- 118 0066 0020     		movs	r0, #0
- 119 0068 FFF7FEFF 		bl	HAL_FLASH_Program
- 120              	.LVL12:
- 121 006c 8DF81700 		strb	r0, [sp, #23]
-  29:Src/flash_firmware.c ****             HAL_UART_Transmit(&huart2, (uint8_t*)"Progged\r\n", 9, 100);
- 122              		.loc 1 29 0
- 123 0070 6423     		movs	r3, #100
- 124 0072 0922     		movs	r2, #9
- 125 0074 0A49     		ldr	r1, .L10+8
- 126 0076 0948     		ldr	r0, .L10+4
- 127 0078 FFF7FEFF 		bl	HAL_UART_Transmit
- 128              	.LVL13:
-  30:Src/flash_firmware.c ****             if (flash_status != HAL_OK) {
- 129              		.loc 1 30 0
- 130 007c 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
- 131 0080 2BB9     		cbnz	r3, .L4
-  31:Src/flash_firmware.c ****                 break;
-  32:Src/flash_firmware.c ****             }
-  33:Src/flash_firmware.c ****             else if (flash_status == HAL_OK) {
- 132              		.loc 1 33 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 4
+ 136              	.LVL8:
+ 137 008e 8DF85F00 		strb	r0, [sp, #95]
+  35:Src/flash_firmware.c ****             HAL_UART_Transmit(&huart2, (uint8_t*)chunk, 8, 100);
+ 138              		.loc 1 35 0
+ 139 0092 6423     		movs	r3, #100
+ 140 0094 0822     		movs	r2, #8
+ 141 0096 11A9     		add	r1, sp, #68
+ 142 0098 2846     		mov	r0, r5
+ 143 009a FFF7FEFF 		bl	HAL_UART_Transmit
+ 144              	.LVL9:
+  36:Src/flash_firmware.c ****             HAL_UART_Transmit(&huart2, (uint8_t*)" ", 1, 100);
+ 145              		.loc 1 36 0
+ 146 009e 6423     		movs	r3, #100
+ 147 00a0 0122     		movs	r2, #1
+ 148 00a2 1349     		ldr	r1, .L10+20
+ 149 00a4 2846     		mov	r0, r5
+ 150 00a6 FFF7FEFF 		bl	HAL_UART_Transmit
+ 151              	.LVL10:
+  37:Src/flash_firmware.c ****             if (flashStatus != HAL_OK) {
+ 152              		.loc 1 37 0
+ 153 00aa 9DF85F30 		ldrb	r3, [sp, #95]	@ zero_extendqisi2
+ 154 00ae 43B9     		cbnz	r3, .L4
+  38:Src/flash_firmware.c ****                 break;
+  39:Src/flash_firmware.c ****             }
+  40:Src/flash_firmware.c ****             else if (flashStatus == HAL_OK) {
+ 155              		.loc 1 40 0
+ 156 00b0 9DF85F30 		ldrb	r3, [sp, #95]	@ zero_extendqisi2
+ 157 00b4 002B     		cmp	r3, #0
+ 158 00b6 D2D1     		bne	.L5
+  41:Src/flash_firmware.c ****                 flashAddress += 8;
+ 159              		.loc 1 41 0
+ 160 00b8 0C4A     		ldr	r2, .L10+16
+ 161 00ba 1368     		ldr	r3, [r2]
+ 162 00bc 0833     		adds	r3, r3, #8
+ 163 00be 1360     		str	r3, [r2]
+ 164 00c0 CDE7     		b	.L5
+ 165              	.LVL11:
+ 166              	.L4:
+ 167              	.LBE4:
+  42:Src/flash_firmware.c ****             }
+  43:Src/flash_firmware.c ****         }
+  44:Src/flash_firmware.c ****     }
+  45:Src/flash_firmware.c ****     HAL_FLASH_Lock();
+ 168              		.loc 1 45 0
+ 169 00c2 FFF7FEFF 		bl	HAL_FLASH_Lock
+ 170              	.LVL12:
+  46:Src/flash_firmware.c **** 
+  47:Src/flash_firmware.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)"\n", 1, 100);
+ 171              		.loc 1 47 0
+ 172 00c6 6423     		movs	r3, #100
+ 173 00c8 0122     		movs	r2, #1
+ 174 00ca 0A49     		ldr	r1, .L10+24
+ 175 00cc 0548     		ldr	r0, .L10+8
+ 176 00ce FFF7FEFF 		bl	HAL_UART_Transmit
+ 177              	.LVL13:
+  48:Src/flash_firmware.c **** 
+  49:Src/flash_firmware.c ****     return flashStatus;
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s 			page 5
 
 
- 133 0082 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
- 134 0086 002B     		cmp	r3, #0
- 135 0088 E0D1     		bne	.L5
-  34:Src/flash_firmware.c ****                 address += 4;
- 136              		.loc 1 34 0
- 137 008a 0435     		adds	r5, r5, #4
- 138              	.LVL14:
- 139 008c DEE7     		b	.L5
- 140              	.LVL15:
- 141              	.L4:
- 142              	.LBE4:
-  35:Src/flash_firmware.c ****             }
-  36:Src/flash_firmware.c ****         }
-  37:Src/flash_firmware.c ****     }
-  38:Src/flash_firmware.c ****     HAL_FLASH_Lock();
- 143              		.loc 1 38 0
- 144 008e FFF7FEFF 		bl	HAL_FLASH_Lock
- 145              	.LVL16:
-  39:Src/flash_firmware.c **** }
- 146              		.loc 1 39 0
- 147 0092 07B0     		add	sp, sp, #28
- 148              	.LCFI2:
- 149              		.cfi_def_cfa_offset 20
- 150              		@ sp needed
- 151 0094 F0BD     		pop	{r4, r5, r6, r7, pc}
- 152              	.LVL17:
- 153              	.L11:
- 154 0096 00BF     		.align	2
- 155              	.L10:
- 156 0098 00000000 		.word	.LC0
- 157 009c 00000000 		.word	huart2
- 158 00a0 0C000000 		.word	.LC1
- 159              		.cfi_endproc
- 160              	.LFE133:
- 162              		.section	.rodata.save_rec_fw.str1.4,"aMS",%progbits,1
- 163              		.align	2
- 164              	.LC0:
- 165 0000 45726173 		.ascii	"Erased\015\012\000"
- 165      65640D0A 
- 165      00
- 166 0009 000000   		.space	3
- 167              	.LC1:
- 168 000c 50726F67 		.ascii	"Progged\015\012\000"
- 168      6765640D 
- 168      0A00
- 169              		.text
- 170              	.Letext0:
- 171              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
- 172              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
- 173              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
- 174              		.file 5 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h
- 175              		.file 6 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
- 176              		.file 7 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
- 177              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
- 178              		.file 9 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 179              		.file 10 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 180              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 5
+ 178              		.loc 1 49 0
+ 179 00d2 9DF85F00 		ldrb	r0, [sp, #95]	@ zero_extendqisi2
+  50:Src/flash_firmware.c **** }
+ 180              		.loc 1 50 0
+ 181 00d6 19B0     		add	sp, sp, #100
+ 182              	.LCFI2:
+ 183              		.cfi_def_cfa_offset 20
+ 184              		@ sp needed
+ 185 00d8 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 186              	.LVL14:
+ 187              	.L11:
+ 188 00da 00BF     		.align	2
+ 189              	.L10:
+ 190 00dc 00000000 		.word	firstPackage
+ 191 00e0 0C000000 		.word	.LC1
+ 192 00e4 00000000 		.word	huart2
+ 193 00e8 00000000 		.word	.LC0
+ 194 00ec 00000000 		.word	flashAddress
+ 195 00f0 18000000 		.word	.LC2
+ 196 00f4 1C000000 		.word	.LC3
+ 197              		.cfi_endproc
+ 198              	.LFE133:
+ 200              		.section	.rodata.Save_Rec_FW.str1.4,"aMS",%progbits,1
+ 201              		.align	2
+ 202              	.LC0:
+ 203 0000 45726173 		.ascii	"Erased\015\012\000"
+ 203      65640D0A 
+ 203      00
+ 204 0009 000000   		.space	3
+ 205              	.LC1:
+ 206 000c 466C6173 		.ascii	"Flashing\015\012\000"
+ 206      68696E67 
+ 206      0D0A00
+ 207 0017 00       		.space	1
+ 208              	.LC2:
+ 209 0018 2000     		.ascii	" \000"
+ 210 001a 0000     		.space	2
+ 211              	.LC3:
+ 212 001c 0A00     		.ascii	"\012\000"
+ 213              		.text
+ 214              	.Letext0:
+ 215              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
+ 216              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
+ 217              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
+ 218              		.file 5 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h
+ 219              		.file 6 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
+ 220              		.file 7 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
+ 221              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
+ 222              		.file 9 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 223              		.file 10 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 224              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 225              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 226              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 227              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 228              		.file 15 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 229              		.file 16 "Inc/main.h"
+ 230              		.file 17 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s 			page 6
 
 
- 181              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
- 182              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 183              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
- 184              		.file 15 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
- 185              		.file 16 "Inc/main.h"
- 186              		.file 17 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
- 187              		.file 18 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h"
- 188              		.file 19 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/string.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s 			page 6
+ 231              		.file 18 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 232              		.file 19 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
+ 233              		.file 20 "Inc/usbd_cdc_if.h"
+ 234              		.file 21 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 flash_firmware.c
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s:18     .text.save_rec_fw:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s:25     .text.save_rec_fw:0000000000000000 save_rec_fw
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s:156    .text.save_rec_fw:0000000000000098 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccAshBJE.s:163    .rodata.save_rec_fw.str1.4:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s:18     .text.Save_Rec_FW:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s:25     .text.Save_Rec_FW:0000000000000000 Save_Rec_FW
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s:190    .text.Save_Rec_FW:00000000000000dc $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccOnygx5.s:201    .rodata.Save_Rec_FW.str1.4:0000000000000000 $d
 
 UNDEFINED SYMBOLS
-malloc
 HAL_FLASH_Unlock
-HAL_FLASHEx_Erase
 HAL_UART_Transmit
-strndup
+HAL_FLASHEx_Erase
 HAL_FLASH_Program
 HAL_FLASH_Lock
+firstPackage
 huart2
+flashAddress

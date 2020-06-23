@@ -42,6 +42,7 @@ Src/usbd_conf.c \
 Src/usbd_desc.c \
 Src/usbd_cdc_if.c \
 Src/flash_firmware.c \
+Src/system_jump.c \
 Src/stm32l4xx_it.c \
 Src/stm32l4xx_hal_msp.c \
 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pcd.c \

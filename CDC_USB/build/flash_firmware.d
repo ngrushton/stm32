@@ -29,7 +29,15 @@ build/flash_firmware.o: Src/flash_firmware.c Inc/flash_firmware.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usb.h \
- Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h
+ Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h \
+ Inc/usbd_cdc_if.h \
+ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ Inc/usbd_conf.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 
 Inc/flash_firmware.h:
 
@@ -100,3 +108,19 @@ Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd.h:
 Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usb.h:
 
 Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h:
+
+Inc/usbd_cdc_if.h:
+
+Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
+
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+
+Inc/usbd_conf.h:
+
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
+
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:

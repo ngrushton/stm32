@@ -3,4 +3,4 @@
 #include <stdlib.h>
 #include <string.h>
 
-void save_rec_fw(char *data_to_flash, uint32_t len, uint32_t address, uint8_t first_package);
+HAL_StatusTypeDef Save_Rec_FW(char *data_to_flash, uint32_t len);

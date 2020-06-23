@@ -45,7 +45,7 @@ MDM_knownGMD_t known_MetaData[]={
   {GMD_END    ,0}/* THIS MUST BE THE LAST ONE */
 };
 
-#define PROG1_ADDRESS ((uint32_t)0x08004000)
+#define PROG1_ADDRESS ((uint32_t)0x08008000)
 
 /**
   * @brief  The application entry point.

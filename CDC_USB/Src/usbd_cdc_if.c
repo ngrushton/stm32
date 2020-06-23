@@ -23,6 +23,7 @@
 #include "usbd_cdc_if.h"
 #include "main.h"
 #include "flash_firmware.h"
+#include "system_jump.h"
 
 /* USER CODE BEGIN INCLUDE */
 
@@ -132,6 +133,7 @@ static int8_t CDC_Init_FS(void);
 static int8_t CDC_DeInit_FS(void);
 static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length);
 static int8_t CDC_Receive_FS(uint8_t* pbuf, uint32_t *Len);
+static void Jump_To_App();
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_DECLARATION */
 
@@ -248,11 +250,13 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
   /* USER CODE END 5 */
 }
 
-uint8_t rec_buffer[128];
-int buf_index = 0;
+uint8_t recBuffer[128];
+int bufIndex = 0;
 char sendOut[5];
 uint8_t upgradeMode = 0;
-uint32_t address = 0x08008000;
+uint8_t firstPackage;
+uint32_t flashAddress;
+HAL_StatusTypeDef packageStatus;
 
 /**
   * @brief  Data received over USB OUT endpoint are sent over CDC interface
@@ -271,26 +275,53 @@ uint32_t address = 0x08008000;
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
   for (int i = 0; i < *Len; i++) { // Incoming buffer of max 64 bytes - append buffers until '\n'
-    rec_buffer[buf_index] = Buf[i];
+    recBuffer[bufIndex] = Buf[i];
 
-    sprintf(sendOut, "%02x%c ", rec_buffer[buf_index], rec_buffer[buf_index]);
-    HAL_UART_Transmit(&huart2, (uint8_t*)sendOut, 4, 100);
+    if (i == 0) {
+      HAL_UART_Transmit(&huart2, (uint8_t*)"\r\n", 2, 100);
+    }
 
-    buf_index += 1;
+    sprintf(sendOut, "%02x", recBuffer[bufIndex]);
+    HAL_UART_Transmit(&huart2, (uint8_t*)sendOut, 2, 100);
+
+    bufIndex += 1;
     
-    if (Buf[i] == '\n') {
+    // if (Buf[i] == '\n') {
+    if (i == *Len-1) {
+      sprintf(sendOut, " L%ld ", *Len);
+      HAL_UART_Transmit(&huart2, (uint8_t*)sendOut, 4, 100);
       if (!upgradeMode) {
-        if (memcmp((char*)rec_buffer, "upgrade", 7) == 0) {
+        if (memcmp((char*)recBuffer, "upgrade", 7) == 0) {
           upgradeMode = 1;
-          HAL_UART_Transmit(&huart2, (uint8_t*)"Upgrade mode\r\n", 14, 100);
+          flashAddress = 0x08008000;
+          firstPackage = 1;
+          HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nUpgrade mode\r\n", 16, 100);
         }
       }
       else {
-        HAL_UART_Transmit(&huart2, (uint8_t*)"In upgrade\r\n", 12, 100);
-        save_rec_fw((char*)rec_buffer, *Len, address, 1);
+        if (memcmp((char*)recBuffer, "upgrade-done", 12) == 0) {
+          upgradeMode = 0;
+          flashAddress = 0x08008000;
+          firstPackage = 1;
+          HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nUpgrade done\r\n", 16, 100);
+          CDC_Transmit_FS((uint8_t*)"return upgrade=end\r\n", 20);
+          HAL_Delay(5000);
+          // SystemAppJump(0x08008000);
+          Jump_To_App();
+        }
+        else {
+          HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nIn upgrade\r\n", 14, 100);
+          packageStatus = Save_Rec_FW((char*)recBuffer, *Len);
+          if (packageStatus == HAL_OK) {
+            CDC_Transmit_FS((uint8_t*)"return package=success\r\n", 24);
+          }
+          else {
+            CDC_Transmit_FS((uint8_t*)"return package=fail\r\n", 21);
+          }
+        }
       }
-      buf_index = 0;
-      memset(rec_buffer, 0, sizeof(rec_buffer));
+      bufIndex = 0;
+      memset(recBuffer, 0, sizeof(recBuffer));
     }
   }
 
@@ -325,7 +356,18 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 }
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_IMPLEMENTATION */
-
+/**
+  * @brief  Jump_To_USB_DFU()
+  *         On reset, the system jumps to the SystemInit(void) function in system_stm32l4xx.c.
+	*         If the trigger is set to 0xFFFFFFFF the system jumps to the the DFU bootloader.
+	*         If not, then the system starts up normally.
+  * @param  None
+  * @retval None
+  */
+static void Jump_To_App() {
+	*((unsigned long *)0x20017FF0) = 0xFFFFFFFF; // Set SRAM location to firmware trigger - 0xFFFFFFFF
+  NVIC_SystemReset(); // Reset the system - go to system_stm32l4xx.c SystemInit()
+}
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 
 /**

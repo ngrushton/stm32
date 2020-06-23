@@ -179,6 +179,45 @@
 
 void SystemInit(void)
 {
+  if ( *((unsigned long *)0x20017FF0) == 0xFFFFFFFF ) { // End of SRAM1 is 0x20018000 - 0x10 = 0x20017FF0
+    *((unsigned long *)0x20017FF0) = 0xAAAAAAAA; // Reset trigger
+
+    typedef void (*pFunction)(void);
+    pFunction JumpToApplication;
+
+    // __HAL_RCC_USART1_FORCE_RESET();
+    // __HAL_RCC_USART1_RELEASE_RESET();
+
+    __HAL_RCC_USART2_FORCE_RESET();
+    __HAL_RCC_USART2_RELEASE_RESET();
+
+    HAL_RCC_DeInit();
+
+    SysTick->CTRL = 0;
+    SysTick->LOAD = 0;
+    SysTick->VAL = 0;
+
+    /**
+     * Step: Disable all interrupts
+     */
+    __disable_irq();
+
+    /* ARM Cortex-M Programming Guide to Memory Barrier Instructions.*/
+    __DSB();
+
+    __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH();
+
+    /* Remap is bot visible at once. Execute some unrelated command! */
+    __DSB();
+    __ISB();
+
+    JumpToApplication = (void (*)(void)) (*((uint32_t *) ((0x08008000 + 4))));
+
+    /* Initialize user application's Stack Pointer */
+    __set_MSP(*(__IO uint32_t*) 0x08008000);
+
+    JumpToApplication();
+  }
   /* FPU settings ------------------------------------------------------------*/
   #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
     SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));  /* set CP10 and CP11 Full Access */

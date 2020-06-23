@@ -37,7 +37,7 @@ build/usbd_cdc_if.o: Src/usbd_cdc_if.c Inc/usbd_cdc_if.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- Inc/main.h Inc/flash_firmware.h
+ Inc/main.h Inc/flash_firmware.h Inc/system_jump.h
 
 Inc/usbd_cdc_if.h:
 
@@ -126,3 +126,5 @@ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
 Inc/main.h:
 
 Inc/flash_firmware.h:
+
+Inc/system_jump.h:

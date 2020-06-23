@@ -1,4 +1,4 @@
-build/main.o: Src/main.c Inc/main.h \
+build/system_jump.o: Src/system_jump.c Inc/system_jump.h Inc/main.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
  Inc/stm32l4xx_hal_conf.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h \
@@ -29,9 +29,9 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usb.h \
- Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h Inc/usb_device.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- Inc/usbd_conf.h Inc/main.h Inc/flash_firmware.h
+ Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h
+
+Inc/system_jump.h:
 
 Inc/main.h:
 
@@ -100,13 +100,3 @@ Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd.h:
 Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usb.h:
 
 Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h:
-
-Inc/usb_device.h:
-
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-
-Inc/usbd_conf.h:
-
-Inc/main.h:
-
-Inc/flash_firmware.h:

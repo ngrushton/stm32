@@ -39,13 +39,13 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
 
-  SCB->VTOR = 0x08004000;
+  SCB->VTOR = 0x08008000;
 	__enable_irq();
 
   while (1)
   {
     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-    HAL_UART_Transmit(&huart2, (uint8_t*)"Prog1\r\n", 7, 100);
+    HAL_UART_Transmit(&huart2, (uint8_t*)"Programme 1\r\n", 13, 100);
     HAL_Delay(1000);
   }
 }

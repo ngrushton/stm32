@@ -1223,7 +1223,7 @@ Memory Configuration
 Name             Origin             Length             Attributes
 RAM              0x0000000020000000 0x0000000000018000 xrw
 RAM2             0x0000000010000000 0x0000000000008000 xrw
-FLASH            0x0000000008000000 0x0000000000004000 xr
+FLASH            0x0000000008000000 0x0000000000008000 xr
 *default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map

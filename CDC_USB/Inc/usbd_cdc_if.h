@@ -30,6 +30,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc.h"
 
+extern uint32_t flashAddress;
+extern uint8_t firstPackage;
+
 /* USER CODE BEGIN INCLUDE */
 
 /* USER CODE END INCLUDE */

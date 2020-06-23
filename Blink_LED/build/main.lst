@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   30:Src/main.c    **** 
   31:Src/main.c    **** /**
   32:Src/main.c    ****   * @brief  The application entry point.
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 2
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 2
 
 
   33:Src/main.c    ****   * @retval int
@@ -70,13 +70,13 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   39:Src/main.c    ****   MX_GPIO_Init();
   40:Src/main.c    ****   MX_USART2_UART_Init();
   41:Src/main.c    **** 
-  42:Src/main.c    ****   SCB->VTOR = 0x08004000;
+  42:Src/main.c    ****   SCB->VTOR = 0x08008000;
   43:Src/main.c    **** 	__enable_irq();
   44:Src/main.c    **** 
   45:Src/main.c    ****   while (1)
   46:Src/main.c    ****   {
   47:Src/main.c    ****     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-  48:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Prog1\r\n", 7, 100);
+  48:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Programme 1\r\n", 13, 100);
   49:Src/main.c    ****     HAL_Delay(1000);
   50:Src/main.c    ****   }
   51:Src/main.c    **** }
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   87:Src/main.c    **** 
   88:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
   89:Src/main.c    ****   {
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 3
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 3
 
 
   90:Src/main.c    ****     Error_Handler();
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  144:Src/main.c    ****   * @retval None
  145:Src/main.c    ****   */
  146:Src/main.c    **** static void MX_GPIO_Init(void)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 4
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 4
 
 
  147:Src/main.c    **** {
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   74 0044 0392     		str	r2, [sp, #12]
   75 0046 039A     		ldr	r2, [sp, #12]
   76              	.LBE6:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 5
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 5
 
 
   77              	.LBB7:
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  115 0084 0894     		str	r4, [sp, #32]
  170:Src/main.c    ****   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
  116              		.loc 1 170 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 6
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 6
 
 
  117 0086 05A9     		add	r1, sp, #20
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  125:Src/main.c    ****   huart2.Init.Mode = UART_MODE_TX_RX;
  166              		.loc 1 125 0
  167 0014 0361     		str	r3, [r0, #16]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 7
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 7
 
 
  126:Src/main.c    ****   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  215              		.loc 1 59 0
  216 0004 2422     		movs	r2, #36
  217 0006 0021     		movs	r1, #0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 8
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 8
 
 
  218 0008 28A8     		add	r0, sp, #160
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   75:Src/main.c    ****   {
  260              		.loc 1 75 0
  261 0046 27A8     		add	r0, sp, #156
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 9
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 9
 
 
  262 0048 FFF7FEFF 		bl	HAL_RCC_OscConfig
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  306              		.thumb
  307              		.thumb_func
  308              		.fpu fpv4-sp-d16
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 10
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 10
 
 
  310              	main:
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
   19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
   20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 11
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 11
 
 
   21:Drivers/CMSIS/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
   76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
   77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 12
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 12
 
 
   78:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  341              		.loc 2 131 0
  342              		.syntax unified
  343              	@ 131 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 13
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 13
 
 
  344 0018 62B6     		cpsie i
@@ -728,7 +728,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  348              	.L12:
  349              	.LBE9:
  350              	.LBE8:
-  47:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Prog1\r\n", 7, 100);
+  47:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Programme 1\r\n", 13, 100);
  351              		.loc 1 47 0 discriminator 1
  352 001a 2021     		movs	r1, #32
  353 001c 4FF09040 		mov	r0, #1207959552
@@ -737,7 +737,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
   48:Src/main.c    ****     HAL_Delay(1000);
  356              		.loc 1 48 0 discriminator 1
  357 0024 6423     		movs	r3, #100
- 358 0026 0722     		movs	r2, #7
+ 358 0026 0D22     		movs	r2, #13
  359 0028 0649     		ldr	r1, .L14+8
  360 002a 0748     		ldr	r0, .L14+12
  361 002c FFF7FEFF 		bl	HAL_UART_Transmit
@@ -752,7 +752,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  369 003a 00BF     		.align	2
  370              	.L14:
  371 003c 00ED00E0 		.word	-536810240
- 372 0040 00400008 		.word	134234112
+ 372 0040 00800008 		.word	134250496
  373 0044 00000000 		.word	.LC0
  374 0048 00000000 		.word	huart2
  375              		.cfi_endproc
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  182:Src/main.c    **** void Error_Handler(void)
  183:Src/main.c    **** {
  388              		.loc 1 183 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 14
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 14
 
 
  389              		.cfi_startproc
@@ -798,8 +798,10 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  399              		.section	.rodata.main.str1.4,"aMS",%progbits,1
  400              		.align	2
  401              	.LC0:
- 402 0000 50726F67 		.ascii	"Prog1\015\012\000"
- 402      310D0A00 
+ 402 0000 50726F67 		.ascii	"Programme 1\015\012\000"
+ 402      72616D6D 
+ 402      6520310D 
+ 402      0A00
  403              		.text
  404              	.Letext0:
  405              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
@@ -817,26 +819,26 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 1
  417              		.file 15 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
  418              		.file 16 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h"
  419              		.file 17 "<built-in>"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s 			page 15
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:18     .text.MX_GPIO_Init:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:130    .text.MX_GPIO_Init:0000000000000094 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:137    .text.MX_USART2_UART_Init:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:143    .text.MX_USART2_UART_Init:0000000000000000 MX_USART2_UART_Init
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:187    .text.MX_USART2_UART_Init:0000000000000028 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:18     .text.MX_GPIO_Init:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:130    .text.MX_GPIO_Init:0000000000000094 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:137    .text.MX_USART2_UART_Init:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:143    .text.MX_USART2_UART_Init:0000000000000000 MX_USART2_UART_Init
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:187    .text.MX_USART2_UART_Init:0000000000000028 $d
                             *COM*:0000000000000080 huart2
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:193    .text.SystemClock_Config:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:200    .text.SystemClock_Config:0000000000000000 SystemClock_Config
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:303    .text.main:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:310    .text.main:0000000000000000 main
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:371    .text.main:000000000000003c $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:379    .text.Error_Handler:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:386    .text.Error_Handler:0000000000000000 Error_Handler
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccM7Hjvq.s:400    .rodata.main.str1.4:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:193    .text.SystemClock_Config:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:200    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:303    .text.main:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:310    .text.main:0000000000000000 main
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:371    .text.main:000000000000003c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:379    .text.Error_Handler:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:386    .text.Error_Handler:0000000000000000 Error_Handler
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccYfHukJ.s:400    .rodata.main.str1.4:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
