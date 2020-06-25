@@ -38,12 +38,13 @@ For bootloader:
 int main(void)
 {
     HAL_Init();
-    SystemClock_Config();
-    MX_GPIO_Init();
-    MX_USART2_UART_Init();
 
     SCB->VTOR = 0x08000000;
     __enable_irq();
+
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
 
     while (1) {
     }
@@ -56,12 +57,13 @@ For application/firmware at address `0x08004000`:
 int main(void)
 {
     HAL_Init();
-    SystemClock_Config();
-    MX_GPIO_Init();
-    MX_USART2_UART_Init();
 
     SCB->VTOR = 0x08004000;
     __enable_irq();
+
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
 
     while (1) {
     }

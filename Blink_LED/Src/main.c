@@ -35,12 +35,13 @@ static void MX_USART2_UART_Init(void);
 int main(void)
 {
   HAL_Init();
+
+  SCB->VTOR = 0x08080000;
+	__enable_irq();
+
   SystemClock_Config();
   MX_GPIO_Init();
   MX_USART2_UART_Init();
-
-  SCB->VTOR = 0x08008000;
-	__enable_irq();
 
   while (1)
   {

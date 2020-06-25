@@ -202,6 +202,9 @@ $(BUILD_DIR):
 flash:
 	openocd -f interface/stlink-v2-1.cfg -f target/stm32l4x.cfg -c "program $(BUILD_DIR)/$(TARGET).bin 0x08000000 reset exit"
 
+flash-all:
+	openocd -f flash.cfg
+
 #######################################
 # clean up
 #######################################

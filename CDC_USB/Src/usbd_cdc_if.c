@@ -293,7 +293,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
       if (!upgradeMode) {
         if (memcmp((char*)recBuffer, "upgrade", 7) == 0) {
           upgradeMode = 1;
-          flashAddress = 0x08008000;
+          flashAddress = 0x08080000;
           firstPackage = 1;
           HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nUpgrade mode\r\n", 16, 100);
         }
@@ -301,13 +301,12 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
       else {
         if (memcmp((char*)recBuffer, "upgrade-done", 12) == 0) {
           upgradeMode = 0;
-          flashAddress = 0x08008000;
+          flashAddress = 0x08080000;
           firstPackage = 1;
           HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nUpgrade done\r\n", 16, 100);
           CDC_Transmit_FS((uint8_t*)"return upgrade=end\r\n", 20);
           HAL_Delay(5000);
-          // SystemAppJump(0x08008000);
-          Jump_To_App();
+          SystemAppJump(0x08080000);
         }
         else {
           HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nIn upgrade\r\n", 14, 100);

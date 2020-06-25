@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 1
   29:Src/usb_device.c **** 
   30:Src/usb_device.c **** /* USER CODE BEGIN Includes */
   31:Src/usb_device.c **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 2
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s 			page 2
 
 
   32:Src/usb_device.c **** /* USER CODE END Includes */
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 1
   40 0006 1048     		ldr	r0, .L11+4
   41 0008 FFF7FEFF 		bl	USBD_Init
   42              	.LVL0:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 3
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s 			page 3
 
 
   43 000c 70B9     		cbnz	r0, .L7
@@ -159,10 +159,9 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 1
   87:Src/usb_device.c ****     Error_Handler();
   88:Src/usb_device.c ****   }
   89:Src/usb_device.c ****   /* USER CODE BEGIN USB_DEVICE_Init_PostTreatment */
-  90:Src/usb_device.c ****   
-  91:Src/usb_device.c ****   /* USER CODE END USB_DEVICE_Init_PostTreatment */
-  92:Src/usb_device.c **** }
-  65              		.loc 1 92 0
+  90:Src/usb_device.c ****   /* USER CODE END USB_DEVICE_Init_PostTreatment */
+  91:Src/usb_device.c **** }
+  65              		.loc 1 91 0
   66 002a 08BD     		pop	{r3, pc}
   67              	.L7:
   75:Src/usb_device.c ****   }
@@ -178,10 +177,10 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 1
   76 0036 EFE7     		b	.L3
   77              	.L9:
   83:Src/usb_device.c ****   }
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 4
-
-
   78              		.loc 1 83 0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s 			page 4
+
+
   79 0038 FFF7FEFF 		bl	Error_Handler
   80              	.LVL6:
   81 003c F1E7     		b	.L4
@@ -190,7 +189,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 1
   83              		.loc 1 87 0
   84 003e FFF7FEFF 		bl	Error_Handler
   85              	.LVL7:
-  86              		.loc 1 92 0
+  86              		.loc 1 91 0
   87 0042 F2E7     		b	.L1
   88              	.L12:
   89              		.align	2
@@ -201,39 +200,79 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 1
   94 0050 00000000 		.word	USBD_Interface_fops_FS
   95              		.cfi_endproc
   96              	.LFE133:
-  98              		.comm	hUsbDeviceFS,708,4
-  99              		.text
- 100              	.Letext0:
- 101              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
- 102              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
- 103              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 104              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 105              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 106              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
- 107              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
- 108              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 109              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
- 110              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
- 111              		.file 12 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
- 112              		.file 13 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
- 113              		.file 14 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.
- 114              		.file 15 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
- 115              		.file 16 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
- 116              		.file 17 "Inc/main.h"
- 117              		.file 18 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 118              		.file 19 "Inc/usbd_desc.h"
- 119              		.file 20 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
- 120              		.file 21 "Inc/usbd_cdc_if.h"
- 121              		.file 22 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s 			page 5
+  98              		.section	.text.USB_DeInit,"ax",%progbits
+  99              		.align	1
+ 100              		.global	USB_DeInit
+ 101              		.syntax unified
+ 102              		.thumb
+ 103              		.thumb_func
+ 104              		.fpu fpv4-sp-d16
+ 106              	USB_DeInit:
+ 107              	.LFB134:
+  92:Src/usb_device.c **** 
+  93:Src/usb_device.c **** void USB_DeInit() {
+ 108              		.loc 1 93 0
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112 0000 08B5     		push	{r3, lr}
+ 113              	.LCFI1:
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 3, -8
+ 116              		.cfi_offset 14, -4
+  94:Src/usb_device.c ****   USBD_Stop(&hUsbDeviceFS);
+ 117              		.loc 1 94 0
+ 118 0002 0248     		ldr	r0, .L15
+ 119 0004 FFF7FEFF 		bl	USBD_Stop
+ 120              	.LVL8:
+  95:Src/usb_device.c **** }
+ 121              		.loc 1 95 0
+ 122 0008 08BD     		pop	{r3, pc}
+ 123              	.L16:
+ 124 000a 00BF     		.align	2
+ 125              	.L15:
+ 126 000c 00000000 		.word	hUsbDeviceFS
+ 127              		.cfi_endproc
+ 128              	.LFE134:
+ 130              		.comm	hUsbDeviceFS,708,4
+ 131              		.text
+ 132              	.Letext0:
+ 133              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s 			page 5
+
+
+ 134              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
+ 135              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 136              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 137              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 138              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 139              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 140              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 141              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 142              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 143              		.file 12 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
+ 144              		.file 13 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
+ 145              		.file 14 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.
+ 146              		.file 15 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
+ 147              		.file 16 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
+ 148              		.file 17 "Inc/main.h"
+ 149              		.file 18 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 150              		.file 19 "Inc/usbd_desc.h"
+ 151              		.file 20 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
+ 152              		.file 21 "Inc/usbd_cdc_if.h"
+ 153              		.file 22 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 usb_device.c
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s:18     .text.MX_USB_DEVICE_Init:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s:25     .text.MX_USB_DEVICE_Init:0000000000000000 MX_USB_DEVICE_Init
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cc4KQLaS.s:91     .text.MX_USB_DEVICE_Init:0000000000000044 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s:18     .text.MX_USB_DEVICE_Init:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s:25     .text.MX_USB_DEVICE_Init:0000000000000000 MX_USB_DEVICE_Init
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s:91     .text.MX_USB_DEVICE_Init:0000000000000044 $d
                             *COM*:00000000000002c4 hUsbDeviceFS
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s:99     .text.USB_DeInit:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s:106    .text.USB_DeInit:0000000000000000 USB_DeInit
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccR3oRdf.s:126    .text.USB_DeInit:000000000000000c $d
 
 UNDEFINED SYMBOLS
 USBD_Init
@@ -244,3 +283,4 @@ Error_Handler
 FS_Desc
 USBD_CDC
 USBD_Interface_fops_FS
+USBD_Stop

@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -25,14 +25,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
   22              		.thumb_func
   23              		.fpu fpv4-sp-d16
   25              	SystemAppJump:
-  26              	.LFB130:
+  26              	.LFB133:
   27              		.file 1 "Src/system_jump.c"
    1:Src/system_jump.c **** #include "system_jump.h"
    2:Src/system_jump.c **** #include "main.h"
-   3:Src/system_jump.c **** 
-   4:Src/system_jump.c **** void SystemAppJump(uint32_t APP_ADDRESS)
-   5:Src/system_jump.c **** {
-  28              		.loc 1 5 0
+   3:Src/system_jump.c **** #include "usb_device.h"
+   4:Src/system_jump.c **** 
+   5:Src/system_jump.c **** void SystemAppJump(uint32_t APP_ADDRESS)
+   6:Src/system_jump.c **** {
+  28              		.loc 1 6 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -43,46 +44,51 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
   36              		.cfi_offset 4, -8
   37              		.cfi_offset 14, -4
   38 0002 0446     		mov	r4, r0
-   6:Src/system_jump.c ****     typedef void (*pFunction)(void);
-   7:Src/system_jump.c ****     pFunction JumpToApplication;
-   8:Src/system_jump.c **** 
-   9:Src/system_jump.c ****     // __HAL_RCC_USART1_FORCE_RESET();
-  10:Src/system_jump.c ****     // __HAL_RCC_USART1_RELEASE_RESET();
-  11:Src/system_jump.c **** 
-  12:Src/system_jump.c ****     __HAL_RCC_USART2_FORCE_RESET();
-  39              		.loc 1 12 0
-  40 0004 114B     		ldr	r3, .L3
-  41 0006 9A6B     		ldr	r2, [r3, #56]
-  42 0008 42F40032 		orr	r2, r2, #131072
-  43 000c 9A63     		str	r2, [r3, #56]
-  13:Src/system_jump.c ****     __HAL_RCC_USART2_RELEASE_RESET();
-  44              		.loc 1 13 0
-  45 000e 9A6B     		ldr	r2, [r3, #56]
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 2
-
-
-  46 0010 22F40032 		bic	r2, r2, #131072
-  47 0014 9A63     		str	r2, [r3, #56]
+   7:Src/system_jump.c ****     typedef void (*pFunction)(void);
+   8:Src/system_jump.c ****     pFunction JumpToApplication;
+   9:Src/system_jump.c **** 
+  10:Src/system_jump.c ****     // __HAL_RCC_USART1_FORCE_RESET();
+  11:Src/system_jump.c ****     // __HAL_RCC_USART1_RELEASE_RESET();
+  12:Src/system_jump.c **** 
+  13:Src/system_jump.c ****     USB_DeInit();
+  39              		.loc 1 13 0
+  40 0004 FFF7FEFF 		bl	USB_DeInit
+  41              	.LVL1:
   14:Src/system_jump.c **** 
-  15:Src/system_jump.c ****     HAL_RCC_DeInit();
-  48              		.loc 1 15 0
-  49 0016 FFF7FEFF 		bl	HAL_RCC_DeInit
-  50              	.LVL1:
-  16:Src/system_jump.c **** 
-  17:Src/system_jump.c ****     SysTick->CTRL = 0;
-  51              		.loc 1 17 0
-  52 001a 0D4B     		ldr	r3, .L3+4
-  53 001c 0022     		movs	r2, #0
-  54 001e 1A60     		str	r2, [r3]
-  18:Src/system_jump.c ****     SysTick->LOAD = 0;
-  55              		.loc 1 18 0
-  56 0020 5A60     		str	r2, [r3, #4]
-  19:Src/system_jump.c ****     SysTick->VAL = 0;
-  57              		.loc 1 19 0
-  58 0022 9A60     		str	r2, [r3, #8]
-  59              	.LBB12:
-  60              	.LBB13:
-  61              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+  15:Src/system_jump.c ****     __HAL_RCC_USART2_FORCE_RESET();
+  42              		.loc 1 15 0
+  43 0008 114B     		ldr	r3, .L3
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 2
+
+
+  44 000a 9A6B     		ldr	r2, [r3, #56]
+  45 000c 42F40032 		orr	r2, r2, #131072
+  46 0010 9A63     		str	r2, [r3, #56]
+  16:Src/system_jump.c ****     __HAL_RCC_USART2_RELEASE_RESET();
+  47              		.loc 1 16 0
+  48 0012 9A6B     		ldr	r2, [r3, #56]
+  49 0014 22F40032 		bic	r2, r2, #131072
+  50 0018 9A63     		str	r2, [r3, #56]
+  17:Src/system_jump.c **** 
+  18:Src/system_jump.c ****     HAL_RCC_DeInit();
+  51              		.loc 1 18 0
+  52 001a FFF7FEFF 		bl	HAL_RCC_DeInit
+  53              	.LVL2:
+  19:Src/system_jump.c **** 
+  20:Src/system_jump.c ****     SysTick->CTRL = 0;
+  54              		.loc 1 20 0
+  55 001e 0D4B     		ldr	r3, .L3+4
+  56 0020 0022     		movs	r2, #0
+  57 0022 1A60     		str	r2, [r3]
+  21:Src/system_jump.c ****     SysTick->LOAD = 0;
+  58              		.loc 1 21 0
+  59 0024 5A60     		str	r2, [r3, #4]
+  22:Src/system_jump.c ****     SysTick->VAL = 0;
+  60              		.loc 1 22 0
+  61 0026 9A60     		str	r2, [r3, #8]
+  62              	.LBB12:
+  63              	.LBB13:
+  64              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
    2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
    3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
@@ -112,15 +118,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
   27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
   29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 3
+
+
   30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
   31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
   32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
   33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
   35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 3
-
-
   36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
   37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   38:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -172,15 +178,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
   84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
   85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 4
+
+
   87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
   88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
   91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
   92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 4
-
-
   93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
   95:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
@@ -231,20 +237,20 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  140:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
  141:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  142:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
-  62              		.loc 2 142 0
-  63              		.syntax unified
-  64              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-  65 0024 72B6     		cpsid i
-  66              	@ 0 "" 2
-  67              		.thumb
-  68              		.syntax unified
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 5
+  65              		.loc 2 142 0
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 5
 
 
-  69              	.LBE13:
-  70              	.LBE12:
-  71              	.LBB14:
-  72              	.LBB15:
+  66              		.syntax unified
+  67              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  68 0028 72B6     		cpsid i
+  69              	@ 0 "" 2
+  70              		.thumb
+  71              		.syntax unified
+  72              	.LBE13:
+  73              	.LBE12:
+  74              	.LBB14:
+  75              	.LBB15:
  143:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  144:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  145:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -292,15 +298,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  187:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
  188:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  189:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Control Register (non-secure)
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 6
+
+
  190:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the non-secure Control Register when in secure state.
  191:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
  192:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  193:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
  194:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  195:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control_ns, %0" : : "r" (control) : "memory");
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 6
-
-
  196:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  197:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  198:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -352,15 +358,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  244:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
  245:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSP Register value
  246:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 7
+
+
  247:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSP(void)
  248:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  249:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  250:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  251:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp"  : "=r" (result) );
  252:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 7
-
-
  253:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  254:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  255:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -412,15 +418,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  301:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSP(void)
  302:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  303:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 8
+
+
  304:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  305:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp" : "=r" (result) );
  306:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  307:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  308:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  309:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 8
-
-
  310:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
  311:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  312:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer (non-secure)
@@ -472,15 +478,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  358:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  359:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  360:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, sp_ns" : "=r" (result) );
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 9
+
+
  361:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  362:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  363:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  364:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  365:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  366:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Stack Pointer (non-secure)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 9
-
-
  367:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Stack Pointer (SP) when in secure state.
  368:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfStack  Stack Pointer value to set
  369:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -532,15 +538,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  415:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  416:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  417:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 10
+
+
  418:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
  419:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  420:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Priority Mask (non-secure)
  421:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Priority Mask Register when in secure state.
  422:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
  423:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 10
-
-
  424:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PRIMASK_NS(uint32_t priMask)
  425:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  426:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR primask_ns, %0" : : "r" (priMask) : "memory");
@@ -592,15 +598,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  472:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Base Priority (non-secure)
  473:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Base Priority register when in secure state.
  474:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Base Priority register value
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 11
+
+
  475:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  476:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_BASEPRI_NS(void)
  477:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  478:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  479:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  480:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, basepri_ns" : "=r" (result) );
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 11
-
-
  481:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  482:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  483:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -652,15 +658,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  529:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  530:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  531:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask" : "=r" (result) );
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 12
+
+
  532:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  533:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  534:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  535:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  536:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
  537:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 12
-
-
  538:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Fault Mask (non-secure)
  539:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Fault Mask register when in secure state.
  540:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Fault Mask register value
@@ -712,15 +718,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  586:Drivers/CMSIS/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always in non-secure
  587:Drivers/CMSIS/Include/cmsis_gcc.h ****   mode.
  588:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 13
+
+
  589:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer Limit (PSPLIM).
  590:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSPLIM Register value
  591:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  592:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSPLIM(void)
  593:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  594:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 13
-
-
  595:Drivers/CMSIS/Include/cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
  596:Drivers/CMSIS/Include/cmsis_gcc.h ****     // without main extensions, the non-secure PSPLIM is RAZ/WI
  597:Drivers/CMSIS/Include/cmsis_gcc.h ****   return 0U;
@@ -772,15 +778,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  643:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
  644:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psplim, %0" : : "r" (ProcStackPtrLimit));
  645:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 14
+
+
  646:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  647:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  648:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  649:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
  650:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  651:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer (non-secure)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 14
-
-
  652:Drivers/CMSIS/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
  653:Drivers/CMSIS/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored.
  654:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -832,15 +838,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  700:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSPLIM Register value
  701:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  702:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSPLIM_NS(void)
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 15
+
+
  703:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  704:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
  705:Drivers/CMSIS/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
  706:Drivers/CMSIS/Include/cmsis_gcc.h ****   return 0U;
  707:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
  708:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 15
-
-
  709:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msplim_ns" : "=r" (result) );
  710:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
  711:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -892,15 +898,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  757:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
  758:Drivers/CMSIS/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    ) */
  759:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 16
+
+
  760:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  761:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  762:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get FPSCR
  763:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Floating Point Status/Control register.
  764:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Floating Point Status/Control register value
  765:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 16
-
-
  766:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_FPSCR(void)
  767:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  768:Drivers/CMSIS/Include/cmsis_gcc.h **** #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
@@ -952,15 +958,15 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  814:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
  815:Drivers/CMSIS/Include/cmsis_gcc.h ****   Access to dedicated instructions
  816:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 17
+
+
  817:Drivers/CMSIS/Include/cmsis_gcc.h **** */
  818:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  819:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Define macros for porting to both thumb1 and thumb2.
  820:Drivers/CMSIS/Include/cmsis_gcc.h ****  * For thumb1, use low register (r0-r7), specified by constraint "l"
  821:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Otherwise, use general registers, specified by constraint "r" */
  822:Drivers/CMSIS/Include/cmsis_gcc.h **** #if defined (__thumb__) && !defined (__thumb2__)
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 17
-
-
  823:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
  824:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+l" (r)
  825:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "l" (r)
@@ -1012,133 +1018,143 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 1
  871:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  872:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  873:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Data Synchronization Barrier
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 18
+
+
  874:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Acts as a special kind of Data Memory Barrier.
  875:Drivers/CMSIS/Include/cmsis_gcc.h ****            It completes when all explicit memory accesses before this instruction complete.
  876:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  877:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DSB(void)
  878:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  879:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("dsb 0xF":::"memory");
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 18
-
-
-  73              		.loc 2 879 0
-  74              		.syntax unified
-  75              	@ 879 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-  76 0026 BFF34F8F 		dsb 0xF
-  77              	@ 0 "" 2
-  78              		.thumb
-  79              		.syntax unified
-  80              	.LBE15:
-  81              	.LBE14:
-  20:Src/system_jump.c **** 
-  21:Src/system_jump.c ****     /**
-  22:Src/system_jump.c ****      * Step: Disable all interrupts
-  23:Src/system_jump.c ****      */
-  24:Src/system_jump.c ****     __disable_irq();
-  25:Src/system_jump.c **** 
-  26:Src/system_jump.c ****     /* ARM Cortex-M Programming Guide to Memory Barrier Instructions.*/
-  27:Src/system_jump.c ****     __DSB();
+  76              		.loc 2 879 0
+  77              		.syntax unified
+  78              	@ 879 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  79 002a BFF34F8F 		dsb 0xF
+  80              	@ 0 "" 2
+  81              		.thumb
+  82              		.syntax unified
+  83              	.LBE15:
+  84              	.LBE14:
+  23:Src/system_jump.c **** 
+  24:Src/system_jump.c ****     /**
+  25:Src/system_jump.c ****      * Step: Disable all interrupts
+  26:Src/system_jump.c ****      */
+  27:Src/system_jump.c ****     __disable_irq();
   28:Src/system_jump.c **** 
-  29:Src/system_jump.c ****     __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH();
-  82              		.loc 1 29 0
-  83 002a 0A4A     		ldr	r2, .L3+8
-  84 002c 1368     		ldr	r3, [r2]
-  85 002e 23F00703 		bic	r3, r3, #7
-  86 0032 43F00103 		orr	r3, r3, #1
-  87 0036 1360     		str	r3, [r2]
-  88              	.LBB16:
-  89              	.LBB17:
-  90              		.loc 2 879 0
-  91              		.syntax unified
-  92              	@ 879 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-  93 0038 BFF34F8F 		dsb 0xF
-  94              	@ 0 "" 2
-  95              		.thumb
-  96              		.syntax unified
-  97              	.LBE17:
-  98              	.LBE16:
-  99              	.LBB18:
- 100              	.LBB19:
+  29:Src/system_jump.c ****     /* ARM Cortex-M Programming Guide to Memory Barrier Instructions.*/
+  30:Src/system_jump.c ****     __DSB();
+  31:Src/system_jump.c **** 
+  32:Src/system_jump.c ****     __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH();
+  85              		.loc 1 32 0
+  86 002e 0A4A     		ldr	r2, .L3+8
+  87 0030 1368     		ldr	r3, [r2]
+  88 0032 23F00703 		bic	r3, r3, #7
+  89 0036 43F00103 		orr	r3, r3, #1
+  90 003a 1360     		str	r3, [r2]
+  91              	.LBB16:
+  92              	.LBB17:
+  93              		.loc 2 879 0
+  94              		.syntax unified
+  95              	@ 879 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  96 003c BFF34F8F 		dsb 0xF
+  97              	@ 0 "" 2
+  98              		.thumb
+  99              		.syntax unified
+ 100              	.LBE17:
+ 101              	.LBE16:
+ 102              	.LBB18:
+ 103              	.LBB19:
  868:Drivers/CMSIS/Include/cmsis_gcc.h **** }
- 101              		.loc 2 868 0
- 102              		.syntax unified
- 103              	@ 868 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
- 104 003c BFF36F8F 		isb 0xF
- 105              	@ 0 "" 2
- 106              		.thumb
- 107              		.syntax unified
- 108              	.LBE19:
- 109              	.LBE18:
-  30:Src/system_jump.c **** 
-  31:Src/system_jump.c ****     /* Remap is bot visible at once. Execute some unrelated command! */
-  32:Src/system_jump.c ****     __DSB();
-  33:Src/system_jump.c ****     __ISB();
-  34:Src/system_jump.c **** 
-  35:Src/system_jump.c ****     JumpToApplication = (void (*)(void)) (*((uint32_t *) ((APP_ADDRESS + 4))));
- 110              		.loc 1 35 0
- 111 0040 6368     		ldr	r3, [r4, #4]
- 112              	.LVL2:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 19
+ 104              		.loc 2 868 0
+ 105              		.syntax unified
+ 106              	@ 868 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 107 0040 BFF36F8F 		isb 0xF
+ 108              	@ 0 "" 2
+ 109              		.thumb
+ 110              		.syntax unified
+ 111              	.LBE19:
+ 112              	.LBE18:
+  33:Src/system_jump.c **** 
+  34:Src/system_jump.c ****     /* Remap is bot visible at once. Execute some unrelated command! */
+  35:Src/system_jump.c ****     __DSB();
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 19
 
 
-  36:Src/system_jump.c **** 
-  37:Src/system_jump.c ****     /* Initialize user application's Stack Pointer */
-  38:Src/system_jump.c ****     __set_MSP(*(__IO uint32_t*) APP_ADDRESS);
+  36:Src/system_jump.c ****     __ISB();
+  37:Src/system_jump.c **** 
+  38:Src/system_jump.c ****     JumpToApplication = (void (*)(void)) (*((uint32_t *) ((APP_ADDRESS + 4))));
  113              		.loc 1 38 0
- 114 0042 2268     		ldr	r2, [r4]
+ 114 0044 6368     		ldr	r3, [r4, #4]
  115              	.LVL3:
- 116              	.LBB20:
- 117              	.LBB21:
- 333:Drivers/CMSIS/Include/cmsis_gcc.h **** }
- 118              		.loc 2 333 0
- 119              		.syntax unified
- 120              	@ 333 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
- 121 0044 82F30888 		MSR msp, r2
- 122              	@ 0 "" 2
- 123              	.LVL4:
- 124              		.thumb
- 125              		.syntax unified
- 126              	.LBE21:
- 127              	.LBE20:
   39:Src/system_jump.c **** 
-  40:Src/system_jump.c ****     JumpToApplication();
- 128              		.loc 1 40 0
- 129 0048 9847     		blx	r3
- 130              	.LVL5:
-  41:Src/system_jump.c **** }...
- 131              		.loc 1 41 0
- 132 004a 10BD     		pop	{r4, pc}
+  40:Src/system_jump.c ****     /* Initialize user application's Stack Pointer */
+  41:Src/system_jump.c ****     __set_MSP(*(__IO uint32_t*) APP_ADDRESS);
+ 116              		.loc 1 41 0
+ 117 0046 2268     		ldr	r2, [r4]
+ 118              	.LVL4:
+ 119              	.LBB20:
+ 120              	.LBB21:
+ 333:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 121              		.loc 2 333 0
+ 122              		.syntax unified
+ 123              	@ 333 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 124 0048 82F30888 		MSR msp, r2
+ 125              	@ 0 "" 2
+ 126              	.LVL5:
+ 127              		.thumb
+ 128              		.syntax unified
+ 129              	.LBE21:
+ 130              	.LBE20:
+  42:Src/system_jump.c **** 
+  43:Src/system_jump.c ****     JumpToApplication();
+ 131              		.loc 1 43 0
+ 132 004c 9847     		blx	r3
  133              	.LVL6:
- 134              	.L4:
- 135              		.align	2
- 136              	.L3:
- 137 004c 00100240 		.word	1073876992
- 138 0050 10E000E0 		.word	-536813552
- 139 0054 00000140 		.word	1073807360
- 140              		.cfi_endproc
- 141              	.LFE130:
- 143              		.text
- 144              	.Letext0:
- 145              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
- 146              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
- 147              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
- 148              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 149              		.file 7 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 150              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
- 151              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
- 152              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 153              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
- 154              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
- 155              		.file 13 "Inc/main.h"
- 156              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s 			page 20
+  44:Src/system_jump.c **** }...
+ 134              		.loc 1 44 0
+ 135 004e 10BD     		pop	{r4, pc}
+ 136              	.LVL7:
+ 137              	.L4:
+ 138              		.align	2
+ 139              	.L3:
+ 140 0050 00100240 		.word	1073876992
+ 141 0054 10E000E0 		.word	-536813552
+ 142 0058 00000140 		.word	1073807360
+ 143              		.cfi_endproc
+ 144              	.LFE133:
+ 146              		.text
+ 147              	.Letext0:
+ 148              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
+ 149              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
+ 150              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
+ 151              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 152              		.file 7 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 153              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 154              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 155              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 156              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 157              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 158              		.file 13 "Inc/main.h"
+ 159              		.file 14 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
+ 160              		.file 15 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 20
+
+
+ 161              		.file 16 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.
+ 162              		.file 17 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
+ 163              		.file 18 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
+ 164              		.file 19 "Inc/usb_device.h"
+ 165              		.file 20 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 system_jump.c
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s:18     .text.SystemAppJump:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s:25     .text.SystemAppJump:0000000000000000 SystemAppJump
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccE6VPpV.s:137    .text.SystemAppJump:000000000000004c $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s:18     .text.SystemAppJump:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s:25     .text.SystemAppJump:0000000000000000 SystemAppJump
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccizKrr0.s:140    .text.SystemAppJump:0000000000000050 $d
 
 UNDEFINED SYMBOLS
+USB_DeInit
 HAL_RCC_DeInit

@@ -1,5 +1,6 @@
 #include "system_jump.h"
 #include "main.h"
+#include "usb_device.h"
 
 void SystemAppJump(uint32_t APP_ADDRESS)
 {
@@ -8,6 +9,8 @@ void SystemAppJump(uint32_t APP_ADDRESS)
 
     // __HAL_RCC_USART1_FORCE_RESET();
     // __HAL_RCC_USART1_RELEASE_RESET();
+
+    USB_DeInit();
 
     __HAL_RCC_USART2_FORCE_RESET();
     __HAL_RCC_USART2_RELEASE_RESET();

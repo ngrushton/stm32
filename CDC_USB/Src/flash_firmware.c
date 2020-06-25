@@ -7,8 +7,8 @@ HAL_StatusTypeDef Save_Rec_FW(char *data_to_flash, uint32_t len) {
 
     FLASH_EraseInitTypeDef EraseInitStruct;
     EraseInitStruct.TypeErase   = FLASH_TYPEERASE_PAGES;
-    EraseInitStruct.Banks       = FLASH_BANK_1;
-    EraseInitStruct.Page        = 16;
+    EraseInitStruct.Banks       = FLASH_BANK_2;
+    EraseInitStruct.Page        = 0;
     EraseInitStruct.NbPages     = 240;
 
     /* Unlock the Flash to enable the flash control register access *************/

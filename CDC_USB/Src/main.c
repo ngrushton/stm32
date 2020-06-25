@@ -38,13 +38,16 @@ static void MX_USART2_UART_Init(void);
 int main(void)
 {
   HAL_Init();
+
+  SCB->VTOR = 0x08008000;
+  __enable_irq();
+
   SystemClock_Config();
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_USB_DEVICE_Init();
 
-  SCB->VTOR = 0x08000000;
-  __enable_irq();
+  HAL_UART_Transmit(&huart2, (uint8_t*)"CDC Upgrade Programme\n", 22, 100);
 
   while (1)
   {
