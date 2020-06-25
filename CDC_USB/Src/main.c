@@ -49,6 +49,9 @@ int main(void)
 
   HAL_UART_Transmit(&huart2, (uint8_t*)"CDC Upgrade Programme\n", 22, 100);
 
+  ReadActiveAppAddress();
+  // SaveActiveAppAddress(0x08080000);
+
   while (1)
   {
   }

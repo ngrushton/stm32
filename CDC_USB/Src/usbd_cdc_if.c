@@ -305,8 +305,8 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
           firstPackage = 1;
           HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nUpgrade done\r\n", 16, 100);
           CDC_Transmit_FS((uint8_t*)"return upgrade=end\r\n", 20);
-          HAL_Delay(5000);
-          SystemAppJump(0x08080000);
+          SaveActiveAppAddress(0x08080000);
+          NVIC_SystemReset();
         }
         else {
           HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nIn upgrade\r\n", 14, 100);

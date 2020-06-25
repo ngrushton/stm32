@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 1
    8:Src/flash_firmware.c ****     FLASH_EraseInitTypeDef EraseInitStruct;
    9:Src/flash_firmware.c ****     EraseInitStruct.TypeErase   = FLASH_TYPEERASE_PAGES;
   49              		.loc 1 9 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 2
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 2
 
 
   50 000e 1393     		str	r3, [sp, #76]
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 1
   83              	.LBE2:
   84              	.LBB3:
   19:Src/flash_firmware.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"Erased\r\n", 8, 100);
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 3
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 3
 
 
   85              		.loc 1 19 0
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 1
  133 0086 0020     		movs	r0, #0
  134 0088 FFF7FEFF 		bl	HAL_FLASH_Program
  135              	.LVL8:
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 4
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 4
 
 
  136 008c 8DF85F00 		strb	r0, [sp, #95]
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 1
   48:Src/flash_firmware.c **** 
   49:Src/flash_firmware.c ****     return flashStatus;
  177              		.loc 1 49 0
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 5
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 5
 
 
  178 00d0 9DF85F00 		ldrb	r0, [sp, #95]	@ zero_extendqisi2
@@ -262,57 +262,349 @@ ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 1
  195 00f0 1C000000 		.word	.LC3
  196              		.cfi_endproc
  197              	.LFE133:
- 199              		.section	.rodata.Save_Rec_FW.str1.4,"aMS",%progbits,1
- 200              		.align	2
- 201              	.LC0:
- 202 0000 45726173 		.ascii	"Erased\015\012\000"
- 202      65640D0A 
- 202      00
- 203 0009 000000   		.space	3
- 204              	.LC1:
- 205 000c 466C6173 		.ascii	"Flashing\015\012\000"
- 205      68696E67 
- 205      0D0A00
- 206 0017 00       		.space	1
- 207              	.LC2:
- 208 0018 2000     		.ascii	" \000"
- 209 001a 0000     		.space	2
- 210              	.LC3:
- 211 001c 0A00     		.ascii	"\012\000"
- 212              		.text
- 213              	.Letext0:
- 214              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
- 215              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
- 216              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
- 217              		.file 5 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h
- 218              		.file 6 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
- 219              		.file 7 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
- 220              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
- 221              		.file 9 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 222              		.file 10 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 223              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
- 224              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
- 225              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 226              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
- 227              		.file 15 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
- 228              		.file 16 "Inc/main.h"
- 229              		.file 17 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
- 230              		.file 18 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 6
+ 199              		.section	.text.SaveActiveAppAddress,"ax",%progbits
+ 200              		.align	1
+ 201              		.global	SaveActiveAppAddress
+ 202              		.syntax unified
+ 203              		.thumb
+ 204              		.thumb_func
+ 205              		.fpu fpv4-sp-d16
+ 207              	SaveActiveAppAddress:
+ 208              	.LFB134:
+  51:Src/flash_firmware.c **** 
+  52:Src/flash_firmware.c **** void SaveActiveAppAddress(uint64_t activeAppAddress) {
+ 209              		.loc 1 52 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 24
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              	.LVL15:
+ 214 0000 D0B5     		push	{r4, r6, r7, lr}
+ 215              	.LCFI3:
+ 216              		.cfi_def_cfa_offset 16
+ 217              		.cfi_offset 4, -16
+ 218              		.cfi_offset 6, -12
+ 219              		.cfi_offset 7, -8
+ 220              		.cfi_offset 14, -4
+ 221 0002 86B0     		sub	sp, sp, #24
+ 222              	.LCFI4:
+ 223              		.cfi_def_cfa_offset 40
+ 224 0004 0646     		mov	r6, r0
+ 225 0006 0F46     		mov	r7, r1
+  53:Src/flash_firmware.c **** 
+  54:Src/flash_firmware.c ****     volatile HAL_StatusTypeDef flashStatus = HAL_OK;
+ 226              		.loc 1 54 0
+ 227 0008 0023     		movs	r3, #0
+ 228 000a 8DF81730 		strb	r3, [sp, #23]
+  55:Src/flash_firmware.c **** 
+  56:Src/flash_firmware.c ****     FLASH_EraseInitTypeDef EraseInitStruct;
+  57:Src/flash_firmware.c ****     EraseInitStruct.TypeErase   = FLASH_TYPEERASE_PAGES;
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 6
 
 
- 231              		.file 19 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
- 232              		.file 20 "Inc/usbd_cdc_if.h"
- 233              		.file 21 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h"
-ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s 			page 7
+ 229              		.loc 1 57 0
+ 230 000e 0193     		str	r3, [sp, #4]
+  58:Src/flash_firmware.c ****     EraseInitStruct.Banks       = FLASH_BANK_2;
+ 231              		.loc 1 58 0
+ 232 0010 0223     		movs	r3, #2
+ 233 0012 0293     		str	r3, [sp, #8]
+  59:Src/flash_firmware.c ****     EraseInitStruct.Page        = 254;
+ 234              		.loc 1 59 0
+ 235 0014 FE23     		movs	r3, #254
+ 236 0016 0393     		str	r3, [sp, #12]
+  60:Src/flash_firmware.c ****     EraseInitStruct.NbPages     = 1;
+ 237              		.loc 1 60 0
+ 238 0018 0123     		movs	r3, #1
+ 239 001a 0493     		str	r3, [sp, #16]
+  61:Src/flash_firmware.c **** 
+  62:Src/flash_firmware.c ****     /* Unlock the Flash to enable the flash control register access *************/
+  63:Src/flash_firmware.c ****     HAL_FLASH_Unlock();
+ 240              		.loc 1 63 0
+ 241 001c FFF7FEFF 		bl	HAL_FLASH_Unlock
+ 242              	.LVL16:
+  64:Src/flash_firmware.c ****     uint32_t PageError;
+  65:Src/flash_firmware.c ****     flashStatus = HAL_FLASHEx_Erase(&EraseInitStruct, &PageError);
+ 243              		.loc 1 65 0
+ 244 0020 6946     		mov	r1, sp
+ 245 0022 01A8     		add	r0, sp, #4
+ 246 0024 FFF7FEFF 		bl	HAL_FLASHEx_Erase
+ 247              	.LVL17:
+ 248 0028 8DF81700 		strb	r0, [sp, #23]
+  66:Src/flash_firmware.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)"App Address Erased\r\n", 20, 100);
+ 249              		.loc 1 66 0
+ 250 002c 0E4C     		ldr	r4, .L16
+ 251 002e 6423     		movs	r3, #100
+ 252 0030 1422     		movs	r2, #20
+ 253 0032 0E49     		ldr	r1, .L16+4
+ 254 0034 2046     		mov	r0, r4
+ 255 0036 FFF7FEFF 		bl	HAL_UART_Transmit
+ 256              	.LVL18:
+  67:Src/flash_firmware.c **** 
+  68:Src/flash_firmware.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)"Flashing\r\n", 10, 100);
+ 257              		.loc 1 68 0
+ 258 003a 6423     		movs	r3, #100
+ 259 003c 0A22     		movs	r2, #10
+ 260 003e 0C49     		ldr	r1, .L16+8
+ 261 0040 2046     		mov	r0, r4
+ 262 0042 FFF7FEFF 		bl	HAL_UART_Transmit
+ 263              	.LVL19:
+  69:Src/flash_firmware.c **** 
+  70:Src/flash_firmware.c ****     // uint64_t flashData = (((uint64_t) 0x00000000) << 32) + ((uint64_t) activeAppAddress);
+  71:Src/flash_firmware.c **** 
+  72:Src/flash_firmware.c ****     if (flashStatus == HAL_OK) {
+ 264              		.loc 1 72 0
+ 265 0046 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ 266 004a 1BB1     		cbz	r3, .L15
+ 267              	.L13:
+  73:Src/flash_firmware.c ****         flashStatus = HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, 0x080FF000, activeAppAddress)
+  74:Src/flash_firmware.c ****     }
+  75:Src/flash_firmware.c ****     HAL_FLASH_Lock();
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 7
+
+
+ 268              		.loc 1 75 0
+ 269 004c FFF7FEFF 		bl	HAL_FLASH_Lock
+ 270              	.LVL20:
+  76:Src/flash_firmware.c **** 
+  77:Src/flash_firmware.c ****     // return flashStatus;
+  78:Src/flash_firmware.c **** }
+ 271              		.loc 1 78 0
+ 272 0050 06B0     		add	sp, sp, #24
+ 273              	.LCFI5:
+ 274              		.cfi_remember_state
+ 275              		.cfi_def_cfa_offset 16
+ 276              		@ sp needed
+ 277 0052 D0BD     		pop	{r4, r6, r7, pc}
+ 278              	.L15:
+ 279              	.LCFI6:
+ 280              		.cfi_restore_state
+  73:Src/flash_firmware.c ****         flashStatus = HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, 0x080FF000, activeAppAddress)
+ 281              		.loc 1 73 0
+ 282 0054 3246     		mov	r2, r6
+ 283 0056 3B46     		mov	r3, r7
+ 284 0058 0649     		ldr	r1, .L16+12
+ 285 005a 0020     		movs	r0, #0
+ 286 005c FFF7FEFF 		bl	HAL_FLASH_Program
+ 287              	.LVL21:
+ 288 0060 8DF81700 		strb	r0, [sp, #23]
+ 289 0064 F2E7     		b	.L13
+ 290              	.L17:
+ 291 0066 00BF     		.align	2
+ 292              	.L16:
+ 293 0068 00000000 		.word	huart2
+ 294 006c 00000000 		.word	.LC4
+ 295 0070 0C000000 		.word	.LC1
+ 296 0074 00F00F08 		.word	135262208
+ 297              		.cfi_endproc
+ 298              	.LFE134:
+ 300              		.section	.text.ReadActiveAppAddress,"ax",%progbits
+ 301              		.align	1
+ 302              		.global	ReadActiveAppAddress
+ 303              		.syntax unified
+ 304              		.thumb
+ 305              		.thumb_func
+ 306              		.fpu fpv4-sp-d16
+ 308              	ReadActiveAppAddress:
+ 309              	.LFB135:
+  79:Src/flash_firmware.c **** 
+  80:Src/flash_firmware.c **** uint64_t ReadActiveAppAddress()
+  81:Src/flash_firmware.c **** {
+ 310              		.loc 1 81 0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 32
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314 0000 30B5     		push	{r4, r5, lr}
+ 315              	.LCFI7:
+ 316              		.cfi_def_cfa_offset 12
+ 317              		.cfi_offset 4, -12
+ 318              		.cfi_offset 5, -8
+ 319              		.cfi_offset 14, -4
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 8
+
+
+ 320 0002 89B0     		sub	sp, sp, #36
+ 321              	.LCFI8:
+ 322              		.cfi_def_cfa_offset 48
+  82:Src/flash_firmware.c **** 	volatile uint32_t read_data;
+  83:Src/flash_firmware.c **** 	uint32_t buffered[2];
+  84:Src/flash_firmware.c **** 	volatile uint32_t read_cnt = 0;
+ 323              		.loc 1 84 0
+ 324 0004 0024     		movs	r4, #0
+ 325 0006 0494     		str	r4, [sp, #16]
+ 326              	.LVL22:
+ 327 0008 04E0     		b	.L20
+ 328              	.LVL23:
+ 329              	.L19:
+  85:Src/flash_firmware.c **** 	int index = 0;
+  86:Src/flash_firmware.c **** 	do
+  87:Src/flash_firmware.c **** 	{
+  88:Src/flash_firmware.c **** 		read_data = *(uint32_t*)(0x080FF000 + read_cnt);
+  89:Src/flash_firmware.c **** 
+  90:Src/flash_firmware.c **** 		if(read_data != 0xFFFFFFFF)
+  91:Src/flash_firmware.c **** 		{
+  92:Src/flash_firmware.c **** 			buffered[index] = read_data;
+  93:Src/flash_firmware.c ****             
+  94:Src/flash_firmware.c ****             char buffer[16];
+  95:Src/flash_firmware.c ****             sprintf(buffer, "%ld\n", buffered[index]);
+  96:Src/flash_firmware.c **** 			HAL_UART_Transmit(&huart2, (uint8_t*)buffer, 10, 100);
+  97:Src/flash_firmware.c **** 
+  98:Src/flash_firmware.c **** 			read_cnt += 4;
+  99:Src/flash_firmware.c **** 		}
+ 100:Src/flash_firmware.c **** 		index++;
+ 330              		.loc 1 100 0
+ 331 000a 0134     		adds	r4, r4, #1
+ 332              	.LVL24:
+ 101:Src/flash_firmware.c **** 	} while(read_data != 0xFFFFFFFF);
+ 333              		.loc 1 101 0
+ 334 000c 079B     		ldr	r3, [sp, #28]
+ 335 000e B3F1FF3F 		cmp	r3, #-1
+ 336 0012 1ED0     		beq	.L22
+ 337              	.LVL25:
+ 338              	.L20:
+  88:Src/flash_firmware.c **** 
+ 339              		.loc 1 88 0
+ 340 0014 049B     		ldr	r3, [sp, #16]
+ 341 0016 03F10063 		add	r3, r3, #134217728
+ 342 001a 03F57F23 		add	r3, r3, #1044480
+ 343 001e 1B68     		ldr	r3, [r3]
+ 344 0020 0793     		str	r3, [sp, #28]
+  90:Src/flash_firmware.c **** 		{
+ 345              		.loc 1 90 0
+ 346 0022 079B     		ldr	r3, [sp, #28]
+ 347 0024 B3F1FF3F 		cmp	r3, #-1
+ 348 0028 EFD0     		beq	.L19
+ 349              	.LBB5:
+  92:Src/flash_firmware.c ****             
+ 350              		.loc 1 92 0
+ 351 002a 079A     		ldr	r2, [sp, #28]
+ 352 002c 08AB     		add	r3, sp, #32
+ 353 002e 03EB8403 		add	r3, r3, r4, lsl #2
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 9
+
+
+ 354 0032 43F80C2C 		str	r2, [r3, #-12]
+  95:Src/flash_firmware.c **** 			HAL_UART_Transmit(&huart2, (uint8_t*)buffer, 10, 100);
+ 355              		.loc 1 95 0
+ 356 0036 0C49     		ldr	r1, .L23
+ 357 0038 6846     		mov	r0, sp
+ 358 003a FFF7FEFF 		bl	sprintf
+ 359              	.LVL26:
+  96:Src/flash_firmware.c **** 
+ 360              		.loc 1 96 0
+ 361 003e 6423     		movs	r3, #100
+ 362 0040 0A22     		movs	r2, #10
+ 363 0042 6946     		mov	r1, sp
+ 364 0044 0948     		ldr	r0, .L23+4
+ 365 0046 FFF7FEFF 		bl	HAL_UART_Transmit
+ 366              	.LVL27:
+  98:Src/flash_firmware.c **** 		}
+ 367              		.loc 1 98 0
+ 368 004a 049B     		ldr	r3, [sp, #16]
+ 369 004c 0433     		adds	r3, r3, #4
+ 370 004e 0493     		str	r3, [sp, #16]
+ 371 0050 DBE7     		b	.L19
+ 372              	.L22:
+ 373              	.LBE5:
+ 102:Src/flash_firmware.c **** 
+ 103:Src/flash_firmware.c **** 	uint64_t jammed = ((uint64_t)buffered[1]<<32) + (uint64_t)buffered[0];
+ 374              		.loc 1 103 0
+ 375 0052 0022     		movs	r2, #0
+ 376 0054 069B     		ldr	r3, [sp, #24]
+ 377              	.LVL28:
+ 104:Src/flash_firmware.c **** 	return jammed;
+ 105:Src/flash_firmware.c **** }...
+ 378              		.loc 1 105 0
+ 379 0056 0598     		ldr	r0, [sp, #20]
+ 380 0058 1418     		adds	r4, r2, r0
+ 381              	.LVL29:
+ 382 005a 43F10005 		adc	r5, r3, #0
+ 383 005e 2046     		mov	r0, r4
+ 384 0060 2946     		mov	r1, r5
+ 385 0062 09B0     		add	sp, sp, #36
+ 386              	.LCFI9:
+ 387              		.cfi_def_cfa_offset 12
+ 388              		@ sp needed
+ 389 0064 30BD     		pop	{r4, r5, pc}
+ 390              	.LVL30:
+ 391              	.L24:
+ 392 0066 00BF     		.align	2
+ 393              	.L23:
+ 394 0068 00000000 		.word	.LC5
+ 395 006c 00000000 		.word	huart2
+ 396              		.cfi_endproc
+ 397              	.LFE135:
+ 399              		.section	.rodata.ReadActiveAppAddress.str1.4,"aMS",%progbits,1
+ 400              		.align	2
+ 401              	.LC5:
+ 402 0000 256C640A 		.ascii	"%ld\012\000"
+ 402      00
+ 403              		.section	.rodata.SaveActiveAppAddress.str1.4,"aMS",%progbits,1
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 10
+
+
+ 404              		.align	2
+ 405              	.LC4:
+ 406 0000 41707020 		.ascii	"App Address Erased\015\012\000"
+ 406      41646472 
+ 406      65737320 
+ 406      45726173 
+ 406      65640D0A 
+ 407              		.section	.rodata.Save_Rec_FW.str1.4,"aMS",%progbits,1
+ 408              		.align	2
+ 409              	.LC0:
+ 410 0000 45726173 		.ascii	"Erased\015\012\000"
+ 410      65640D0A 
+ 410      00
+ 411 0009 000000   		.space	3
+ 412              	.LC1:
+ 413 000c 466C6173 		.ascii	"Flashing\015\012\000"
+ 413      68696E67 
+ 413      0D0A00
+ 414 0017 00       		.space	1
+ 415              	.LC2:
+ 416 0018 2000     		.ascii	" \000"
+ 417 001a 0000     		.space	2
+ 418              	.LC3:
+ 419 001c 0A00     		.ascii	"\012\000"
+ 420              		.text
+ 421              	.Letext0:
+ 422              		.file 2 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/machine/_default_types
+ 423              		.file 3 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/lock.h"
+ 424              		.file 4 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_types.h"
+ 425              		.file 5 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h
+ 426              		.file 6 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/reent.h"
+ 427              		.file 7 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/sys/_stdint.h"
+ 428              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
+ 429              		.file 9 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 430              		.file 10 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 431              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 432              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 433              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 434              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 435              		.file 15 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 436              		.file 16 "Inc/main.h"
+ 437              		.file 17 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdlib.h"
+ 438              		.file 18 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 439              		.file 19 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
+ 440              		.file 20 "Inc/usbd_cdc_if.h"
+ 441              		.file 21 "/usr/local/Cellar/gcc-arm-none-eabi/20180627/arm-none-eabi/include/stdio.h"
+ 442              		.file 22 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h"
+ARM GAS  /var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 flash_firmware.c
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s:18     .text.Save_Rec_FW:0000000000000000 $t
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s:25     .text.Save_Rec_FW:0000000000000000 Save_Rec_FW
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s:189    .text.Save_Rec_FW:00000000000000d8 $d
-/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//ccA01qef.s:200    .rodata.Save_Rec_FW.str1.4:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:18     .text.Save_Rec_FW:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:25     .text.Save_Rec_FW:0000000000000000 Save_Rec_FW
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:189    .text.Save_Rec_FW:00000000000000d8 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:200    .text.SaveActiveAppAddress:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:207    .text.SaveActiveAppAddress:0000000000000000 SaveActiveAppAddress
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:293    .text.SaveActiveAppAddress:0000000000000068 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:301    .text.ReadActiveAppAddress:0000000000000000 $t
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:308    .text.ReadActiveAppAddress:0000000000000000 ReadActiveAppAddress
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:394    .text.ReadActiveAppAddress:0000000000000068 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:400    .rodata.ReadActiveAppAddress.str1.4:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:404    .rodata.SaveActiveAppAddress.str1.4:0000000000000000 $d
+/var/folders/k_/d4dbklhx7q1fs9lh20k9kt840000gn/T//cciphe1t.s:408    .rodata.Save_Rec_FW.str1.4:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_FLASH_Unlock
@@ -323,3 +615,4 @@ HAL_FLASH_Lock
 firstPackage
 huart2
 flashAddress
+sprintf

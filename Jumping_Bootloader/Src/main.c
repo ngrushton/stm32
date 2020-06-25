@@ -21,6 +21,7 @@
 #include "main.h"
 #include "system_jump.h"
 #include "MetaDataManager.h"
+#include <stdio.h>
 
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart2;
@@ -36,6 +37,8 @@ static void MX_USART2_UART_Init(void);
 unsigned char ReCallActiveAppAddrFromMemory(void);
 unsigned char SaveActiveApp(uint32_t address);
 unsigned char SaveNodeName(char *data);
+uint64_t ReadActiveAppAddress();
+void SaveActiveAppAddress(uint64_t activeAppAddress);
 
 /* Table with All the known Meta Data */
 MDM_knownGMD_t known_MetaData[]={
@@ -46,6 +49,7 @@ MDM_knownGMD_t known_MetaData[]={
 };
 
 #define PROG1_ADDRESS ((uint32_t)0x08008000)
+// #define PROG1_ADDRESS ((uint32_t)0x08080000)
 
 /**
   * @brief  The application entry point.
@@ -80,10 +84,11 @@ int main(void)
   // }
 
   // EraseMetaDataManager();
-
+  // SaveActiveAppAddress(0x08008000);
+  // SaveActiveAppAddress(0x08080000);
   HAL_UART_Transmit(&huart2, (uint8_t*)"In bootloader...\r\n", 18, 1000);
-
-  SystemAppJump(PROG1_ADDRESS);
+  uint64_t activeAppAddress = ReadActiveAppAddress();
+  SystemAppJump(activeAppAddress);
 }
 
 /**
@@ -118,6 +123,64 @@ unsigned char SaveActiveApp(uint32_t address) {
     NecessityToSaveMetaDataManager = 1;
 
     return Success;
+}
+
+void SaveActiveAppAddress(uint64_t activeAppAddress) {
+
+    volatile HAL_StatusTypeDef flashStatus = HAL_OK;
+
+    FLASH_EraseInitTypeDef EraseInitStruct;
+    EraseInitStruct.TypeErase   = FLASH_TYPEERASE_PAGES;
+    EraseInitStruct.Banks       = FLASH_BANK_2;
+    EraseInitStruct.Page        = 254;
+    EraseInitStruct.NbPages     = 1;
+
+    /* Unlock the Flash to enable the flash control register access *************/
+    HAL_FLASH_Unlock();
+    uint32_t PageError;
+    flashStatus = HAL_FLASHEx_Erase(&EraseInitStruct, &PageError);
+    HAL_UART_Transmit(&huart2, (uint8_t*)"App Address Erased\r\n", 20, 100);
+
+    HAL_UART_Transmit(&huart2, (uint8_t*)"Flashing\r\n", 10, 100);
+
+    // uint64_t flashData = (((uint64_t) 0x00000000) << 32) + ((uint64_t) activeAppAddress);
+
+    if (flashStatus == HAL_OK) {
+        flashStatus = HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, 0x080FF000, activeAppAddress);
+    }
+    HAL_FLASH_Lock();
+
+    // return flashStatus;
+}
+
+// Temporary
+uint64_t ReadActiveAppAddress()
+{
+	volatile uint32_t read_data;
+	uint32_t buffered[2];
+	volatile uint32_t read_cnt = 0;
+	int index = 0;
+	do
+	{
+		read_data = *(uint32_t*)(0x080FF000 + read_cnt);
+
+		if(read_data != 0xFFFFFFFF)
+		{
+			buffered[index] = read_data;
+            
+      char buffer[16];
+      sprintf(buffer, "Add: %ld ", buffered[index]);
+			HAL_UART_Transmit(&huart2, (uint8_t*)buffer, 10, 100);
+
+			read_cnt += 4;
+		}
+		index++;
+	} while(read_data != 0xFFFFFFFF);
+
+  HAL_UART_Transmit(&huart2, (uint8_t*)"\n", 1, 100);
+
+	uint64_t jammed = ((uint64_t)buffered[1]<<32) + (uint64_t)buffered[0];
+	return jammed;
 }
 
 /**
