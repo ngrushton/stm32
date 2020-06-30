@@ -23,8 +23,6 @@ uint64_t ReadActiveAppAddress();
 void SaveActiveAppAddress(uint64_t activeAppAddress);
 static void Jump_To_App();
 
-char print_out[64];
-
 #define APP_ADDRESS 0x080FEFE0
 
 /**
@@ -35,29 +33,20 @@ int main(void)
 {
   HAL_Init();
 
-  // SCB->VTOR = 0x08000000;
-  // __enable_irq();
+  SCB->VTOR = 0x08000000;
+  __enable_irq();
 
   SystemClock_Config();
   MX_USART2_UART_Init();
 
-  // SaveActiveAppAddress(0x08008000);
-  // SaveActiveAppAddress(0x08080000);
   HAL_UART_Transmit(&huart2, (uint8_t*)"In bootloader...\r\n", 18, 1000);
 
-  sprintf(print_out, "%ld\r\n", *((unsigned long *)0x20017FF0));
-
-  HAL_UART_Transmit(&huart2, (uint8_t*)print_out, 10, 1000);
-
-  SaveActiveAppAddress(0x08008000);
-
-  // uint64_t activeAppAddress = ReadActiveAppAddress();
-  // Jump_To_App();
+  SystemAppJump(0x08008000);
 }
 
 
 /**
-  * @brief  Jump_To_USB_DFU()
+  * @brief  Jump_To_App()
   *         On reset, the system jumps to the SystemInit(void) function in system_stm32l4xx.c.
 	*         If the trigger is set to 0xFFFFFFFF the system jumps to the the DFU bootloader.
 	*         If not, then the system starts up normally.
