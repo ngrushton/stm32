@@ -60,8 +60,6 @@ Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c \
 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c \
 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c \
 Src/system_stm32l4xx.c \
-STM32_MetaDataManager/MetaDataManager.c \
-STM32_MetaDataManager/Template/TemplateFlashManagement.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -124,8 +122,6 @@ C_INCLUDES =  \
 -IDrivers/CMSIS/Device/ST/STM32L4xx/Include \
 -IDrivers/CMSIS/Include \
 -IDrivers/CMSIS/Include \
--ISTM32_MetaDataManager \
--ISTM32_MetaDataManager/Template
 
 
 # compile gcc flags

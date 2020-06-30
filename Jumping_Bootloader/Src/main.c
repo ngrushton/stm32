@@ -1,18 +1,7 @@
-/* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  ****************************************************************************** 
+  * 
+  * SOUNDSENSING BOOTLOADER
   *
   ******************************************************************************
   */
@@ -20,36 +9,23 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "system_jump.h"
-#include "MetaDataManager.h"
 #include <stdio.h>
 
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart2;
-
-uint8_t  NodeName[8];
-uint8_t  APIToken[32];
 uint32_t ActiveApp;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
-unsigned char ReCallActiveAppAddrFromMemory(void);
-unsigned char SaveActiveApp(uint32_t address);
-unsigned char SaveNodeName(char *data);
+
 uint64_t ReadActiveAppAddress();
 void SaveActiveAppAddress(uint64_t activeAppAddress);
+static void Jump_To_App();
 
-/* Table with All the known Meta Data */
-MDM_knownGMD_t known_MetaData[]={
-  {GMD_NODE_NAME,      (sizeof(NodeName))},
-  {GMD_API_TOKEN,    (sizeof(APIToken))},
-  {GMD_ACTIVE_APP,    (sizeof(ActiveApp))},
-  {GMD_END    ,0}/* THIS MUST BE THE LAST ONE */
-};
+char print_out[64];
 
-#define PROG1_ADDRESS ((uint32_t)0x08008000)
-// #define PROG1_ADDRESS ((uint32_t)0x08080000)
+#define APP_ADDRESS 0x080FEFE0
 
 /**
   * @brief  The application entry point.
@@ -58,73 +34,48 @@ MDM_knownGMD_t known_MetaData[]={
 int main(void)
 {
   HAL_Init();
+
+  // SCB->VTOR = 0x08000000;
+  // __enable_irq();
+
   SystemClock_Config();
-  MX_GPIO_Init();
   MX_USART2_UART_Init();
 
-  SCB->VTOR = 0x08000000;
-	__enable_irq();
-
-  // InitMetaDataManager((void *)&known_MetaData, MDM_DATA_TYPE_GMD, NULL);
-
-  // unsigned char success = ReCallActiveAppAddrFromMemory();
-
-  // SaveActiveApp(0x08000000);
-  // SaveNodeName("TestTest");
-
-  // if (NecessityToSaveMetaDataManager) {
-  //   uint32_t Success = EraseMetaDataManager();
-  //   // if(Success) {
-  //   //   SaveMetaDataManager();
-  //   // }
-  // }
-
-  // if (success) {
-  //   SystemAppJump(ActiveApp);
-  // }
-
-  // EraseMetaDataManager();
   // SaveActiveAppAddress(0x08008000);
   // SaveActiveAppAddress(0x08080000);
   HAL_UART_Transmit(&huart2, (uint8_t*)"In bootloader...\r\n", 18, 1000);
-  uint64_t activeAppAddress = ReadActiveAppAddress();
-  SystemAppJump(activeAppAddress);
+
+  sprintf(print_out, "%ld\r\n", *((unsigned long *)0x20017FF0));
+
+  HAL_UART_Transmit(&huart2, (uint8_t*)print_out, 10, 1000);
+
+  SaveActiveAppAddress(0x08008000);
+
+  // uint64_t activeAppAddress = ReadActiveAppAddress();
+  // Jump_To_App();
 }
+
 
 /**
-  * @brief  ReCallActiveAppAddrFromMemory
-  *         Use the MetaDataManager functions to retrieve the active app address
-  * @retval unsigned char: Success (1) from MetaDataManager recall
+  * @brief  Jump_To_USB_DFU()
+  *         On reset, the system jumps to the SystemInit(void) function in system_stm32l4xx.c.
+	*         If the trigger is set to 0xFFFFFFFF the system jumps to the the DFU bootloader.
+	*         If not, then the system starts up normally.
+  * @param  None
+  * @retval None
   */
-unsigned char ReCallActiveAppAddrFromMemory(void) {
-    unsigned char Success = 0;
-
-    /* Recall the node name Credential saved */
-    Success = MDM_ReCallGMD(GMD_ACTIVE_APP,(void *)&ActiveApp);
-
-    // memset(NodeNameString, '\0', sizeof(NodeNameString));
-    // strncpy(NodeNameString, (char*)NodeName, 8);
-
-    return Success;
+static void Jump_To_App() {
+	*((unsigned long *)0x20017FF0) = 0x08008000; // Set SRAM location to firmware trigger - 0xFFFFFFFF
+  NVIC_SystemReset(); // Reset the system - go to system_stm32l4xx.c SystemInit()
 }
+
 
 /**
-  * @brief  SaveActiveApp
-  *         Use the MetaDataManager functions save the active app address
-  * @retval unsigned char: Success (1) from MetaDataManager recall
+  * @brief  SaveActiveAppAddress
+  *         Save the app address to jump to after system reset
+  * @param  activeAppAddress
+  * @retval None
   */
-unsigned char SaveActiveApp(uint32_t address) {
-    unsigned char Success = 0;
-
-    uint32_t ActiveAppToSave[1];
-    ActiveAppToSave[0] = address;
-
-    Success = MDM_SaveGMD(GMD_ACTIVE_APP,(void *)&ActiveAppToSave);
-    NecessityToSaveMetaDataManager = 1;
-
-    return Success;
-}
-
 void SaveActiveAppAddress(uint64_t activeAppAddress) {
 
     volatile HAL_StatusTypeDef flashStatus = HAL_OK;
@@ -132,7 +83,7 @@ void SaveActiveAppAddress(uint64_t activeAppAddress) {
     FLASH_EraseInitTypeDef EraseInitStruct;
     EraseInitStruct.TypeErase   = FLASH_TYPEERASE_PAGES;
     EraseInitStruct.Banks       = FLASH_BANK_2;
-    EraseInitStruct.Page        = 254;
+    EraseInitStruct.Page        = 253;
     EraseInitStruct.NbPages     = 1;
 
     /* Unlock the Flash to enable the flash control register access *************/
@@ -146,14 +97,19 @@ void SaveActiveAppAddress(uint64_t activeAppAddress) {
     // uint64_t flashData = (((uint64_t) 0x00000000) << 32) + ((uint64_t) activeAppAddress);
 
     if (flashStatus == HAL_OK) {
-        flashStatus = HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, 0x080FF000, activeAppAddress);
+        flashStatus = HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, APP_ADDRESS, activeAppAddress);
     }
     HAL_FLASH_Lock();
 
     // return flashStatus;
 }
 
-// Temporary
+
+/**
+  * @brief  ReadActiveAppAddress
+  *         Read the app address to jump to after system reset
+  * @retval Return uint64_t app address value
+  */
 uint64_t ReadActiveAppAddress()
 {
 	volatile uint32_t read_data;
@@ -162,7 +118,7 @@ uint64_t ReadActiveAppAddress()
 	int index = 0;
 	do
 	{
-		read_data = *(uint32_t*)(0x080FF000 + read_cnt);
+		read_data = *(uint32_t*)(APP_ADDRESS + read_cnt);
 
 		if(read_data != 0xFFFFFFFF)
 		{
@@ -183,25 +139,6 @@ uint64_t ReadActiveAppAddress()
 	return jammed;
 }
 
-/**
-  * @brief  SaveNodeName
-  *         Use the MetaDataManager functions save node name
-  * @retval unsigned char: Success (1) from MetaDataManager recall
-  */
-unsigned char SaveNodeName(char *data) {
-    unsigned char Success = 0;
-
-    uint8_t nameToSave[8];
-
-    for (int i = 0; i < 8; i++) {
-        nameToSave[i] = data[i];
-    }
-
-    Success = MDM_SaveGMD(GMD_NODE_NAME,(void *)&nameToSave);
-    NecessityToSaveMetaDataManager = 1;
-
-    return Success;
-}
 
 /**
   * @brief System Clock Configuration
@@ -256,6 +193,7 @@ void SystemClock_Config(void)
   }
 }
 
+
 /**
   * @brief USART2 Initialization Function
   * @param None
@@ -288,39 +226,6 @@ static void MX_USART2_UART_Init(void)
   /* USER CODE BEGIN USART2_Init 2 */
 
   /* USER CODE END USART2_Init 2 */
-
-}
-
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_GPIO_Init(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-  /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : B1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
 }
 

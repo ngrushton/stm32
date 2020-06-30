@@ -179,6 +179,25 @@
 
 void SystemInit(void)
 {
+
+  if ( *((unsigned long *)0x20017FF0) == 0x08008000 || *((unsigned long *)0x20017FF0) == 0x08080000 ) { // End of SRAM1 is 0x20018000 - 0x10 = 0x20017FF0
+
+    typedef void(*pFunction)(void);
+    pFunction JumpToApp;
+
+    __DSB();
+    __HAL_SYSCFG_REMAPMEMORY_SYSTEMFLASH();
+
+    __DSB();
+    __ISB();
+
+    JumpToApp = (void (*)(void)) (*((uint32_t *)( *((unsigned long *)0x20017FF0) + 4))); // System memory/bootloader location for Nucleo-L476RG
+    __set_MSP(*(uint32_t *) *((unsigned long *)0x20017FF0) );
+
+      *((unsigned long *)0x20017FF0) = 0xAAAAAAAA; // Reset trigger
+    JumpToApp();
+  }
+
   /* FPU settings ------------------------------------------------------------*/
   #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
     SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));  /* set CP10 and CP11 Full Access */

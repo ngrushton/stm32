@@ -27,9 +27,7 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- Inc/system_jump.h STM32_MetaDataManager/MetaDataManager.h \
- STM32_MetaDataManager/MetaDataManager_Config.h \
- STM32_MetaDataManager/SENSING1_config.h
+ Inc/system_jump.h
 
 Inc/main.h:
 
@@ -94,9 +92,3 @@ Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
 
 Inc/system_jump.h:
-
-STM32_MetaDataManager/MetaDataManager.h:
-
-STM32_MetaDataManager/MetaDataManager_Config.h:
-
-STM32_MetaDataManager/SENSING1_config.h:
